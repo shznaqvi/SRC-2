@@ -17,14 +17,14 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="edu.aku.hassannaqvi.src_preg.core.MainApp"
+        android:name=".core.MainApp"
         android:allowBackup="true"
         android:icon="@mipmap/logonew"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="edu.aku.hassannaqvi.src_preg.ui.SplashscreenActivity"
+            android:name=".ui.SplashscreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,31 +33,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.aku.hassannaqvi.src_preg.ui.LoginActivity"
+            android:name=".ui.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
-            android:name="edu.aku.hassannaqvi.src_preg.ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.src_preg.ui.SectionAActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-        <activity
-            android:name="edu.aku.hassannaqvi.src_preg.core.AndroidDatabaseManager"
+            android:name=".ui.SectionAActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name="edu.aku.hassannaqvi.src_preg.ui.EndingActivity"
+            android:name=".core.AndroidDatabaseManager"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name="edu.aku.hassannaqvi.src_preg.FormsList" />
+        <activity
+            android:name=".ui.EndingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".FormsList" />
 
-        <service android:name="edu.aku.hassannaqvi.src_preg.DownloadFileService" />
+        <service android:name=".DownloadFileService" />
 
+        <activity android:name=".ui.SectionInfoActivity" />
+        <activity android:name=".ui.Recruitment.SecRBActivity"></activity>
     </application>
 
 </manifest>
