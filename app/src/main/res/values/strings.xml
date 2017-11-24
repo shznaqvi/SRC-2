@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">(MNCH) Services Project in District Dadu, Pakistan</string>
-
-
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
