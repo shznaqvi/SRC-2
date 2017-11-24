@@ -4,6 +4,9 @@ android {
     compileSdkVersion 26
     buildToolsVersion '26.0.3'
     def versionPropsFile = file('version.properties')
+    dataBinding {
+        enabled true
+    }
 
     if (versionPropsFile.canRead()) {
         Properties versionProps = new Properties()
