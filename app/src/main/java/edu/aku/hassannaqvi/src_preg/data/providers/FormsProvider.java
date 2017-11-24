@@ -7,8 +7,10 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.util.Log;
+import android.widget.Toast;
 
-import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
+import edu.aku.hassannaqvi.src_preg.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 
 /**
@@ -37,21 +39,21 @@ public class FormsProvider extends ContentProvider {
 
     /** Add possible URIs to handle by the matcher */
     static {
-        MATCHER.addURI(AUTHORITY, FormsContract.FormsTable.TABLE_NAME, CODE_FORMS_ALL);
-        MATCHER.addURI(AUTHORITY, FormsContract.FormsTable.TABLE_NAME + "/#", CODE_FORMS_SINGLE);
+        MATCHER.addURI(AUTHORITY, FormsTable.TABLE_NAME, CODE_FORMS_ALL);
+        MATCHER.addURI(AUTHORITY, FormsTable.TABLE_NAME + "/#", CODE_FORMS_SINGLE);
     }
 
     /**
      * FormsDbHelper - database helper object
      */
-    private DatabaseHelper db;
+    private DatabaseHelper mDbHelper;
 
     /**
      * Initialize the provider and the database helper object.
      */
     @Override
     public boolean onCreate() {
-        db = new DatabaseHelper(getContext());
+        mDbHelper = new DatabaseHelper(getContext());
         return true;
     }
 
@@ -61,8 +63,8 @@ public class FormsProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
                         String sortOrder) {
-        // Get readable database
-        SQLiteDatabase database = db.getReadableDatabase();
+        // Get readable db
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
         // This cursor will hold the result of the query
         Cursor cursor;
@@ -71,16 +73,16 @@ public class FormsProvider extends ContentProvider {
         int match = MATCHER.match(uri);
         switch (match) {
             case CODE_FORMS_ALL:
-                cursor = database.query(FormsContract.FormsTable.TABLE_NAME, projection, null, null,
+                cursor = db.query(FormsTable.TABLE_NAME, projection, null, null,
                         null, null, sortOrder);
                 break;
             case CODE_FORMS_SINGLE:
                 // Where
-                selection = FormsContract.FormsTable._ID + "=?";
+                selection = FormsTable._ID + "=?";
                 // What
                 selectionArgs = new String[]{String.valueOf(ContentUris.parseId(uri))};
-                // Form query to the database
-                cursor = database.query(FormsContract.FormsTable.TABLE_NAME, projection, selection, selectionArgs,
+                // Form query to the db
+                cursor = db.query(FormsTable.TABLE_NAME, projection, selection, selectionArgs,
                         null, null, sortOrder);
 
                 break;
@@ -96,7 +98,27 @@ public class FormsProvider extends ContentProvider {
      */
     @Override
     public Uri insert(Uri uri, ContentValues contentValues) {
-        return null;
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        long id = -1;
+        switch (MATCHER.match(uri)) {
+
+            case CODE_FORMS_ALL:
+                id = db.insert(FormsTable.TABLE_NAME,
+                        null, contentValues);
+                break;
+
+            case CODE_FORMS_SINGLE:
+                throw new IllegalArgumentException("Invalid URI, cannot insert with ID: " + uri);
+            default:
+                throw new IllegalArgumentException("Unknown URI: " + uri);
+        }
+        if (id == -1) {
+            Toast.makeText(getContext(), "Failed to insert row for " + uri, Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Failed to insert row for " + uri);
+            return null;
+        }
+
+        return ContentUris.withAppendedId(uri, id);
     }
 
     /**
@@ -120,6 +142,13 @@ public class FormsProvider extends ContentProvider {
      */
     @Override
     public String getType(Uri uri) {
-        return null;
+        switch (MATCHER.match(uri)) {
+            case CODE_FORMS_ALL:
+                return "vnd.android.forms.dir/" + AUTHORITY + "." + FormsTable.TABLE_NAME;
+            case CODE_FORMS_SINGLE:
+                return "vnd.android.forms.item/" + AUTHORITY + "." + FormsTable.TABLE_NAME;
+            default:
+                throw new IllegalArgumentException("Unknown URI: " + uri);
+        }
     }
 }
