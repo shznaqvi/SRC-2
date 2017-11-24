@@ -58,7 +58,10 @@
         <service android:name=".DownloadFileService" />
 
         <activity android:name=".ui.SectionInfoActivity" />
-        <activity android:name=".ui.Recruitment.SecRBActivity"></activity>
+        <activity android:name=".ui.Recruitment.SecRBActivity" />
+        <activity android:name=".ui.PregnancyFollowUp.SectionPFBActivity" />
+        <activity android:name=".ui.Outcome.SectionOBActivity" />
+        <activity android:name=".ui.ChildFollowUp.SectionCFBActivity"></activity>
     </application>
 
 </manifest>
