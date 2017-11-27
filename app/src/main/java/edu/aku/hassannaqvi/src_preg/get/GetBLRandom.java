@@ -20,9 +20,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.src_preg.contracts.BLRandomContract.singleChild;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
+import edu.aku.hassannaqvi.src_preg.data.contracts.BLRandomContract.singleChild;
 
 /**
  * Created by sidra.nizam on 9/8/2017.

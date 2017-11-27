@@ -20,8 +20,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import edu.aku.hassannaqvi.src_preg.contracts.BLRandomContract;
-import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.BLRandomContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.FormsContract;
 import edu.aku.hassannaqvi.src_preg.ui.EndingActivity;
 
 /**

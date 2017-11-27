@@ -15,9 +15,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.src_preg.contracts.UCsContract.UCsTable;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
+import edu.aku.hassannaqvi.src_preg.data.contracts.UCsContract.UCsTable;
 
 /**
  * Created by ali.azaz on 6/10/2017.

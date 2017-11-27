@@ -18,18 +18,18 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import edu.aku.hassannaqvi.src_preg.contracts.BLRandomContract;
-import edu.aku.hassannaqvi.src_preg.contracts.BLRandomContract.singleChild;
-import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
-import edu.aku.hassannaqvi.src_preg.contracts.FormsContract.FormsTable;
-import edu.aku.hassannaqvi.src_preg.contracts.TalukasContract;
-import edu.aku.hassannaqvi.src_preg.contracts.TalukasContract.TalukasTable;
-import edu.aku.hassannaqvi.src_preg.contracts.UCsContract;
-import edu.aku.hassannaqvi.src_preg.contracts.UCsContract.UCsTable;
-import edu.aku.hassannaqvi.src_preg.contracts.UsersContract;
-import edu.aku.hassannaqvi.src_preg.contracts.UsersContract.UsersTable;
-import edu.aku.hassannaqvi.src_preg.contracts.VillagesContract;
-import edu.aku.hassannaqvi.src_preg.contracts.VillagesContract.VillagesTable;
+import edu.aku.hassannaqvi.src_preg.data.contracts.BLRandomContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.BLRandomContract.singleChild;
+import edu.aku.hassannaqvi.src_preg.data.contracts.FormsContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.FormsContract.FormsTable;
+import edu.aku.hassannaqvi.src_preg.data.contracts.TalukasContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.TalukasContract.TalukasTable;
+import edu.aku.hassannaqvi.src_preg.data.contracts.UCsContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.UCsContract.UCsTable;
+import edu.aku.hassannaqvi.src_preg.data.contracts.UsersContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.UsersContract.UsersTable;
+import edu.aku.hassannaqvi.src_preg.data.contracts.VillagesContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.VillagesContract.VillagesTable;
 import edu.aku.hassannaqvi.src_preg.otherClasses.MotherLst;
 
 

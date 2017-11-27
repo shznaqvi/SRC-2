@@ -1,4 +1,4 @@
-package edu.aku.hassannaqvi.src_preg.contracts;
+package edu.aku.hassannaqvi.src_preg.data.contracts;
 
 
 import android.database.Cursor;

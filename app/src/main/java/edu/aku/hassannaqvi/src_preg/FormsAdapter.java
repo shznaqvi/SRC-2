@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.Collections;
 import java.util.List;
 
-import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.FormsContract;
 
 /**
  * Created by hassan.naqvi on 8/1/2016.

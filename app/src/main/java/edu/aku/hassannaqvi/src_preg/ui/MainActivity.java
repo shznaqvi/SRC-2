@@ -45,10 +45,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import edu.aku.hassannaqvi.src_preg.FormsList;
 import edu.aku.hassannaqvi.src_preg.R;
-import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
 import edu.aku.hassannaqvi.src_preg.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
+import edu.aku.hassannaqvi.src_preg.data.contracts.FormsContract;
 import edu.aku.hassannaqvi.src_preg.sync.SyncForms;
 
 public class MainActivity extends Activity {

@@ -39,11 +39,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.src_preg.R;
-import edu.aku.hassannaqvi.src_preg.contracts.BLRandomContract;
-import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
-import edu.aku.hassannaqvi.src_preg.contracts.VillagesContract;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
+import edu.aku.hassannaqvi.src_preg.data.contracts.BLRandomContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.FormsContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.VillagesContract;
 
 public class SectionAActivity extends Activity {
 

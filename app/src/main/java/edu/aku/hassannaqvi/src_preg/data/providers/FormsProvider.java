@@ -10,8 +10,8 @@ import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
 
-import edu.aku.hassannaqvi.src_preg.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
+import edu.aku.hassannaqvi.src_preg.data.contracts.FormsContract.FormsTable;
 
 /**
  * Created by Hassan.naqvi on 11/23/2017.

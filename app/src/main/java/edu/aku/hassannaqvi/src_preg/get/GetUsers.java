@@ -5,9 +5,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -16,10 +13,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-import edu.aku.hassannaqvi.src_preg.contracts.UsersContract;
-import edu.aku.hassannaqvi.src_preg.contracts.UsersContract.UsersTable;
-import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
+import edu.aku.hassannaqvi.src_preg.data.contracts.UsersContract;
+import edu.aku.hassannaqvi.src_preg.data.contracts.UsersContract.UsersTable;
 
 /**
  * Created by hassan.naqvi on 11/30/2016.
@@ -86,7 +82,10 @@ public class GetUsers extends AsyncTask<String, String, String> {
         //json = json.replaceAll("\\[", "").replaceAll("\\]","");
         Log.d(TAG, result);
         if (json.length() > 0) {
-            ArrayList<UsersContract> userArrayList;
+
+            userArrayList = new ArrayList<UsersContract>();
+
+          /*  ArrayList<UsersContract> userArrayList;
             DatabaseHelper db = new DatabaseHelper(mContext);
             try {
                 userArrayList = new ArrayList<UsersContract>();
@@ -98,7 +97,7 @@ public class GetUsers extends AsyncTask<String, String, String> {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            // db.getAllUsers();
+            // db.getAllUsers();*/
         } else {
             pd.setMessage("Received: " + json.length() + "");
             pd.show();

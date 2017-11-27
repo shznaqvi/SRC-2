@@ -11,8 +11,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
+import edu.aku.hassannaqvi.src_preg.data.contracts.FormsContract;
 
 public class FormsList extends Activity {
 
