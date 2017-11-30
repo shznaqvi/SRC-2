@@ -19,12 +19,13 @@
             android:layoutDirection="rtl"
             android:orientation="vertical">
 
+            <!--Status-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/dcstatus"
+                android:text="@string/istatus"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
@@ -34,63 +35,77 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/istatus1"
+                    android:id="@+id/istatusa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus01"/>
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/istatusa" />
 
                 <RadioButton
-                    android:id="@+id/istatus2"
+                    android:id="@+id/istatusb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus02"/>
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/istatusb" />
 
                 <RadioButton
-                    android:id="@+id/istatus3"
+                    android:id="@+id/istatusc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus03"/>
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/istatusc" />
 
                 <RadioButton
-                    android:id="@+id/istatus4"
+                    android:id="@+id/istatusd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus04"/>
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/istatusd" />
 
                 <RadioButton
-                    android:id="@+id/istatus5"
+                    android:id="@+id/istatuse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus05"/>
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/istatuse" />
 
                 <RadioButton
-                    android:id="@+id/istatus6"
+                    android:id="@+id/istatusf"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus06"/>
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/istatusf" />
 
                 <RadioButton
-                    android:id="@+id/istatus7"
+                    android:id="@+id/istatusg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus07"/>
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/istatusg" />
 
                 <RadioButton
-                    android:id="@+id/istatus8"
+                    android:id="@+id/istatush"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/istatush" />
+
+                <RadioButton
+                    android:id="@+id/istatus88"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/other" />
 
             </RadioGroup>
 
             <EditText
-                android:id="@+id/istatus888x"
+                android:id="@+id/istatus88x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:hint="@string/other"
-                android:inputType="textCapWords"
-                android:visibility="gone" />
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:maxLength="40"
+                android:text="@string/other" />
 
             <Button
                 android:id="@+id/btn_End"
@@ -98,14 +113,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:layout_weight="1"
-                android:onClick="endInterview"
                 android:text="@string/end_interview"
                 android:textColor="#ff1e1e" />
 
-
         </LinearLayout>
 
-
     </ScrollView>
-
 </RelativeLayout>
