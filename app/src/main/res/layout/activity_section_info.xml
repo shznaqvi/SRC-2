@@ -3,8 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.aku.hassannaqvi.src_preg.ui.SectionInfoActivity">
+
     <data>
-        <variable name="checkFlag" type="edu.aku.hassannaqvi.src_preg.ui.SectionInfoActivity"/>
+
+        <variable
+            name="checkFlag"
+            type="edu.aku.hassannaqvi.src_preg.ui.SectionInfoActivity" />
     </data>
 
     <ScrollView
@@ -18,59 +22,66 @@
             android:layoutDirection="rtl"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="2dp"
-                android:background="@color/colorPrimaryDark"
-                android:gravity="center"
-                android:text="@string/secALabel"
-                android:textSize="40sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="@string/secALabel"
+            android:textSize="40sp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/colorPrimary" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimary" />
 
-            <!--HH no-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/ta01"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+        <!--HH no-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/hhno"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
 
-            <EditText
-                android:id="@+id/hhno"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="0123456789"
-                android:inputType="number"
-                android:maxLength="9"
-                android:text="@string/ta01" />
+        <EditText
+            android:id="@+id/hhno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:maxLength="9"
+            android:text="@string/hhno" />
 
-            <!--Women/Mother name-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/name"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+        <!--Women/Mother name-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/wname"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
 
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:maxLength="25"
-                android:text="@string/name" />
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+            android:maxLength="25"
+            android:text="@string/wname" />
 
-            <!--Women/Mother age-->
+        <!--Women/Mother age-->
+        <LinearLayout
+            android:id="@+id/fldGrpAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="@{checkFlag == 2 ? View.GONE : View.VISIBLE}">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -261,26 +272,6 @@
                 android:maxLength="25"
                 android:text="@string/lhvname" />
 
-            <!--DT Interview or Date of Visit-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/dtInterview"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
-
-            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                android:id="@+id/date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:focusable="true"
-                android:hint="@string/dtInterview"
-                android:textColor="@android:color/black"
-                app:dateFormat="dd-MM-yyyy" />
-
             <!--DFA 10-->
             <LinearLayout
                 android:id="@+id/fldGrpDFA10"
@@ -396,73 +387,73 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/status"
+                android:text="@string/istatus"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <RadioGroup
-                android:id="@+id/status"
+                android:id="@+id/istatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/statusa"
+                    android:id="@+id/istatusa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/statusa" />
+                    android:text="@string/istatusa" />
 
                 <RadioButton
-                    android:id="@+id/statusb"
+                    android:id="@+id/istatusb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/statusb" />
+                    android:text="@string/istatusb" />
 
                 <RadioButton
-                    android:id="@+id/statusc"
+                    android:id="@+id/istatusc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/statusc" />
+                    android:text="@string/istatusc" />
 
                 <RadioButton
-                    android:id="@+id/statusd"
+                    android:id="@+id/istatusd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/statusd" />
+                    android:text="@string/istatusd" />
 
                 <RadioButton
-                    android:id="@+id/statuse"
+                    android:id="@+id/istatuse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/statuse" />
+                    android:text="@string/istatuse" />
 
                 <RadioButton
-                    android:id="@+id/statusf"
+                    android:id="@+id/istatusf"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/statusf" />
+                    android:text="@string/istatusf" />
 
                 <RadioButton
-                    android:id="@+id/statusg"
+                    android:id="@+id/istatusg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/statusg" />
+                    android:text="@string/istatusg" />
 
                 <RadioButton
-                    android:id="@+id/statush"
+                    android:id="@+id/istatush"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/statush" />
+                    android:text="@string/istatush" />
 
                 <RadioButton
-                    android:id="@+id/status88"
+                    android:id="@+id/istatus88"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -471,7 +462,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/status88x"
+                android:id="@+id/istatus88x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
@@ -654,14 +645,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
-                        android:text="@string/pfa16f" />
+                        android:text="@string/dkn" />
 
                     <RadioButton
                         android:id="@+id/pfa16g"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
-                        android:text="@string/pfa16g" />
+                        android:text="@string/na" />
 
                 </RadioGroup>
 
