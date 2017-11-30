@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context="edu.aku.hassannaqvi.src_preg.ui.SectionInfoActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.aku.hassannaqvi.src_preg.ui.SectionInfoActivity">
+    <data>
+        <variable name="checkFlag" type="edu.aku.hassannaqvi.src_preg.ui.SectionInfoActivity"/>
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,23 +33,715 @@
                 android:layout_height="2dp"
                 android:background="@color/colorPrimary" />
 
+            <!--HH no-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="ta01"
+                android:text="@string/ta01"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/ta01"
+                android:id="@+id/hhno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="0123456789"
-                android:enabled="false"
                 android:inputType="number"
-                android:maxLength="9" />
+                android:maxLength="9"
+                android:text="@string/ta01" />
+
+            <!--Women/Mother name-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/name"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:maxLength="25"
+                android:text="@string/name" />
+
+            <!--Women/Mother age-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/age"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:maxLength="3"
+                android:text="@string/age" />
+
+            <!--Husband Name-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/hname"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/hname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:maxLength="25"
+                android:text="@string/hname" />
+
+            <!--Head Name-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/hhname"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/hhname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:maxLength="25"
+                android:text="@string/hhname" />
+
+            <!--Child Name-->
+            <LinearLayout
+                android:id="@+id/fldGrpDFA06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{checkFlag == 1 ? View.VISIBLE : View.GONE}">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/dfa06"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <EditText
+                    android:id="@+id/dfa06"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                    android:maxLength="25"
+                    android:text="@string/dfa06" />
+
+            </LinearLayout>
+
+            <!--UC-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layoutDirection="ltr"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="?android:textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="7"
+                    android:background="@android:color/transparent"
+                    android:text="UC"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spUCs"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="35"
+                    android:gravity="center"
+                    android:popupBackground="#ffffff" />
+            </LinearLayout>
+
+            <!--Village-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layoutDirection="ltr"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="?android:textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:background="@android:color/transparent"
+                    android:text="Villages: "
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spVillages"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="35"
+                    android:gravity="center"
+                    android:popupBackground="#ffffff" />
+
+            </LinearLayout>
+
+            <!--DA 07-->
+            <LinearLayout
+                android:id="@+id/fldGrpDA07"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{checkFlag == 2 ? View.VISIBLE : View.GONE}">
+
+                <!--dfa10-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/da07"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/da07"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:focusable="true"
+                    android:hint="@string/da07"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy" />
+
+            </LinearLayout>
+
+            <!--LHV Name-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/lhvname"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/lhvname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:maxLength="25"
+                android:text="@string/lhvname" />
+
+            <!--DT Interview or Date of Visit-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/dtInterview"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:focusable="true"
+                android:hint="@string/dtInterview"
+                android:textColor="@android:color/black"
+                app:dateFormat="dd-MM-yyyy" />
+
+            <!--DFA 10-->
+            <LinearLayout
+                android:id="@+id/fldGrpDFA10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{checkFlag == 1 ? View.VISIBLE : View.GONE}">
+
+                <!--dfa10-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/dfa10"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/dfa10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:focusable="true"
+                    android:hint="@string/dfa10"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy" />
+
+                <!--dfa11-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/dfa10"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <Spinner
+                    android:id="@+id/dfa11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+
+            </LinearLayout>
+
+            <!--PFA 10-->
+            <LinearLayout
+                android:id="@+id/fldGrpPFA10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{checkFlag == 3 ? View.VISIBLE : View.GONE}">
+
+                <!--pfa10-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/pfa10"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <Spinner
+                    android:id="@+id/pfa10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+
+                <!--pfa11-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/pfa11"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <Spinner
+                    android:id="@+id/pfa11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+
+            </LinearLayout>
+
+            <!--RA 10-->
+            <LinearLayout
+                android:id="@+id/fldGrpRA10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{checkFlag == 4 ? View.VISIBLE : View.GONE}">
+
+                <!--ra10-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/ra10"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <Spinner
+                    android:id="@+id/ra10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></Spinner>
+            </LinearLayout>
+
+            <!--Status-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/status"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <RadioGroup
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/statusa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/statusa" />
+
+                <RadioButton
+                    android:id="@+id/statusb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/statusb" />
+
+                <RadioButton
+                    android:id="@+id/statusc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/statusc" />
+
+                <RadioButton
+                    android:id="@+id/statusd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/statusd" />
+
+                <RadioButton
+                    android:id="@+id/statuse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/statuse" />
+
+                <RadioButton
+                    android:id="@+id/statusf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/statusf" />
+
+                <RadioButton
+                    android:id="@+id/statusg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/statusg" />
+
+                <RadioButton
+                    android:id="@+id/statush"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/statush" />
+
+                <RadioButton
+                    android:id="@+id/status88"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/other" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/status88x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:maxLength="40"
+                android:text="@string/other" />
+
+            <!--DFA 15-->
+            <LinearLayout
+                android:id="@+id/fldGrpDFA15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{checkFlag == 1 ? View.VISIBLE : View.GONE}">
+
+                <!--dfa15-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/dfa15"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/dfa15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:focusable="true"
+                    android:hint="@string/dfa15"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy" />
+
+                <CheckBox
+                    android:id="@+id/dfa1599"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dkn" />
+
+                <CheckBox
+                    android:id="@+id/dfa15888"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+
+            </LinearLayout>
+
+            <!--PFA 14-->
+            <LinearLayout
+                android:id="@+id/fldGrpPFA14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{checkFlag == 3 ? View.VISIBLE : View.GONE}">
+
+                <!--pfa14-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/pfa14"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/pfa14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:focusable="true"
+                    android:hint="@string/pfa14"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy" />
+
+                <CheckBox
+                    android:id="@+id/pfa1499"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dkn" />
+
+                <CheckBox
+                    android:id="@+id/pfa14888"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+
+                <!--pfa15-->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/pfa15"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <RadioGroup
+                    android:id="@+id/pfa15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/pfa15a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/pfa15b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/no" />
+
+                    <RadioButton
+                        android:id="@+id/pfa15c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/dkn" />
+
+                </RadioGroup>
+
+                <!--pfa16-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/pfa16"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <RadioGroup
+                    android:id="@+id/pfa16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/pfa16a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/pfa16a" />
+
+                    <RadioButton
+                        android:id="@+id/pfa16b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/pfa16b" />
+
+                    <RadioButton
+                        android:id="@+id/pfa16c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/pfa16c" />
+
+                    <RadioButton
+                        android:id="@+id/pfa16d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/pfa16d" />
+
+                    <RadioButton
+                        android:id="@+id/pfa16e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/pfa16e" />
+
+                    <RadioButton
+                        android:id="@+id/pfa16f"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/pfa16f" />
+
+                    <RadioButton
+                        android:id="@+id/pfa16g"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/pfa16g" />
+
+                </RadioGroup>
+
+                <!--pfa17-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/pfa17"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                    android:id="@+id/pfa17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:focusable="true"
+                    android:hint="@string/pfa17"
+                    android:textColor="@android:color/black"
+                    app:dateFormat="dd-MM-yyyy" />
+
+                <CheckBox
+                    android:id="@+id/pfa1799"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dkn" />
+
+                <CheckBox
+                    android:id="@+id/pfa17888"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+
+                <!--pfa18-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/pfa18"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <EditText
+                    android:id="@+id/pfa18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:text="@string/month" />
+
+                <!--pfa19-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/pfa19"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <EditText
+                    android:id="@+id/pfa19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:inputType="number"
+                    android:maxLength="9"
+                    android:text="@string/pfa19" />
+
+                <CheckBox
+                    android:id="@+id/pfa19888"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
