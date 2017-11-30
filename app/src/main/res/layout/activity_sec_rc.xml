@@ -5,6 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRCActivity">
 
+    <data>
+
+        <import type="android.view.View"/>
+    </data>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -204,7 +210,9 @@
                     android:layout_height="wrap_content"
                     android:digits="abcdefghijklkmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:hint="@string/other"
-                    android:inputType="textCapWords"/>
+                    android:inputType="textCapWords"
+                    android:text='@{rc0588.checked ? rc0588x.getText.toString : ""}'
+                    android:visibility="@{rc0588.checked ? View.VISIBLE : View.GONE}"/>
 
             </LinearLayout>
 
@@ -309,9 +317,11 @@
                     android:layout_height="wrap_content"
                     android:digits="abcdefghijklkmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:hint="@string/other"
-                    android:inputType="textCapWords"/>
+                    android:inputType="textCapWords"
+                    android:text='@{rc0788.checked ? rc0788x.getText.toString : ""}'
+                    android:visibility="@{rc0788.checked ? View.VISIBLE : View.GONE}"
+                    />
 
-            </LinearLayout>
 
 
             <LinearLayout
@@ -639,6 +649,8 @@
 
             </LinearLayout>
 
+            </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -823,7 +835,9 @@
                     android:layout_height="wrap_content"
                     android:digits="abcdefghijklkmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:hint="@string/other"
-                    android:inputType="textCapWords"/>
+                    android:inputType="textCapWords"
+                    android:text='@{rc1288.checked ? rc1288x.getText.toString : ""}'
+                    android:visibility="@{rc1288.checked ? View.VISIBLE : View.GONE}"/>
 
                 <CheckBox
                     android:id="@+id/rc1299"
@@ -883,7 +897,9 @@
                     android:layout_height="wrap_content"
                     android:digits="abcdefghijklkmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:hint="@string/other"
-                    android:inputType="textCapWords"/>
+                    android:inputType="textCapWords"
+                    android:text='@{rc1388.checked ? rc1388x.getText.toString : ""}'
+                    android:visibility="@{rc1388.checked ? View.VISIBLE : View.GONE}"/>
 
                 <RadioButton
                     android:id="@+id/rc1399"
@@ -1410,6 +1426,42 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/pink_100"
+                    android:text="@string/rc14gh"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+                <RadioGroup
+                    android:id="@+id/rc14gh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rc14gha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/yes"/>
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"/>
+
+                    <RadioButton
+                        android:id="@+id/rc14ghb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/no"/>
+
+                </RadioGroup>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
                     android:text="@string/rc15"
@@ -1853,7 +1905,9 @@
                         android:layout_height="wrap_content"
                         android:digits="abcdefghijklkmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                         android:hint="@string/other"
-                        android:inputType="textCapWords"/>
+                        android:inputType="textCapWords"
+                        android:text='@{rc1788a.checked ? rc0588x.getText.toString : ""}'
+                        android:visibility="@{rc1788a.checked ? View.VISIBLE : View.GONE}"/>
 
                 </LinearLayout>
 

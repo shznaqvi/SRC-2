@@ -229,6 +229,24 @@
   <string name="rc17av"> گھٽ ۾ گھٽ چار شروعاتي سارسنڀال جا دورا ڪريو </string>
   <string name="rc17ahv"> وزن واري ڪم کان احتياط </string>
   <string name="rc17ar"> وڌ ۾ وڌ آرام ڪرڻ </string>
+  <string name="pfa10"> پوئيواري فارم جو نمبر </string>
+  <string name="pfa11"> ٽرائيميسٽر/حمل جا مهينا </string>
+  <string name="pfa14"> جيڪڏهن حمل واري عورت مري وئي آهي ته وفات جي تاريخ لکو. </string>
+  <string name="pfa15"> ڇا توهان اڃان حمل سان آهيو؟ </string>
+  <string name="pfa16"> جيڪڏهن نه ته توهان جي تازي گذريل حمل جو نتيجو ڇا نڪتو؟ </string>
+  <string name="pfa16a"> ٻار ضايع ٿي ويو </string>
+  <string name="pfa16b"> مئل ٻار جي پيدائش </string>
+  <string name="pfa16c"> ڄميل ٻار زنده آهي </string>
+  <string name="pfa16d"> ڄميل ٻار مري ويو </string>
+
+  <string name="pfa17"> جيڪڏهن حمل سان نه آهيو ته اوهان جو آخري حمل ڪڏهن پورو ٿيو؟ </string>
+  <string name="pfa18"> هي حمل جو ڪهڙو مهينو آهي؟ </string>
+  <string name="pfa19"> حمل جي دوران شروعاتي دورن جو تعدا </string>
+  <string name="da07"> ويم جي تاريخ </string>
+  <string name="dfa06"> ٻار جو نالو </string>
+  <string name="dfa10"> ويم کان بعد ڪيل دوري جي تاريخ (جيڪڏهن آهي ته) </string>
+  <string name="dfa11"> ٻار جي هاڻوڪي ڪيل دوري جو نمبر </string>
+  <string name="dfa15"> جيڪڏهن ماءُ مري وئي ته وفات جي تاريخ لکو </string>
 
 
 </resources>

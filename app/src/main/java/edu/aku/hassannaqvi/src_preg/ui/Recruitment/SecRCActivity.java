@@ -44,19 +44,6 @@ public class SecRCActivity extends AppCompatActivity
             }
         });
 
-        bl.rc0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
-        {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    bl.rc0588x.setVisibility(View.VISIBLE);
-                } else {
-                    bl.rc0588x.setVisibility(View.GONE);
-                    bl.rc0588x.setText(null);
-                }
-            }
-        });
-
 
         bl.rc06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
@@ -68,19 +55,23 @@ public class SecRCActivity extends AppCompatActivity
                     bl.fldGrprc07.setVisibility(View.GONE);
                     bl.rc07.clearCheck();
                     bl.rc0788x.setText(null);
+                    bl.rc08.clearCheck();
+                    bl.rc09w.clearCheck();
+                    bl.rc09bp.clearCheck();
+                    bl.rc09st.clearCheck();
+                    bl.rc09ud.clearCheck();
+                    bl.rc09hb.clearCheck();
+                    bl.rc09us.clearCheck();
+                    bl.rc09ti.clearCheck();
                 }
             }
         });
-        bl.rc0788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+
+        bl.rc10h.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    bl.rc0788x.setVisibility(View.VISIBLE);
-                } else {
-                    bl.rc0788x.setVisibility(View.GONE);
-                    bl.rc0788x.setText(null);
-                }
+
             }
         });
 
