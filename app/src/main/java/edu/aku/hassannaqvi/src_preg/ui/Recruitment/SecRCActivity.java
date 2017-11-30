@@ -13,73 +13,73 @@ import edu.aku.hassannaqvi.src_preg.databinding.ActivitySecRcBinding;
 public class SecRCActivity extends AppCompatActivity
 {
 
-    ActivitySecRcBinding binding;
+    ActivitySecRcBinding bl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_sec_rc);
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_sec_rc);
+        bl = DataBindingUtil.setContentView(this, R.layout.activity_sec_rc);
         setupViews();
 
 
     }
 
     public void setupViews() {
-        binding.rc01.setManager(getSupportFragmentManager());
-        binding.rc03.setManager(getSupportFragmentManager());
+        bl.rc01.setManager(getSupportFragmentManager());
+        bl.rc03.setManager(getSupportFragmentManager());
 
-        binding.rc04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        bl.rc04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (binding.rc04a.isChecked()) {
-                    binding.fldGrprc05.setVisibility(View.VISIBLE);
+                if (bl.rc04a.isChecked()) {
+                    bl.fldGrprc05.setVisibility(View.VISIBLE);
                 } else {
-                    binding.fldGrprc05.setVisibility(View.GONE);
-                    binding.rc05.clearCheck();
-                    binding.rc0588x.setText(null);
+                    bl.fldGrprc05.setVisibility(View.GONE);
+                    bl.rc05.clearCheck();
+                    bl.rc0588x.setText(null);
                 }
             }
         });
 
-        binding.rc0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        bl.rc0588.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    binding.rc0588x.setVisibility(View.VISIBLE);
+                    bl.rc0588x.setVisibility(View.VISIBLE);
                 } else {
-                    binding.rc0588x.setVisibility(View.GONE);
-                    binding.rc0588x.setText(null);
+                    bl.rc0588x.setVisibility(View.GONE);
+                    bl.rc0588x.setText(null);
                 }
             }
         });
 
 
-        binding.rc06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        bl.rc06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (binding.rc06a.isChecked()) {
-                    binding.fldGrprc07.setVisibility(View.VISIBLE);
+                if (bl.rc06a.isChecked()) {
+                    bl.fldGrprc07.setVisibility(View.VISIBLE);
                 } else {
-                    binding.fldGrprc07.setVisibility(View.GONE);
-                    binding.rc07.clearCheck();
-                    binding.rc0788x.setText(null);
+                    bl.fldGrprc07.setVisibility(View.GONE);
+                    bl.rc07.clearCheck();
+                    bl.rc0788x.setText(null);
                 }
             }
         });
-        binding.rc0788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        bl.rc0788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    binding.rc0788x.setVisibility(View.VISIBLE);
+                    bl.rc0788x.setVisibility(View.VISIBLE);
                 } else {
-                    binding.rc0788x.setVisibility(View.GONE);
-                    binding.rc0788x.setText(null);
+                    bl.rc0788x.setVisibility(View.GONE);
+                    bl.rc0788x.setText(null);
                 }
             }
         });

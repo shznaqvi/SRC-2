@@ -37,43 +37,43 @@
                     android:id="@+id/istatus1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus1" />
+                    android:text="@string/istatus01"/>
 
                 <RadioButton
                     android:id="@+id/istatus2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus2" />
+                    android:text="@string/istatus02"/>
 
                 <RadioButton
                     android:id="@+id/istatus3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus3" />
+                    android:text="@string/istatus03"/>
 
                 <RadioButton
                     android:id="@+id/istatus4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus4" />
+                    android:text="@string/istatus04"/>
 
                 <RadioButton
                     android:id="@+id/istatus5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus5" />
+                    android:text="@string/istatus05"/>
 
                 <RadioButton
                     android:id="@+id/istatus6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus6" />
+                    android:text="@string/istatus06"/>
 
                 <RadioButton
                     android:id="@+id/istatus7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/istatus7" />
+                    android:text="@string/istatus07"/>
 
                 <RadioButton
                     android:id="@+id/istatus8"
