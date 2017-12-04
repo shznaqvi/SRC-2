@@ -28,24 +28,26 @@ public class EndingActivity extends Activity {
     ScrollView scrollView01;
     @BindView(R.id.istatus)
     RadioGroup istatus;
-    @BindView(R.id.istatus1)
+    @BindView(R.id.istatusa)
     RadioButton istatus1;
-    @BindView(R.id.istatus2)
+    @BindView(R.id.istatusb)
     RadioButton istatus2;
-    @BindView(R.id.istatus3)
+    @BindView(R.id.istatusc)
     RadioButton istatus3;
-    @BindView(R.id.istatus4)
+    @BindView(R.id.istatusd)
     RadioButton istatus4;
-    @BindView(R.id.istatus5)
+    @BindView(R.id.istatuse)
     RadioButton istatus5;
-    @BindView(R.id.istatus6)
+    @BindView(R.id.istatusf)
     RadioButton istatus6;
-    @BindView(R.id.istatus7)
+    @BindView(R.id.istatusg)
     RadioButton istatus7;
-    @BindView(R.id.istatus8)
+    @BindView(R.id.istatush)
     RadioButton istatus8;
-    @BindView(R.id.istatus888x)
-    EditText istatus888x;
+    @BindView(R.id.istatus88)
+    RadioButton istatus88;
+    @BindView(R.id.istatus88x)
+    EditText istatus88x;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,8 +66,9 @@ public class EndingActivity extends Activity {
             istatus6.setEnabled(false);
             istatus7.setEnabled(false);
             istatus8.setEnabled(false);
-            istatus888x.setEnabled(false);
-            istatus888x.setText(null);
+            istatus88.setEnabled(false);
+            istatus88x.setEnabled(false);
+            istatus88x.setText(null);
 
         } else {
             //fldGrpmn0823Reason.setVisibility(View.GONE);
@@ -75,12 +78,12 @@ public class EndingActivity extends Activity {
         istatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (istatus8.isChecked()) {
-                    istatus888x.setVisibility(View.VISIBLE);
-                    istatus888x.requestFocus();
+                if (istatus88.isChecked()) {
+                    istatus88x.setVisibility(View.VISIBLE);
+                    istatus88x.requestFocus();
                 } else {
-                    istatus888x.setText(null);
-                    istatus888x.setVisibility(View.GONE);
+                    istatus88x.setText(null);
+                    istatus88x.setVisibility(View.GONE);
                 }
             }
         });
@@ -148,9 +151,10 @@ public class EndingActivity extends Activity {
                 : istatus6.isChecked() ? "6"
                 : istatus7.isChecked() ? "7"
                 : istatus8.isChecked() ? "8"
+                : istatus88.isChecked() ? "88"
                 : "0");
 
-        MainApp.fc.setIstatus88x(istatus888x.getText().toString());
+        MainApp.fc.setIstatus88x(istatus88x.getText().toString());
 
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
@@ -195,15 +199,15 @@ public class EndingActivity extends Activity {
             istatus1.setError(null);
         }
 
-        if (istatus8.isChecked()) {
+        if (istatus88.isChecked()) {
 
-            if (istatus888x.getText().toString().isEmpty()) {
+            if (istatus88x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-                istatus888x.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "istatus888x: This data is Required!");
+                istatus88x.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "istatus88x: This data is Required!");
                 return false;
             } else {
-                istatus888x.setError(null);
+                istatus88x.setError(null);
             }
 
         }

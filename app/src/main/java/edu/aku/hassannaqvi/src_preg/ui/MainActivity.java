@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -49,6 +50,7 @@ import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
 import edu.aku.hassannaqvi.src_preg.core.AndroidDatabaseManager;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
+import edu.aku.hassannaqvi.src_preg.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.src_preg.sync.SyncForms;
 
 public class MainActivity extends Activity {
@@ -225,54 +227,71 @@ public class MainActivity extends Activity {
             }
         });
 
+        ActivityMainBinding mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        mainBinding.setCallback(this);
+
     }
 
-    public void openForm(View v) {
+    public void openForm(int check) {
 
-        if (spAreas.getSelectedItemPosition() != 0) {
+//        if (spAreas.getSelectedItemPosition() != 0) {
+        final Intent oF = new Intent(MainActivity.this, SectionInfoActivity.class);
+        switch (check) {
+            case 1:
+                oF.putExtra("check", 1);
+                break;
+            case 2:
+                oF.putExtra("check", 2);
+                break;
+            case 3:
+                oF.putExtra("check", 3);
+                break;
+            case 4:
+                oF.putExtra("check", 4);
+                break;
+            default:
+                break;
+        }
+        if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
+            startActivity(oF);
+        } else {
 
-            if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
-                Intent oF = new Intent(MainActivity.this, SectionInfoActivity.class);
-                startActivity(oF);
-            } else {
+            builder = new AlertDialog.Builder(MainActivity.this);
+            ImageView img = new ImageView(getApplicationContext());
+            img.setImageResource(R.drawable.tagimg);
+            img.setPadding(0, 15, 0, 15);
+            builder.setCustomTitle(img);
 
-                builder = new AlertDialog.Builder(MainActivity.this);
-                ImageView img = new ImageView(getApplicationContext());
-                img.setImageResource(R.drawable.tagimg);
-                img.setPadding(0, 15, 0, 15);
-                builder.setCustomTitle(img);
+            final EditText input = new EditText(MainActivity.this);
+            input.setInputType(InputType.TYPE_CLASS_TEXT);
+            builder.setView(input);
 
-                final EditText input = new EditText(MainActivity.this);
-                input.setInputType(InputType.TYPE_CLASS_TEXT);
-                builder.setView(input);
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    m_Text = input.getText().toString();
+                    if (!m_Text.equals("")) {
+                        editor.putString("tagName", m_Text);
+                        editor.commit();
 
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        m_Text = input.getText().toString();
-                        if (!m_Text.equals("")) {
-                            editor.putString("tagName", m_Text);
-                            editor.commit();
-
-                            if (!MainApp.userName.equals("0000")) {
-                                Intent oF = new Intent(MainActivity.this, SectionInfoActivity.class);
-                                startActivity(oF);
-                            }
+                        if (!MainApp.userName.equals("0000")) {
+                            startActivity(oF);
                         }
                     }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
+                }
+            });
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
 
-                builder.show();
-            }
-        } else {
-            Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
+            builder.show();
         }
+//        } else {
+//            Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
+//        }
     }
 
 

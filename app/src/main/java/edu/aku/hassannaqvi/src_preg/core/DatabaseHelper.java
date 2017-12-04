@@ -58,7 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + " );";
     public static final String DATABASE_NAME = "src_preg.db";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_copy.");
-    public static final String PROJECT_NAME = "DMU-UENTMK";
+    public static final String PROJECT_NAME = "DMU-SRCPREG";
     private static final int DATABASE_VERSION = 1;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsTable.TABLE_NAME + "("
