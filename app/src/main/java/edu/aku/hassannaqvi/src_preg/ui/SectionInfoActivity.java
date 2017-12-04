@@ -23,6 +23,7 @@ import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 public class SectionInfoActivity extends Activity {
 
     ActivitySectionInfoBinding binding;
+    int check = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class SectionInfoActivity extends Activity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_section_info);
 
 //        Get data from Main Activity
-        int check = getIntent().getExtras().getInt("check");
+        check = getIntent().getExtras().getInt("check");
 //        Assigning data to UI binding
         checking ch = new checking(check);
         binding.setCheckFlag(ch);
@@ -45,49 +46,56 @@ public class SectionInfoActivity extends Activity {
     public Boolean formValidation() {
 
 //        HH No
-        if (!validatorClass.EmptyTextBox(this, binding.hhno, getString(R.string.hhno))){
+        if (!validatorClass.EmptyTextBox(this, binding.hhno, getString(R.string.hhno))) {
             return false;
         }
 
 //       W.NAME
-        if (!validatorClass.EmptyTextBox(this, binding.name, getString(R.string.wname))){
+        if (!validatorClass.EmptyTextBox(this, binding.name, getString(R.string.wname))) {
             return false;
         }
 
 //       H.NAME
-        if (!validatorClass.EmptyTextBox(this, binding.hname, getString(R.string.hname))){
+        if (!validatorClass.EmptyTextBox(this, binding.hname, getString(R.string.hname))) {
             return false;
         }
 
 //       HH.NAME
-        if (!validatorClass.EmptyTextBox(this, binding.hhname, getString(R.string.hhname))){
+        if (!validatorClass.EmptyTextBox(this, binding.hhname, getString(R.string.hhname))) {
             return false;
         }
 
 //        UC
-        if (!validatorClass.EmptySpinner(this, binding.spUCs, "UCs")){
+        if (!validatorClass.EmptySpinner(this, binding.spUCs, "UCs")) {
             return false;
         }
 
 //        Villages
-        if (!validatorClass.EmptySpinner(this, binding.spVillages, "Villages")){
+        if (!validatorClass.EmptySpinner(this, binding.spVillages, "Villages")) {
             return false;
         }
 
 //       LHV.NAME
-        if (!validatorClass.EmptyTextBox(this, binding.lhvname, getString(R.string.lhvname))){
+        if (!validatorClass.EmptyTextBox(this, binding.lhvname, getString(R.string.lhvname))) {
             return false;
         }
 
+//        RA10
+        if (check == 4) {
+            if (!validatorClass.EmptySpinner(this, binding.ra10, getString(R.string.ra10))) {
+                return false;
+            }
+        }
+
 //       STATUS
-        if (!validatorClass.EmptyRadioButtonWithOther(this, binding.istatus, binding.istatus88, binding.istatus88x, getString(R.string.istatus))){
+        if (!validatorClass.EmptyRadioButtonWithOther(this, binding.istatus, binding.istatus88, binding.istatus88x, getString(R.string.istatus))) {
             return false;
         }
 
         return true;
     }
 
-    public void BtnContinue(){
+    public void BtnContinue() {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
