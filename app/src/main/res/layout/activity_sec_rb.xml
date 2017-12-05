@@ -328,7 +328,7 @@
                 android:textColor="@android:color/white" />
 
             <RadioGroup
-                android:id="@+id/rb09"
+                android:id="@+id/rb09i"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -884,6 +884,13 @@
                 android:hint="@string/rb16"
                 android:inputType="numberDecimal"
                 android:maxLength="7" />
+
+            <CheckBox
+                android:id="@+id/rb1699"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dkn" />
 
 
             <TextView

@@ -1,10 +1,8 @@
 package edu.aku.hassannaqvi.src_preg.ui.Recruitment;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -12,6 +10,7 @@ import org.json.JSONException;
 import butterknife.OnClick;
 import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySecRbBinding;
+import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
 public class SecRBActivity extends Activity {
 
@@ -34,6 +33,7 @@ public class SecRBActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
@@ -72,17 +72,7 @@ public class SecRBActivity extends Activity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
-
-        /*MainApp.fmc = new FamilyMembersContract();
-        MainApp.fmc.setFormDate(MainApp.fc.getFormDate());
-        MainApp.fmc.setDeviceId(MainApp.fc.getDeviceID());
-        MainApp.fmc.setInterviewer1(MainApp.userName);
-        MainApp.fmc.setInterviewer2(MainApp.userName2);
-        MainApp.fmc.set_UUID(MainApp.fc.get_UID());
-        MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
-
-        MainApp.counter++;
+        /*SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
         JSONObject sB = new JSONObject();
 
@@ -100,10 +90,6 @@ public class SecRBActivity extends Activity {
         sB.put("spblb05", spblb05a.isChecked() ? "1" : spblb05b.isChecked() ? "2" : spblb05c.isChecked() ? "3"
                 : spblb05d.isChecked() ? "4" : spblb05e.isChecked() ? "5" : spblb05f.isChecked() ? "6" : spblb05g.isChecked() ? "7"
                 : spblb0566.isChecked() ? "66" : "0");
-        sB.put("spblb06", spblb0677.isChecked() ? "77" : spblb06a.isChecked() ? "1" : spblb06b.isChecked() ? "2" : spblb06c.isChecked() ? "3"
-                : spblb06d.isChecked() ? "4" : spblb06e.isChecked() ? "5" : spblb06f.isChecked() ? "6"
-                : spblb06g.isChecked() ? "7" : spblb06h.isChecked() ? "8" : spblb06i.isChecked() ? "9"
-                : spblb06j.isChecked() ? "10" : "0");
         sB.put("spblb07", spblb07a.isChecked() ? "1" : spblb07b.isChecked() ? "2" : "0");
 
         MainApp.fmc.setsB(String.valueOf(sB));*/
@@ -119,7 +105,144 @@ public class SecRBActivity extends Activity {
     }
 
 
-    public boolean ValidateForm() {
+    private boolean ValidateForm() {
+
+        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+
+        if (!validatorClass.EmptyTextBox(this, binding.rb01, getString(R.string.rb01))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyTextBox(this, binding.rb02, getString(R.string.rb02))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb03, binding.rb03a, getString(R.string.rb03))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyTextBox(this, binding.rb03n, getString(R.string.rb03n))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb04, binding.rb04a, getString(R.string.rb04))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyTextBox(this, binding.rb04n, getString(R.string.rb04n))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyTextBox(this, binding.rb05n, getString(R.string.rb05n))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb06, binding.rb06a, getString(R.string.rb06))) {
+            return false;
+        }
+
+
+        if (binding.rb0799.isChecked() && !validatorClass.EmptyTextBox(this, binding.rb07m, getString(R.string.rb07m))) {
+            return false;
+        }
+
+        if (binding.rb0899.isChecked() && !validatorClass.EmptyTextBox(this, binding.rb08n, getString(R.string.rb08n))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb09vd, binding.rb09vda, getString(R.string.rb09vd))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb09i, binding.rb09ia, getString(R.string.rb09i))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb09fa, binding.rb09faa, getString(R.string.rb09fa))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb09m, binding.rb09ma, getString(R.string.rb09m))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb09c, binding.rb09ca, getString(R.string.rb09c))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb0988, binding.rb0988a, getString(R.string.other))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb10, binding.rb10a, getString(R.string.rb10))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb11, binding.rb11a, getString(R.string.rb11))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb12, binding.rb12a, getString(R.string.rb12))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButtonWithOther(this, binding.rb13, binding.rb13a, binding.rb1388x, getString(R.string.rb13))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButtonWithOther(this, binding.rb14, binding.rb14a, binding.rb1488x, getString(R.string.rb14))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButtonWithOther(this, binding.rb15, binding.rb15a, binding.rb1588x, getString(R.string.rb15))) {
+            return false;
+        }
+
+
+        if (binding.rb1699.isChecked() && !validatorClass.EmptyTextBox(this, binding.rb16, getString(R.string.rb16))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb17, binding.rb17a, getString(R.string.rb17))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButtonWithOther(this, binding.rb18, binding.rb18a, binding.rb1888x, getString(R.string.other))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb19, binding.rb19a, getString(R.string.rb19))) {
+            return false;
+        }
+
+
+        return true;
+    }
+
+
+    /*public boolean ValidateForm() {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
@@ -226,9 +349,16 @@ public class SecRBActivity extends Activity {
         }
 
 
-
-
+        if (binding.rb09vda.isChecked()) {
+            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.rb07m), Toast.LENGTH_SHORT).show();
+            binding.rb07m.setError("This data is required");
+            binding.rb07m.requestFocus();
+            Log.i(TAG, "rb07m: This Data is Required!");
+            return false;
+        } else {
+            binding.rb07m.setError(null);
+        }
 
         return true;
-    }
+    }*/
 }
