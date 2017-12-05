@@ -151,12 +151,16 @@ public class SecRCActivity extends AppCompatActivity
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bl.rc02w, 0, 40, getString(R.string.rc02w), " weeks")) {
+        if (!validatorClass.RangeTextBox(this, bl.rc02w, 3, 40, getString(R.string.rc02w), " weeks")) {
             return false;
         }
 
 //       3.2 Days
         if (!validatorClass.EmptyTextBox(this, bl.rc02d, getString(R.string.rc02d))) {
+            return false;
+        }
+
+        if (!validatorClass.RangeTextBox(this, bl.rc02d, 0, 6, getString(R.string.rc02d), " days")) {
             return false;
         }
 
@@ -231,11 +235,132 @@ public class SecRCActivity extends AppCompatActivity
 
         }
 
+        // 3.10
 
-//        Villages
+
+        // 3.11
+        if (!validatorClass.EmptyRadioButton(this, bl.rc11, bl.rc11a, getString(R.string.rc11))) {
+            return false;
+        }
+
+        // 3.12
+        if (bl.rc11a.isChecked()) {
+
+        }
+
+        // 3.13
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc13, bl.rc13a, getString(R.string.rc13))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButtonWithOther(this, bl.rc13, bl.rc1388, bl.rc1388x, getString(R.string.rc13))) {
+            return false;
+        }
+
+        // 3.14
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14c, bl.rc14ca, getString(R.string.rc14c))) {
+            return false;
+        }
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14fb, bl.rc14fba, getString(R.string.rc14fb))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14la, bl.rc14laa, getString(R.string.rc14la))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14nv, bl.rc14nva, getString(R.string.rc14nv))) {
+            return false;
+        }
 
 
-        return true;
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14cf, bl.rc14cfa, getString(R.string.rc14cf))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14hs, bl.rc14hsa, getString(R.string.rc14hs))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14fs, bl.rc14fsa, getString(R.string.rc14fs))) {
+            return false;
+        }
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14sh, bl.rc14sha, getString(R.string.rc14sh))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14fv, bl.rc14fva, getString(R.string.rc14fv))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14plb, bl.rc14plba, getString(R.string.rc14plb))) {
+            return false;
+        }
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14bm, bl.rc14bma, getString(R.string.rc14bm))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14bv, bl.rc14bva, getString(R.string.rc14bv))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14ddp, bl.rc14ddpa, getString(R.string.rc14ddp))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc14gh, bl.rc14gha, getString(R.string.rc14gh))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc15, bl.rc15a, getString(R.string.rc15))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc16, bl.rc16a, getString(R.string.rc16))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc17dpd, bl.rc17dpda, getString(R.string.rc17dpd))) {
+            return false;
+        }
+        if (!validatorClass.EmptyRadioButton(this, bl.rc17dn, bl.rc17dna, getString(R.string.rc17dn))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc17fs, bl.rc17fsa, getString(R.string.rc17fs))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc17fp, bl.rc17fpa, getString(R.string.rc17fp))) {
+            return false;
+        }
+        if (!validatorClass.EmptyRadioButton(this, bl.rc17b, bl.rc17ba, getString(R.string.rc17b))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc17ebf, bl.rc17ebfa, getString(R.string.rc17ebf))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc17av, bl.rc17ava, getString(R.string.rc17av))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc17ahv, bl.rc17ahva, getString(R.string.rc17ahv))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc17ar, bl.rc17ara, getString(R.string.rc17ar))) {
+            return false;
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, bl.rc1788, bl.rc1788a, getString(R.string.other))) {
+            return false;
+        }
+
+        return validatorClass.EmptyRadioButtonWithOther(this, bl.rc1788, bl.rc1788a, bl.rc1788x, getString(R.string.rc17 + R.string.other));
     }
 
     public void BtnContinue() {
