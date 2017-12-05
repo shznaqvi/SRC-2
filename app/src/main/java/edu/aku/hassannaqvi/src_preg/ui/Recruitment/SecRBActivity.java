@@ -33,6 +33,7 @@ public class SecRBActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
