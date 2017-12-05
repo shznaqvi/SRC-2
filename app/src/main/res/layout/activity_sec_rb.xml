@@ -4,6 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRBActivity">
 
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRBActivity" />
+
+        <variable
+            name="checkFlag"
+            type="edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRBActivity" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,7 +96,7 @@
                 android:id="@+id/rb03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb03a"
@@ -137,7 +150,7 @@
                 android:id="@+id/rb04"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb04a"
@@ -211,7 +224,7 @@
                 android:id="@+id/rb06"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb06a"
@@ -297,7 +310,7 @@
                 android:id="@+id/rb09vd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb09vda"
@@ -331,7 +344,7 @@
                 android:id="@+id/rb09i"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb09ia"
@@ -365,7 +378,7 @@
                 android:id="@+id/rb09fa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb09faa"
@@ -399,7 +412,7 @@
                 android:id="@+id/rb09m"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb09ma"
@@ -433,7 +446,7 @@
                 android:id="@+id/rb09c"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb09ca"
@@ -467,7 +480,7 @@
                 android:id="@+id/rb0988"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb0988a"
@@ -511,7 +524,7 @@
                 android:id="@+id/rb10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb10a"
@@ -553,7 +566,7 @@
                 android:id="@+id/rb11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb11a"
@@ -619,7 +632,7 @@
                 android:id="@+id/rb12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb12a"
@@ -685,7 +698,7 @@
                 android:id="@+id/rb13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb13a"
@@ -753,7 +766,7 @@
                 android:id="@+id/rb14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb14a"
@@ -821,7 +834,7 @@
                 android:id="@+id/rb15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb15a"
@@ -906,7 +919,7 @@
                 android:id="@+id/rb17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb17a"
@@ -940,7 +953,7 @@
                 android:id="@+id/rb18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb18a"
@@ -1008,7 +1021,7 @@
                 android:id="@+id/rb19"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <RadioButton
                     android:id="@+id/rb19a"
@@ -1053,6 +1066,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="#1ed61e"
+                    android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/start_interview"
                     android:textColor="@color/white" />
 

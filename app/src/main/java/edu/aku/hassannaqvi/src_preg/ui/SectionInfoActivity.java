@@ -33,9 +33,7 @@ public class SectionInfoActivity extends Activity {
         binding.setCallback(this);
 
 //        Main Working from here
-
 //        Skip Patterns
-
 
     }
 

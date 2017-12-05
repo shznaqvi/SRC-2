@@ -22,10 +22,11 @@ public class SecRBActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sec_rb);
+        binding.setCallback(this);
     }
 
-/*    @OnClick(R.id.btn_Continue)
-    void SaveData() {
+
+    public void BtnContinue() {
         if (ValidateForm()) {
             try {
                 SaveDraft();
@@ -42,7 +43,7 @@ public class SecRBActivity extends Activity {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
-    }*/
+    }
 
 
     private boolean UpdateDB() {
@@ -118,7 +119,7 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb03, binding.rb03a, getString(R.string.rb03))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb03, binding.rb03b, getString(R.string.rb03))) {
             return false;
         }
 
@@ -128,7 +129,7 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb04, binding.rb04a, getString(R.string.rb04))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb04, binding.rb04b, getString(R.string.rb04))) {
             return false;
         }
 
@@ -143,41 +144,41 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb06, binding.rb06a, getString(R.string.rb06))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb06, binding.rb06b, getString(R.string.rb06))) {
             return false;
         }
 
 
-        if (binding.rb0799.isChecked() && !validatorClass.EmptyTextBox(this, binding.rb07m, getString(R.string.rb07m))) {
+        if (!binding.rb0799.isChecked() && !validatorClass.EmptyTextBox(this, binding.rb07m, getString(R.string.rb07m))) {
             return false;
         }
 
-        if (binding.rb0899.isChecked() && !validatorClass.EmptyTextBox(this, binding.rb08n, getString(R.string.rb08n))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, binding.rb09vd, binding.rb09vda, getString(R.string.rb09vd))) {
+        if (!binding.rb0899.isChecked() && !validatorClass.EmptyTextBox(this, binding.rb08n, getString(R.string.rb08n))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb09i, binding.rb09ia, getString(R.string.rb09i))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb09vd, binding.rb09vdb, getString(R.string.rb09vd))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb09fa, binding.rb09faa, getString(R.string.rb09fa))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb09i, binding.rb09ib, getString(R.string.rb09i))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb09m, binding.rb09ma, getString(R.string.rb09m))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb09fa, binding.rb09fab, getString(R.string.rb09fa))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb09c, binding.rb09ca, getString(R.string.rb09c))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb09m, binding.rb09mb, getString(R.string.rb09m))) {
+            return false;
+        }
+
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb09c, binding.rb09cb, getString(R.string.rb09c))) {
             return false;
         }
 
@@ -187,32 +188,32 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb10, binding.rb10a, getString(R.string.rb10))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb10, binding.rb1099, getString(R.string.rb10))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb11, binding.rb11a, getString(R.string.rb11))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb11, binding.rb1199, getString(R.string.rb11))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb12, binding.rb12a, getString(R.string.rb12))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb12, binding.rb12f, getString(R.string.rb12))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb13, binding.rb13a, binding.rb1388x, getString(R.string.rb13))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb13, binding.rb1388, binding.rb1388x, getString(R.string.rb13))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb14, binding.rb14a, binding.rb1488x, getString(R.string.rb14))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb14, binding.rb1488, binding.rb1488x, getString(R.string.rb14))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb15, binding.rb15a, binding.rb1588x, getString(R.string.rb15))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb15, binding.rb1588, binding.rb1588x, getString(R.string.rb15))) {
             return false;
         }
 
@@ -220,20 +221,23 @@ public class SecRBActivity extends Activity {
        /* if (binding.rb1699.isChecked() && !validatorClass.EmptyTextBox(this, binding.rb16, getString(R.string.rb16))) {
             return false;
         }
-*/
+        */
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb17, binding.rb17a, getString(R.string.rb17))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb17, binding.rb17b, getString(R.string.rb17))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb18, binding.rb18a, binding.rb1888x, getString(R.string.other))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb18, binding.rb1888, binding.rb1888x, getString(R.string.other))) {
             return false;
         }
 
 
-        return validatorClass.EmptyRadioButton(this, binding.rb19, binding.rb19a, getString(R.string.rb19));
+        return validatorClass.EmptyRadioButton(this, binding.rb19, binding.rb19b, getString(R.string.rb19));
     }
+
+
+
 
 
     /*public boolean ValidateForm() {
