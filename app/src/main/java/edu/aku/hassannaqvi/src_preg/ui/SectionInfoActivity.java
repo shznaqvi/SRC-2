@@ -41,6 +41,7 @@ public class SectionInfoActivity extends Activity {
 
 //        Skip Patterns
 
+
     }
 
     public Boolean formValidation() {

@@ -30,6 +30,21 @@ public abstract class validatorClass {
         }
     }
 
+    public static boolean RangeTextBox(Context context, EditText txt, int min, int max, String msg, String type) {
+
+        if (Integer.valueOf(txt.getText().toString()) < min || Integer.valueOf(txt.getText().toString()) > max) {
+            Toast.makeText(context, "ERROR(invalid): " + msg, Toast.LENGTH_SHORT).show();
+            txt.setError("Range is " + min + " to " + max + type + " ... ");    // Set Error on last radio button
+            txt.requestFocus();
+            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": Range is " + min + " to " + max + " times...  ");
+            return false;
+        } else {
+            txt.setError(null);
+            return true;
+        }
+
+    }
+
     public static boolean EmptySpinner(Context context, Spinner spin, String msg) {
         if (spin.getSelectedItem() == "....") {
             Toast.makeText(context, "ERROR(Empty)" + msg, Toast.LENGTH_SHORT).show();

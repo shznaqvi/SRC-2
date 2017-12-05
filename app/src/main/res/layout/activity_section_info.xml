@@ -168,7 +168,7 @@
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:hint="@string/dfa06"
                     android:maxLength="25"
-                    android:text='@{checkFlag.check == 1 ? dfa06.getText.toString() : ""}'/>
+                    android:text='@{checkFlag.check == 1 ? dfa06.getText.toString : ""}' />
 
             </LinearLayout>
 
@@ -306,6 +306,7 @@
                     android:layout_marginTop="1dp"
                     android:focusable="true"
                     android:hint="@string/dfa10"
+                    android:text='@{checkFlag.check == 1 ? dfa10.getText.toString : ""}'
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
@@ -501,29 +502,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
+                    android:enabled="@{dfa1599.checked || dfa15888.checked ? false : true}"
                     android:focusable="true"
                     android:hint="@string/dfa15"
+                    android:text='@{checkFlag.check == 1 ?
+                    (dfa1599.checked || dfa15888.checked  ? "" : dfa15.getText.toString) : ""}'
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
-                <RadioGroup
-                    android:id="@+id/dfa15a"
+                <CheckBox
+                    android:id="@+id/dfa1599"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:checked="@{dfa15888.checked ? false : true}"
+                    android:enabled="@{dfa15888.checked ? false : true}"
+                    android:text="@string/dkn" />
 
-                    <RadioButton
-                        android:id="@+id/dfa1599"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dkn" />
-
-                    <RadioButton
-                        android:id="@+id/dfa15888"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/na" />
-
-                </RadioGroup>
+                <CheckBox
+                    android:id="@+id/dfa15888"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="@{dfa1599.checked ? false : true}"
+                    android:enabled="@{dfa1599.checked ? false : true}"
+                    android:text="@string/na" />
 
             </LinearLayout>
 
@@ -550,29 +551,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
+                    android:enabled="@{pfa1499.checked || pfa14888.checked ? false : true}"
                     android:focusable="true"
                     android:hint="@string/pfa14"
+                    android:text='@{checkFlag.check == 3 ?
+                    (pfa1499.checked || pfa14888.checked  ? "" : pfa14.getText.toString) : ""}'
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
-                <RadioGroup
-                    android:id="@+id/pfa14a"
+                <CheckBox
+                    android:id="@+id/pfa1499"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:checked="@{pfa14888.checked ? false : true}"
+                    android:enabled="@{pfa14888.checked ? false : true}"
+                    android:text="@string/dkn" />
 
-                    <RadioButton
-                        android:id="@+id/pfa1499"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dkn" />
+                <CheckBox
+                    android:id="@+id/pfa14888"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="@{pfa1499.checked ? false : true}"
+                    android:enabled="@{pfa1499.checked ? false : true}"
+                    android:text="@string/na" />
 
-                    <RadioButton
-                        android:id="@+id/pfa14888"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/na" />
-
-                </RadioGroup>
 
                 <!--pfa15-->
 
@@ -694,29 +696,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
+                    android:enabled="@{pfa1799.checked || pfa17888.checked ? false : true}"
                     android:focusable="true"
                     android:hint="@string/pfa17"
+                    android:text='@{checkFlag.check == 3 ?
+                    (pfa1799.checked || pfa17888.checked  ? "" : pfa17.getText.toString) : ""}'
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
-                <RadioGroup
-                    android:id="@+id/pfa17a"
+                <CheckBox
+                    android:id="@+id/pfa1799"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:checked="@{pfa17888.checked ? false : true}"
+                    android:enabled="@{pfa17888.checked ? false : true}"
+                    android:text="@string/dkn" />
 
-                    <RadioButton
-                        android:id="@+id/pfa1799"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dkn" />
-
-                    <RadioButton
-                        android:id="@+id/pfa17888"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/na" />
-
-                </RadioGroup>
+                <CheckBox
+                    android:id="@+id/pfa17888"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="@{pfa1799.checked ? false : true}"
+                    android:enabled="@{pfa1799.checked ? false : true}"
+                    android:text="@string/na" />
 
                 <!--pfa18-->
                 <TextView
@@ -735,7 +737,8 @@
                     android:digits="0123456789"
                     android:hint="@string/month"
                     android:inputType="number"
-                    android:maxLength="9" />
+                    android:maxLength="9"
+                    android:text='@{checkFlag.check == 3 ? pfa18.getText.toString : ""}' />
 
                 <!--pfa19-->
                 <TextView
@@ -752,9 +755,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:digits="0123456789"
+                    android:enabled="@{pfa19888.checked ? false : true}"
                     android:hint="@string/pfa19"
                     android:inputType="number"
-                    android:maxLength="9" />
+                    android:maxLength="9"
+                    android:text='@{checkFlag.check == 3 ?
+                    (pfa19888.checked ? "" : pfa19.getText.toString) : ""}' />
 
                 <CheckBox
                     android:id="@+id/pfa19888"
