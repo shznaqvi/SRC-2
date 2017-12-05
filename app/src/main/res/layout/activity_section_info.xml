@@ -524,6 +524,7 @@
                     android:layout_height="wrap_content"
                     android:checked="@{dfa1599.checked ? false : true}"
 
+
                     android:text="@string/na" />
 
                 <!--android:enabled="@{dfa1599.checked ? false : true}"-->
@@ -743,8 +744,8 @@
                     android:digits="0123456789"
                     android:hint="@string/month"
                     android:inputType="number"
-                    android:text='@{checkFlag.check == 3 ? pfa18.getText.toString : ""}'
-                    android:maxLength="9" />
+                    android:maxLength="9"
+                    android:text='@{checkFlag.check == 3 ? pfa18.getText.toString : ""}'/>
 
                 <!--pfa19-->
                 <TextView
@@ -764,8 +765,8 @@
                     android:enabled="@{pfa19888.checked ? false : true}"
                     android:hint="@string/pfa19"
                     android:inputType="number"
-                    android:text='@{checkFlag.check == 3 ? (pfa19888.checked ? "" : pfa19.getText.toString) : ""}'
-                    android:maxLength="9" />
+                    android:maxLength="9"
+                    android:text='@{checkFlag.check == 3 ? (pfa19888.checked ? "" : pfa19.getText.toString) : ""}'/>
 
                 <CheckBox
                     android:id="@+id/pfa19888"
