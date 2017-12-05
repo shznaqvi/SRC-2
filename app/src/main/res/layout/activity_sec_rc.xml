@@ -8,6 +8,10 @@
     <data>
 
         <import type="android.view.View"/>
+
+        <variable
+            name="callback"
+            type="edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRCActivity"/>
     </data>
 
 
@@ -800,6 +804,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:text="@string/rc12c"/>
+
+                <EditText
+                    android:id="@+id/rc12cx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklkmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:hint="@string/rc12c"
+                    android:inputType="textCapWords"
+                    android:text='@{rc12c.checked ? rc12cx.getText.toString : ""}'
+                    android:visibility="@{rc12c.checked ? View.VISIBLE : View.GONE}"/>
 
                 <CheckBox
                     android:id="@+id/rc12d"
@@ -1910,6 +1924,36 @@
                         android:visibility="@{rc1788a.checked ? View.VISIBLE : View.GONE}"/>
 
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="80dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_End"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/red"
+                    android:text="@string/end_interview"
+                    android:textColor="@color/white"
+                    android:visibility="visible"
+                    />
+
+                <Button
+                    android:id="@+id/btn_Continue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#1ed61e"
+                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:text="@string/start_interview"
+                    android:textColor="@color/white"/>
 
             </LinearLayout>
 

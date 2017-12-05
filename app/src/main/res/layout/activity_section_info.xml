@@ -168,7 +168,7 @@
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:hint="@string/dfa06"
                     android:maxLength="25"
-                    android:text='@{checkFlag.check == 1 ? dfa06.getText.toString() : ""}'/>
+                    android:text='@{checkFlag.check == 1 ? dfa06.getText.toString : ""}'/>
 
             </LinearLayout>
 
