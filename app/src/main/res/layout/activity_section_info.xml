@@ -513,7 +513,7 @@
                     android:id="@+id/dfa1599"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checked="@{dfa15888.checked ? false : true}"
+                    android:checked="@{dfa15888.checked ? false : false}"
                     android:enabled="@{dfa15888.checked ? false : true}"
                     android:text="@string/dkn" />
 
@@ -522,11 +522,9 @@
                     android:id="@+id/dfa15888"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checked="@{dfa1599.checked ? false : true}"
-
+                    android:checked="@{dfa1599.checked ? false : false}"
+                    android:enabled="@{dfa1599.checked ? false : true}"
                     android:text="@string/na" />
-
-                <!--android:enabled="@{dfa1599.checked ? false : true}"-->
 
             </LinearLayout>
 
@@ -565,7 +563,7 @@
                     android:id="@+id/pfa1499"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checked="@{pfa14888.checked ? false : true}"
+                    android:checked="@{pfa14888.checked ? false : false}"
                     android:enabled="@{pfa14888.checked ? false : true}"
                     android:text="@string/dkn" />
 
@@ -574,11 +572,9 @@
                     android:id="@+id/pfa14888"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checked="@{pfa1499.checked ? false : true}"
-
+                    android:checked="@{pfa1499.checked ? false : false}"
+                    android:enabled="@{pfa1499.checked ? false : true}"
                     android:text="@string/na" />
-
-                <!--android:enabled="@{pfa1499.checked ? false : true}"-->
 
                 <!--pfa15-->
 
@@ -712,7 +708,7 @@
                     android:id="@+id/pfa1799"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checked="@{pfa17888.checked ? false : true}"
+                    android:checked="@{pfa17888.checked ? false : false}"
                     android:enabled="@{pfa17888.checked ? false : true}"
                     android:text="@string/dkn" />
 
@@ -720,11 +716,9 @@
                     android:id="@+id/pfa17888"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checked="@{pfa1799.checked ? false : true}"
-
+                    android:checked="@{pfa1799.checked ? false : false}"
+                    android:enabled="@{pfa1799.checked ? false : true}"
                     android:text="@string/na" />
-
-                <!--android:enabled="@{pfa1799.checked ? false : true}"-->
 
                 <!--pfa18-->
                 <TextView
@@ -743,8 +737,8 @@
                     android:digits="0123456789"
                     android:hint="@string/month"
                     android:inputType="number"
-                    android:text='@{checkFlag.check == 3 ? pfa18.getText.toString : ""}'
-                    android:maxLength="9" />
+                    android:maxLength="9"
+                    android:text='@{checkFlag.check == 3 ? pfa18.getText.toString : ""}' />
 
                 <!--pfa19-->
                 <TextView
@@ -764,8 +758,8 @@
                     android:enabled="@{pfa19888.checked ? false : true}"
                     android:hint="@string/pfa19"
                     android:inputType="number"
-                    android:text='@{checkFlag.check == 3 ? (pfa19888.checked ? "" : pfa19.getText.toString) : ""}'
-                    android:maxLength="9" />
+                    android:maxLength="9"
+                    android:text='@{checkFlag.check == 3 ? (pfa19888.checked ? "" : pfa19.getText.toString) : ""}' />
 
                 <CheckBox
                     android:id="@+id/pfa19888"
