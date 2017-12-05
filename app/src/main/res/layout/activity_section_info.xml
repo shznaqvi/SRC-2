@@ -502,34 +502,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
-
+                    android:enabled="@{dfa1599.checked || dfa15888.checked ? false : true}"
                     android:focusable="true"
                     android:hint="@string/dfa15"
-
+                    android:text='@{checkFlag.check == 1 ? (dfa1599.checked || dfa15888.checked  ? "" : dfa15.getText.toString) : ""}'
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
-
-                <!--android:text='@{checkFlag.check == 1 ? (dfa1599.checked || dfa15888.checked  ? "" : dfa15.getText.toString) : ""}'-->
-                <!--android:enabled="@{dfa1599.checked || dfa15888.checked ? false : true}"-->
 
                 <CheckBox
                     android:id="@+id/dfa1599"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:checked="@{dfa15888.checked ? false : true}"
+                    android:enabled="@{dfa15888.checked ? false : true}"
                     android:text="@string/dkn" />
 
-                <!--android:checked="@{dfa15888.checked ? false : true}"
-                android:enabled="@{dfa15888.checked ? false : true}"-->
+
                 <CheckBox
                     android:id="@+id/dfa15888"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:checked="@{dfa1599.checked ? false : true}"
 
                     android:text="@string/na" />
 
-                <!--android:checked="@{dfa1599.checked ? false : true}"
-                android:enabled="@{dfa1599.checked ? false : true}"-->
+                <!--android:enabled="@{dfa1599.checked ? false : true}"-->
+
             </LinearLayout>
 
             <!--PFA 14-->
@@ -555,25 +553,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
-
+                    android:enabled="@{pfa1499.checked || pfa14888.checked ? false : true}"
                     android:focusable="true"
                     android:hint="@string/pfa14"
-
+                    android:text='@{checkFlag.check == 3 ?(pfa1499.checked || pfa14888.checked  ? "" : pfa14.getText.toString) : ""}'
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
-                <!--android:text='@{checkFlag.check == 3 ?(pfa1499.checked || pfa14888.checked  ? "" : pfa14.getText.toString) : ""}'-->
-                <!--android:enabled="@{pfa1499.checked || pfa14888.checked ? false : true}"-->
 
                 <CheckBox
                     android:id="@+id/pfa1499"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:checked="@{pfa14888.checked ? false : true}"
+                    android:enabled="@{pfa14888.checked ? false : true}"
                     android:text="@string/dkn" />
 
-                <!--android:checked="@{pfa14888.checked ? false : true}"
-                android:enabled="@{pfa14888.checked ? false : true}"-->
 
                 <CheckBox
                     android:id="@+id/pfa14888"
@@ -705,25 +700,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1dp"
-
+                    android:enabled="@{pfa1799.checked || pfa17888.checked ? false : true}"
                     android:focusable="true"
                     android:hint="@string/pfa17"
-
+                    android:text='@{checkFlag.check == 3 ? (pfa1799.checked || pfa17888.checked  ? "" : pfa17.getText.toString) : ""}'
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
-                <!--android:text='@{checkFlag.check == 3 ? (pfa1799.checked || pfa17888.checked  ? "" : pfa17.getText.toString) : ""}'-->
-                <!--android:enabled="@{pfa1799.checked || pfa17888.checked ? false : true}"-->
+
                 <CheckBox
                     android:id="@+id/pfa1799"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:checked="@{pfa17888.checked ? false : true}"
+                    android:enabled="@{pfa17888.checked ? false : true}"
                     android:text="@string/dkn" />
 
-                <!--android:checked="@{pfa17888.checked ? false : true}"
-                android:enabled="@{pfa17888.checked ? false : true}"
--->
                 <CheckBox
                     android:id="@+id/pfa17888"
                     android:layout_width="match_parent"
@@ -751,9 +743,8 @@
                     android:digits="0123456789"
                     android:hint="@string/month"
                     android:inputType="number"
-                    android:maxLength="9"
-                    />
-                <!--android:text='@{checkFlag.check == 3 ? pfa18.getText.toString : ""}'-->
+                    android:text='@{checkFlag.check == 3 ? pfa18.getText.toString : ""}'
+                    android:maxLength="9" />
 
                 <!--pfa19-->
                 <TextView
@@ -773,9 +764,8 @@
                     android:enabled="@{pfa19888.checked ? false : true}"
                     android:hint="@string/pfa19"
                     android:inputType="number"
-                    android:maxLength="9"
-                    />
-                <!--android:text='@{checkFlag.check == 3 ? (pfa19888.checked ? "" : pfa19.getText.toString) : ""}'-->
+                    android:text='@{checkFlag.check == 3 ? (pfa19888.checked ? "" : pfa19.getText.toString) : ""}'
+                    android:maxLength="9" />
 
                 <CheckBox
                     android:id="@+id/pfa19888"
