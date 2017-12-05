@@ -22,8 +22,6 @@ public class SecRCActivity extends AppCompatActivity
 
         bl = DataBindingUtil.setContentView(this, R.layout.activity_sec_rc);
         setupViews();
-
-
     }
 
     public void setupViews() {
@@ -74,7 +72,9 @@ public class SecRCActivity extends AppCompatActivity
 
             }
         });
-
-
     }
+
+
+
+
 }

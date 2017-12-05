@@ -60,7 +60,7 @@ public abstract class validatorClass {
         }
     }
 
-    public static boolean EmptyRadioButtonWithOther(Context context, RadioGroup rdGrp, RadioButton rdBtn,EditText txt, String msg) {
+    public static boolean EmptyRadioButtonWithOther(Context context, RadioGroup rdGrp, RadioButton rdBtn, EditText txt, String msg) {
         if (rdGrp.getCheckedRadioButtonId() == -1) {
             Toast.makeText(context, "ERROR(empty): " + msg, Toast.LENGTH_SHORT).show();
             rdBtn.setError("This data is Required!");    // Set Error on last radio button
@@ -72,10 +72,9 @@ public abstract class validatorClass {
             return false;
         } else {
             rdBtn.setError(null);
-            if (rdBtn.isChecked()){
-                return EmptyTextBox(context,txt,msg);
-            }
-            else {
+            if (rdBtn.isChecked()) {
+                return EmptyTextBox(context, txt, msg);
+            } else {
                 return true;
             }
         }
