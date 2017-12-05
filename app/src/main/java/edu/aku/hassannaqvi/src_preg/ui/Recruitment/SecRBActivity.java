@@ -7,7 +7,6 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 
-import butterknife.OnClick;
 import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySecRbBinding;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
@@ -25,7 +24,7 @@ public class SecRBActivity extends Activity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sec_rb);
     }
 
-    @OnClick(R.id.btn_Continue)
+/*    @OnClick(R.id.btn_Continue)
     void SaveData() {
         if (ValidateForm()) {
             try {
@@ -43,7 +42,7 @@ public class SecRBActivity extends Activity {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
-    }
+    }*/
 
 
     private boolean UpdateDB() {
@@ -98,11 +97,11 @@ public class SecRBActivity extends Activity {
 
     }
 
-
+/*
     @OnClick(R.id.btn_End)
     void onBtnEndClick() {
         finish();
-    }
+    }*/
 
 
     private boolean ValidateForm() {
