@@ -246,6 +246,10 @@ public class SecRCActivity extends AppCompatActivity
         // 3.12
         if (bl.rc11a.isChecked()) {
 
+            if (!validatorClass.EmptyCheckBox(this, bl.fldGrprc10, bl.rc10a, getString(R.string.rc10))) {
+                return false;
+            }
+
         }
 
         // 3.13
