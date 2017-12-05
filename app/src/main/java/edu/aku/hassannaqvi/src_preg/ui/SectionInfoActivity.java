@@ -55,6 +55,13 @@ public class SectionInfoActivity extends Activity {
             return false;
         }
 
+//        W.AGE
+        if (check != 2) {
+            if (!validatorClass.EmptyTextBox(this, binding.age, getString(R.string.age))) {
+                return false;
+            }
+        }
+
 //       H.NAME
         if (!validatorClass.EmptyTextBox(this, binding.hname, getString(R.string.hname))) {
             return false;
@@ -63,6 +70,13 @@ public class SectionInfoActivity extends Activity {
 //       HH.NAME
         if (!validatorClass.EmptyTextBox(this, binding.hhname, getString(R.string.hhname))) {
             return false;
+        }
+
+//        Child.Name
+        if (check == 1) {
+            if (!validatorClass.EmptyTextBox(this, binding.dfa06, getString(R.string.dfa06))) {
+                return false;
+            }
         }
 
 //        UC
@@ -75,12 +89,43 @@ public class SectionInfoActivity extends Activity {
             return false;
         }
 
+//        DA 07
+        if (check == 2) {
+            if (!validatorClass.EmptyTextBox(this, binding.da07, getString(R.string.da07))) {
+                return false;
+            }
+        }
+
 //       LHV.NAME
         if (!validatorClass.EmptyTextBox(this, binding.lhvname, getString(R.string.lhvname))) {
             return false;
         }
 
-//        RA10
+//        DFA 10
+        if (check == 1) {
+            if (!validatorClass.EmptyTextBox(this, binding.dfa10, getString(R.string.dfa10))) {
+                return false;
+            }
+
+//            dfa 11
+            if (!validatorClass.EmptySpinner(this, binding.dfa11, getString(R.string.dfa11))) {
+                return false;
+            }
+        }
+
+//        PFA 10
+        if (check == 3) {
+            if (!validatorClass.EmptySpinner(this, binding.pfa10, getString(R.string.pfa10))) {
+                return false;
+            }
+
+//            pfa 11
+            if (!validatorClass.EmptySpinner(this, binding.pfa11, getString(R.string.pfa11))) {
+                return false;
+            }
+        }
+
+//        RA 10
         if (check == 4) {
             if (!validatorClass.EmptySpinner(this, binding.ra10, getString(R.string.ra10))) {
                 return false;
@@ -90,6 +135,52 @@ public class SectionInfoActivity extends Activity {
 //       STATUS
         if (!validatorClass.EmptyRadioButtonWithOther(this, binding.istatus, binding.istatus88, binding.istatus88x, getString(R.string.istatus))) {
             return false;
+        }
+
+//        DFA 15
+        if (check == 1) {
+            if (!validatorClass.EmptyRadioButton(this, binding.dfa15a, binding.dfa15888, getString(R.string.dfa15))) {
+                if (!validatorClass.EmptyTextBox(this, binding.dfa15, getString(R.string.dfa15))) {
+                    binding.dfa15888.setError(null);
+                    return false;
+                }
+            }
+        }
+
+//        PFA 14
+        if (check == 3) {
+            if (!validatorClass.EmptyRadioButton(this, binding.pfa14a, binding.pfa14888, getString(R.string.pfa14))) {
+                if (!validatorClass.EmptyTextBox(this, binding.pfa14, getString(R.string.pfa14))) {
+                    binding.pfa14888.setError(null);
+                    return false;
+                }
+            }
+
+//            pfa 15
+            if (!validatorClass.EmptyRadioButton(this, binding.pfa15, binding.pfa15c, getString(R.string.pfa15))) {
+                return false;
+            }
+//            pfa 16
+            if (!validatorClass.EmptyRadioButton(this, binding.pfa16, binding.pfa16g, getString(R.string.pfa16))) {
+                return false;
+            }
+//            pfa 17
+            if (!validatorClass.EmptyRadioButton(this, binding.pfa17a, binding.pfa17888, getString(R.string.pfa17))) {
+                if (!validatorClass.EmptyTextBox(this, binding.pfa17, getString(R.string.pfa17))) {
+                    binding.pfa17888.setError(null);
+                    return false;
+                }
+            }
+//            pfa 18
+            if (!validatorClass.EmptyTextBox(this, binding.pfa18, getString(R.string.pfa18))) {
+                return false;
+            }
+//            pfa 19
+            if (!binding.pfa19888.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, binding.pfa19, getString(R.string.pfa19))) {
+                    return false;
+                }
+            }
         }
 
         return true;

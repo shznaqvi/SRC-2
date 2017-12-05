@@ -22,7 +22,7 @@ public abstract class validatorClass {
             Toast.makeText(context, "ERROR(empty): " + msg, Toast.LENGTH_SHORT).show();
             txt.setError("This data is Required! ");    // Set Error on last radio button
             txt.requestFocus();
-            Log.i(context.getClass().getName(), context.getResources().getResourceName(txt.getId()).split("/")[1] + ": This data is Required!");
+            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": This data is Required!");
             return false;
         } else {
             txt.setError(null);
@@ -36,7 +36,7 @@ public abstract class validatorClass {
             ((TextView) spin.getSelectedView()).setText("This Data is Required");
             ((TextView) spin.getSelectedView()).setTextColor(Color.RED);
             spin.requestFocus();
-            Log.i(context.getClass().getName(), context.getResources().getResourceName(spin.getId()).split("/")[1] + ": This data is Required!");
+            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(spin.getId()) + ": This data is Required!");
             return false;
         } else {
             ((TextView) spin.getSelectedView()).setError(null);
@@ -52,7 +52,7 @@ public abstract class validatorClass {
             rdBtn.setFocusable(true);
             rdBtn.setFocusableInTouchMode(true);
             rdBtn.requestFocus();
-            Log.i(context.getClass().getName(), context.getResources().getResourceName(rdGrp.getId()).split("/")[1] + ": This data is Required!");
+            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(rdGrp.getId()) + ": This data is Required!");
             return false;
         } else {
             rdBtn.setError(null);
@@ -68,11 +68,16 @@ public abstract class validatorClass {
             rdBtn.setFocusable(true);
             rdBtn.setFocusableInTouchMode(true);
             rdBtn.requestFocus();
-            Log.i(context.getClass().getName(), context.getResources().getResourceName(rdGrp.getId()).split("/")[1] + ": This data is Required!");
+            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(rdGrp.getId()) + ": This data is Required!");
             return false;
         } else {
             rdBtn.setError(null);
-            return EmptyTextBox(context,txt,msg);
+            if (rdBtn.isChecked()){
+                return EmptyTextBox(context,txt,msg);
+            }
+            else {
+                return true;
+            }
         }
     }
 

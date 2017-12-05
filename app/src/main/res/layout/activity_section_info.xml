@@ -58,9 +58,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="0123456789"
+                android:hint="@string/hhno"
                 android:inputType="number"
-                android:maxLength="9"
-                android:hint="@string/hhno" />
+                android:maxLength="9" />
 
             <!--Women/Mother name-->
             <TextView
@@ -77,8 +77,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:maxLength="25"
-                android:hint="@string/wname" />
+                android:hint="@string/wname"
+                android:maxLength="25" />
 
             <!--Women/Mother age-->
             <LinearLayout
@@ -102,9 +102,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:digits="0123456789"
+                    android:hint="@string/age"
                     android:inputType="number"
-                    android:maxLength="3"
-                    android:hint="@string/age" />
+                    android:maxLength="3" />
 
             </LinearLayout>
 
@@ -123,8 +123,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:maxLength="25"
-                android:hint="@string/hname" />
+                android:hint="@string/hname"
+                android:maxLength="25" />
 
             <!--Head Name-->
             <TextView
@@ -141,8 +141,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:maxLength="25"
-                android:hint="@string/hhname" />
+                android:hint="@string/hhname"
+                android:maxLength="25" />
 
             <!--Child Name-->
             <LinearLayout
@@ -166,8 +166,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                    android:hint="@string/dfa06"
                     android:maxLength="25"
-                    android:hint="@string/dfa06" />
+                    android:text='@{checkFlag.check == 1 ? dfa06.getText.toString() : ""}'/>
 
             </LinearLayout>
 
@@ -277,8 +278,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:maxLength="25"
-                android:hint="@string/lhvname" />
+                android:hint="@string/lhvname"
+                android:maxLength="25" />
 
             <!--DFA 10-->
             <LinearLayout
@@ -314,7 +315,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/dfa10"
+                    android:text="@string/dfa11"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
@@ -474,8 +475,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:maxLength="40"
-                android:hint="@string/other" />
+                android:hint="@string/other"
+                android:maxLength="40" />
 
             <!--DFA 15-->
             <LinearLayout
@@ -505,17 +506,24 @@
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
-                <CheckBox
-                    android:id="@+id/dfa1599"
+                <RadioGroup
+                    android:id="@+id/dfa15a"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dkn" />
+                    android:layout_height="wrap_content">
 
-                <CheckBox
-                    android:id="@+id/dfa15888"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/na" />
+                    <RadioButton
+                        android:id="@+id/dfa1599"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dkn" />
+
+                    <RadioButton
+                        android:id="@+id/dfa15888"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/na" />
+
+                </RadioGroup>
 
             </LinearLayout>
 
@@ -547,17 +555,24 @@
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
-                <CheckBox
-                    android:id="@+id/pfa1499"
+                <RadioGroup
+                    android:id="@+id/pfa14a"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dkn" />
+                    android:layout_height="wrap_content">
 
-                <CheckBox
-                    android:id="@+id/pfa14888"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/na" />
+                    <RadioButton
+                        android:id="@+id/pfa1499"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dkn" />
+
+                    <RadioButton
+                        android:id="@+id/pfa14888"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/na" />
+
+                </RadioGroup>
 
                 <!--pfa15-->
 
@@ -684,17 +699,24 @@
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
-                <CheckBox
-                    android:id="@+id/pfa1799"
+                <RadioGroup
+                    android:id="@+id/pfa17a"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dkn" />
+                    android:layout_height="wrap_content">
 
-                <CheckBox
-                    android:id="@+id/pfa17888"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/na" />
+                    <RadioButton
+                        android:id="@+id/pfa1799"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dkn" />
+
+                    <RadioButton
+                        android:id="@+id/pfa17888"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/na" />
+
+                </RadioGroup>
 
                 <!--pfa18-->
                 <TextView
@@ -711,9 +733,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:digits="0123456789"
+                    android:hint="@string/month"
                     android:inputType="number"
-                    android:maxLength="9"
-                    android:hint="@string/month" />
+                    android:maxLength="9" />
 
                 <!--pfa19-->
                 <TextView
@@ -730,9 +752,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:digits="0123456789"
+                    android:hint="@string/pfa19"
                     android:inputType="number"
-                    android:maxLength="9"
-                    android:hint="@string/pfa19" />
+                    android:maxLength="9" />
 
                 <CheckBox
                     android:id="@+id/pfa19888"
