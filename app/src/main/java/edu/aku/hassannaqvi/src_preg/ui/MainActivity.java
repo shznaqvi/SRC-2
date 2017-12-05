@@ -52,6 +52,7 @@ import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.src_preg.sync.SyncForms;
+import edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRCActivity;
 
 public class MainActivity extends Activity {
 
@@ -235,7 +236,7 @@ public class MainActivity extends Activity {
     public void openForm(int check) {
 
 //        if (spAreas.getSelectedItemPosition() != 0) {
-        final Intent oF = new Intent(MainActivity.this, SectionInfoActivity.class);
+        final Intent oF = new Intent(MainActivity.this, SecRCActivity.class);
         switch (check) {
             case 1:
                 oF.putExtra("check", 1);
