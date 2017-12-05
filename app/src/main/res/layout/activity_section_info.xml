@@ -574,11 +574,11 @@
                     android:id="@+id/pfa14888"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:checked="@{pfa1499.checked ? false : true}"
 
                     android:text="@string/na" />
 
-                <!--android:checked="@{pfa1499.checked ? false : true}"
-                android:enabled="@{pfa1499.checked ? false : true}"-->
+                <!--android:enabled="@{pfa1499.checked ? false : true}"-->
 
                 <!--pfa15-->
 
@@ -720,11 +720,11 @@
                     android:id="@+id/pfa17888"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:checked="@{pfa1799.checked ? false : true}"
 
                     android:text="@string/na" />
 
-                <!--android:checked="@{pfa1799.checked ? false : true}"
-                android:enabled="@{pfa1799.checked ? false : true}"-->
+                <!--android:enabled="@{pfa1799.checked ? false : true}"-->
 
                 <!--pfa18-->
                 <TextView
