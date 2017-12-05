@@ -176,7 +176,7 @@ public class SecRCActivity extends AppCompatActivity
                 return false;
             }
 
-            if (!validatorClass.EmptyRadioButtonWithOther(this, bl.rc05, bl.rc0588, bl.rc0588x, getString(R.string.rc05))) {
+            if (!validatorClass.EmptyRadioButton(this, bl.rc05, bl.rc0588, bl.rc0588x, getString(R.string.rc05))) {
                 return false;
             }
         }
@@ -193,7 +193,7 @@ public class SecRCActivity extends AppCompatActivity
                 return false;
             }
 
-            if (!validatorClass.EmptyRadioButtonWithOther(this, bl.rc07, bl.rc0788, bl.rc0788x, getString(R.string.rc07))) {
+            if (!validatorClass.EmptyRadioButton(this, bl.rc07, bl.rc0788, bl.rc0788x, getString(R.string.rc07))) {
                 return false;
             }
 

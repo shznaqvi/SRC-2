@@ -5,14 +5,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.widget.Toast;
 
 import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
@@ -134,13 +129,13 @@ public class SectionInfoActivity extends Activity {
         }
 
 //       STATUS
-        if (!validatorClass.EmptyRadioButtonWithOther(this, binding.istatus, binding.istatus88, binding.istatus88x, getString(R.string.istatus))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.istatus, binding.istatus88, binding.istatus88x, getString(R.string.istatus))) {
             return false;
         }
 
 //        DFA 15
         if (check == 1) {
-            if (!validatorClass.EmptyRadioButton(this, binding.dfa15a, binding.dfa15888, getString(R.string.dfa15))) {
+            if (!(binding.dfa1599.isChecked() && binding.dfa15888.isChecked())) {
                 if (!validatorClass.EmptyTextBox(this, binding.dfa15, getString(R.string.dfa15))) {
                     binding.dfa15888.setError(null);
                     return false;
@@ -150,7 +145,7 @@ public class SectionInfoActivity extends Activity {
 
 //        PFA 14
         if (check == 3) {
-            if (!validatorClass.EmptyRadioButton(this, binding.pfa14a, binding.pfa14888, getString(R.string.pfa14))) {
+            if (!(binding.pfa1499.isChecked() && binding.pfa14888.isChecked())) {
                 if (!validatorClass.EmptyTextBox(this, binding.pfa14, getString(R.string.pfa14))) {
                     binding.pfa14888.setError(null);
                     return false;
@@ -166,7 +161,7 @@ public class SectionInfoActivity extends Activity {
                 return false;
             }
 //            pfa 17
-            if (!validatorClass.EmptyRadioButton(this, binding.pfa17a, binding.pfa17888, getString(R.string.pfa17))) {
+            if (!(binding.pfa1799.isChecked() && binding.pfa17888.isChecked())) {
                 if (!validatorClass.EmptyTextBox(this, binding.pfa17, getString(R.string.pfa17))) {
                     binding.pfa17888.setError(null);
                     return false;

@@ -505,8 +505,7 @@
                     android:enabled="@{dfa1599.checked || dfa15888.checked ? false : true}"
                     android:focusable="true"
                     android:hint="@string/dfa15"
-                    android:text='@{checkFlag.check == 1 ?
-                    (dfa1599.checked || dfa15888.checked  ? "" : dfa15.getText.toString) : ""}'
+                    android:text='@{checkFlag.check == 1 ? (dfa1599.checked || dfa15888.checked  ? "" : dfa15.getText.toString) : ""}'
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
@@ -554,8 +553,7 @@
                     android:enabled="@{pfa1499.checked || pfa14888.checked ? false : true}"
                     android:focusable="true"
                     android:hint="@string/pfa14"
-                    android:text='@{checkFlag.check == 3 ?
-                    (pfa1499.checked || pfa14888.checked  ? "" : pfa14.getText.toString) : ""}'
+                    android:text='@{checkFlag.check == 3 ?(pfa1499.checked || pfa14888.checked  ? "" : pfa14.getText.toString) : ""}'
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
@@ -699,8 +697,7 @@
                     android:enabled="@{pfa1799.checked || pfa17888.checked ? false : true}"
                     android:focusable="true"
                     android:hint="@string/pfa17"
-                    android:text='@{checkFlag.check == 3 ?
-                    (pfa1799.checked || pfa17888.checked  ? "" : pfa17.getText.toString) : ""}'
+                    android:text='@{checkFlag.check == 3 ? (pfa1799.checked || pfa17888.checked  ? "" : pfa17.getText.toString) : ""}'
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
@@ -759,8 +756,7 @@
                     android:hint="@string/pfa19"
                     android:inputType="number"
                     android:maxLength="9"
-                    android:text='@{checkFlag.check == 3 ?
-                    (pfa19888.checked ? "" : pfa19.getText.toString) : ""}' />
+                    android:text='@{checkFlag.check == 3 ? (pfa19888.checked ? "" : pfa19.getText.toString) : ""}' />
 
                 <CheckBox
                     android:id="@+id/pfa19888"
