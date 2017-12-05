@@ -217,10 +217,10 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (binding.rb1699.isChecked() && !validatorClass.EmptyTextBox(this, binding.rb16, getString(R.string.rb16))) {
+       /* if (binding.rb1699.isChecked() && !validatorClass.EmptyTextBox(this, binding.rb16, getString(R.string.rb16))) {
             return false;
         }
-
+*/
 
         if (!validatorClass.EmptyRadioButton(this, binding.rb17, binding.rb17a, getString(R.string.rb17))) {
             return false;
@@ -232,12 +232,7 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb19, binding.rb19a, getString(R.string.rb19))) {
-            return false;
-        }
-
-
-        return true;
+        return validatorClass.EmptyRadioButton(this, binding.rb19, binding.rb19a, getString(R.string.rb19));
     }
 
 

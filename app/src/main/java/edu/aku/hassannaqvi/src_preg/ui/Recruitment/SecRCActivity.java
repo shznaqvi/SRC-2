@@ -193,9 +193,9 @@ public class SecRCActivity extends AppCompatActivity
         //      3.7
 
         if (bl.rc06a.isChecked()) {
-            if (!validatorClass.EmptyRadioButton(this, bl.rc07, bl.rc07a, getString(R.string.rc07))) {
+            /*if (!validatorClass.EmptyRadioButton(this, bl.rc07, bl.rc07a, getString(R.string.rc07))) {
                 return false;
-            }
+            }*/
 
             if (!validatorClass.EmptyRadioButton(this, bl.rc07, bl.rc0788, bl.rc0788x, getString(R.string.rc07))) {
                 return false;
