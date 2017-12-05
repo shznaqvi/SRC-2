@@ -203,17 +203,17 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButtonWithOther(this, binding.rb13, binding.rb13a, binding.rb1388x, getString(R.string.rb13))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb13, binding.rb13a, binding.rb1388x, getString(R.string.rb13))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButtonWithOther(this, binding.rb14, binding.rb14a, binding.rb1488x, getString(R.string.rb14))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb14, binding.rb14a, binding.rb1488x, getString(R.string.rb14))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButtonWithOther(this, binding.rb15, binding.rb15a, binding.rb1588x, getString(R.string.rb15))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb15, binding.rb15a, binding.rb1588x, getString(R.string.rb15))) {
             return false;
         }
 
@@ -228,7 +228,7 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButtonWithOther(this, binding.rb18, binding.rb18a, binding.rb1888x, getString(R.string.other))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.rb18, binding.rb18a, binding.rb1888x, getString(R.string.other))) {
             return false;
         }
 
