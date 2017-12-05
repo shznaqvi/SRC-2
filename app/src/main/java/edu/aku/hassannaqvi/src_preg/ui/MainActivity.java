@@ -236,7 +236,7 @@ public class MainActivity extends Activity {
     public void openForm(int check) {
 
 //        if (spAreas.getSelectedItemPosition() != 0) {
-        final Intent oF = new Intent(MainActivity.this, SecRCActivity.class);
+        final Intent oF = new Intent(MainActivity.this, SectionInfoActivity.class);
         switch (check) {
             case 1:
                 oF.putExtra("check", 1);
