@@ -53,14 +53,32 @@
 
         <service android:name=".DownloadFileService"/>
 
-        <activity android:name=".ui.SectionInfoActivity"/>
-        <activity android:name=".ui.Recruitment.SecRBActivity"/>
-        <activity android:name=".ui.PregnancyFollowUp.SectionPFBActivity"/>
-        <activity android:name=".ui.Outcome.SectionOBActivity"/>
-        <activity android:name=".ui.ChildFollowUp.SectionCFBActivity"/>
+        <activity
+            android:name=".ui.SectionInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name=".ui.Recruitment.SecRBActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name=".ui.PregnancyFollowUp.SectionPFBActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name=".ui.Outcome.SectionOBActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name=".ui.ChildFollowUp.SectionCFBActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity
             android:name=".ui.Recruitment.SecRCActivity"
-            android:theme="@style/AppTheme1"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
 
     </application>
 
