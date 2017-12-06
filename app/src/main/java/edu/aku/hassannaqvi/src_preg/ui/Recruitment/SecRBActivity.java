@@ -250,6 +250,7 @@ public class SecRBActivity extends Activity {
 
         if (!validatorClass.EmptyRadioButton(this, binding.rb15, binding.rb1588, binding.rb1588x, getString(R.string.rb15))) {
             return false;
+
         }
 
 
