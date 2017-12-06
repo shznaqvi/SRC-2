@@ -477,7 +477,9 @@
                 android:layout_height="wrap_content"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/other"
-                android:maxLength="40" />
+                android:maxLength="40"
+                android:text='@{istatus88.checked ? istatus88x.getText.toString : ""}'
+                android:visibility="@{istatus88.checked ? View.VISIBLE : View.GONE}"/>
 
             <!--DFA 15-->
             <LinearLayout

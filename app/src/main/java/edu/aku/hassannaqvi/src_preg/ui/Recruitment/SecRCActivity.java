@@ -193,9 +193,9 @@ public class SecRCActivity extends AppCompatActivity
         //      3.7
 
         if (bl.rc06a.isChecked()) {
-            /*if (!validatorClass.EmptyRadioButton(this, bl.rc07, bl.rc07a, getString(R.string.rc07))) {
+            if (!validatorClass.EmptyRadioButton(this, bl.rc07, bl.rc07a, getString(R.string.rc07))) {
                 return false;
-            }*/
+            }
 
             if (!validatorClass.EmptyRadioButton(this, bl.rc07, bl.rc0788, bl.rc0788x, getString(R.string.rc07))) {
                 return false;
@@ -237,6 +237,13 @@ public class SecRCActivity extends AppCompatActivity
 
         // 3.10
 
+        if (!bl.rc10h.isChecked()) {
+
+            if (!validatorClass.EmptyCheckBox(this, bl.fldGrprc10, bl.rc10a, getString(R.string.rc10))) {
+                return false;
+            }
+        }
+
 
         // 3.11
         if (!validatorClass.EmptyRadioButton(this, bl.rc11, bl.rc11a, getString(R.string.rc11))) {
@@ -244,11 +251,19 @@ public class SecRCActivity extends AppCompatActivity
         }
 
         // 3.12
-        if (bl.rc11a.isChecked()) {
+        if (bl.rc11a.isChecked() && !bl.rc1299.isChecked()) {
 
-            if (!validatorClass.EmptyCheckBox(this, bl.fldGrprc10, bl.rc10a, getString(R.string.rc10))) {
+            if (!validatorClass.EmptyCheckBox(this, bl.fldGrprc12, bl.rc12a, getString(R.string.rc12))) {
                 return false;
             }
+
+            if (!validatorClass.EmptyCheckBox(this, bl.fldGrprc12, bl.rc12c, bl.rc12cx, getString(R.string.rc12c))) {
+                return false;
+            }
+            if (!validatorClass.EmptyCheckBox(this, bl.fldGrprc12, bl.rc1288, bl.rc1288x, getString(R.string.other))) {
+                return false;
+            }
+
 
         }
 
@@ -364,7 +379,9 @@ public class SecRCActivity extends AppCompatActivity
             return false;
         }
 
+
         return validatorClass.EmptyRadioButton(this, bl.rc1788, bl.rc1788a, bl.rc1788x, getString(R.string.rc17 + R.string.other));
+
     }
 
     public void BtnContinue() {

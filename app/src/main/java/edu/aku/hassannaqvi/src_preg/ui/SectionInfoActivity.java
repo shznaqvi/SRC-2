@@ -1,10 +1,10 @@
 package edu.aku.hassannaqvi.src_preg.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -15,7 +15,8 @@ import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySectionInfoBinding;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
-public class SectionInfoActivity extends Activity {
+public class SectionInfoActivity extends AppCompatActivity
+{
 
     ActivitySectionInfoBinding binding;
     int check = 0;
@@ -31,6 +32,13 @@ public class SectionInfoActivity extends Activity {
         checking ch = new checking(check);
         binding.setCheckFlag(ch);
         binding.setCallback(this);
+        binding.pfa17.setManager(getSupportFragmentManager());
+        binding.da07.setManager(getSupportFragmentManager());
+        binding.dfa10.setManager(getSupportFragmentManager());
+        binding.dfa15.setManager(getSupportFragmentManager());
+        binding.pfa14.setManager(getSupportFragmentManager());
+        binding.pfa17.setManager(getSupportFragmentManager());
+
 
 //        Main Working from here
 //        Skip Patterns
