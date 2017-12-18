@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.src_preg.ui.Recruitment;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +10,11 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.src_preg.R;
+import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
+import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySecRbBinding;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
