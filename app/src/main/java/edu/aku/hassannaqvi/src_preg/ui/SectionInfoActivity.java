@@ -9,12 +9,14 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 import edu.aku.hassannaqvi.src_preg.R;
@@ -48,6 +50,9 @@ public class SectionInfoActivity extends AppCompatActivity {
             case 1:
                 binding.dfa10.setManager(getSupportFragmentManager());
                 binding.dfa15.setManager(getSupportFragmentManager());
+
+                binding.dfa11.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(new String[]{"....", "7", "14", "28", "40"})));
+
                 break;
             case 2:
                 binding.da07.setManager(getSupportFragmentManager());
@@ -55,8 +60,12 @@ public class SectionInfoActivity extends AppCompatActivity {
             case 3:
                 binding.pfa14.setManager(getSupportFragmentManager());
                 binding.pfa17.setManager(getSupportFragmentManager());
+
+                binding.pfa10.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(new String[]{"....", "1", "2"})));
+                binding.pfa11.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(new String[]{"....", "Second", "Third"})));
                 break;
             case 4:
+                binding.ra10.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arrays.asList(new String[]{"....", "First", "Second", "Third"})));
                 break;
             default:
                 break;
@@ -253,6 +262,7 @@ public class SectionInfoActivity extends AppCompatActivity {
         MainApp.fc.setUser(MainApp.userName);
         MainApp.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
+        MainApp.fc.setAppversion(MainApp.versionName + "." + MainApp.versionCode);
         setGPS(); //Set GPS
 
         JSONObject sa = new JSONObject();
@@ -264,6 +274,8 @@ public class SectionInfoActivity extends AppCompatActivity {
         if (check == 2) {
             sa.put("age", binding.age.getText().toString());
             sa.put("da07", binding.da07.getText().toString());
+
+            MainApp.fc.setFormtype("DA");
         }
 
         sa.put("hname", binding.hname.getText().toString());
@@ -275,6 +287,8 @@ public class SectionInfoActivity extends AppCompatActivity {
             sa.put("dfa11", binding.dfa11.getSelectedItem().toString());
             sa.put("dfa15", binding.dfa15.getText().toString().trim().isEmpty() ? (binding.dfa1599.isChecked() ? "99" : (binding.dfa15888.isChecked() ? "88" : "0"))
                     : binding.dfa15.getText().toString());
+
+            MainApp.fc.setFormtype("DFA");
         }
 
         sa.put("ucCode", binding.spUCs.getSelectedItem().toString());
@@ -294,11 +308,15 @@ public class SectionInfoActivity extends AppCompatActivity {
             sa.put("pfa18", binding.pfa18.getText().toString());
             sa.put("pfa19", binding.pfa19.getText().toString().trim().isEmpty() ? (binding.pfa19888.isChecked() ? "88" : "0")
                     : binding.pfa19.getText().toString());
+
+            MainApp.fc.setFormtype("PFA");
         }
 
         if (check == 4) {
             sa.put("ra10", binding.ra10.getSelectedItem().toString());
             sa.put("ra11", binding.ra11.getText().toString());
+
+            MainApp.fc.setFormtype("RA");
         }
 
         sa.put("istatus", binding.istatusa.isChecked() ? "1" : binding.istatusb.isChecked() ? "2" : binding.istatusc.isChecked() ? "3" : binding.istatusd.isChecked() ? "4" : binding.istatuse.isChecked() ? "5"
