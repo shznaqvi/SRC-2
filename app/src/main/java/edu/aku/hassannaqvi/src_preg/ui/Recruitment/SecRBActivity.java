@@ -59,17 +59,8 @@ public class SecRBActivity extends Activity {
         //Long rowId;
         DatabaseHelper db = new DatabaseHelper(this);
 
-        // 1. INSERT FORM
-        //rowId = db.addForm(AppMain.fc);
-
-        //AppMain.fc.setID(String.valueOf(rowId));
-
-        //if (rowId != null) {
 
         Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-        /*AppMain.fc.setUID(
-                (AppMain.fc.getDeviceID() + AppMain.fc.getID()));*/
-        //Toast.makeText(this, "Current Form No: " + AppMain.fc.getUID(), Toast.LENGTH_SHORT).show();
 
         // 2. UPDATE FORM ROWID
         int updcount = db.updateSB();
@@ -82,11 +73,6 @@ public class SecRBActivity extends Activity {
             return false;
         }
 
-
-        /*} else {
-            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
-            return false;
-        }*/
 
     }
 

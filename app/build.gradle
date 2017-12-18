@@ -28,15 +28,34 @@ android {
             versionName "1.1b"
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
+
+        sourceSets {
+
+            main {
+
+                java {
+
+                    exclude '**/edu.aku.hassannaqvi.src_preg/ui/Outcome/SectionOBActivity.java'
+
+                }
+
+            }
+
+        }
     } else {
         throw new GradleException("Could not read version.properties!")
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+
+
 }
 
 

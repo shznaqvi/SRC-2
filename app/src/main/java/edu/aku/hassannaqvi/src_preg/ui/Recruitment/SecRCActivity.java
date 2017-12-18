@@ -10,8 +10,11 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.src_preg.R;
+import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
+import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySecRcBinding;
 import edu.aku.hassannaqvi.src_preg.ui.EndingActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
@@ -46,7 +49,10 @@ public class SecRCActivity extends AppCompatActivity
                     bl.fldGrprc05.setVisibility(View.VISIBLE);
                 } else {
                     bl.fldGrprc05.setVisibility(View.GONE);
-                    bl.rc05.clearCheck();
+                    bl.rc05a.setChecked(false);
+                    bl.rc05b.setChecked(false);
+                    bl.rc05c.setChecked(false);
+                    bl.rc0588.setChecked(false);
                     bl.rc0588x.setText(null);
                 }
             }
@@ -61,7 +67,11 @@ public class SecRCActivity extends AppCompatActivity
                     bl.fldGrprc07.setVisibility(View.VISIBLE);
                 } else {
                     bl.fldGrprc07.setVisibility(View.GONE);
-                    bl.rc07.clearCheck();
+                    bl.rc07a.setChecked(false);
+                    bl.rc07b.setChecked(false);
+                    bl.rc07c.setChecked(false);
+                    bl.rc07d.setChecked(false);
+                    bl.rc0788.setChecked(false);
                     bl.rc0788x.setText(null);
                     bl.rc08.clearCheck();
                     bl.rc09w.clearCheck();
@@ -75,7 +85,7 @@ public class SecRCActivity extends AppCompatActivity
             }
         });
 
-        bl.rc10h.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        bl.rc1066.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -133,33 +143,48 @@ public class SecRCActivity extends AppCompatActivity
             }
         });
 
+        bl.rc0199.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    bl.rc01.setVisibility(View.GONE);
+                    bl.rc01.setText(null);
+                } else {
+                    bl.rc01.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
     }
 
 
     public Boolean formValidation() {
 
 //        3.1
-        if (!validatorClass.EmptyTextBox(this, bl.rc01, getString(R.string.rc01))) {
-            return false;
+        if (!bl.rc0199.isChecked()) {
+            if (!validatorClass.EmptyTextBox(this, bl.rc01, getString(R.string.rc01))) {
+                return false;
+            }
         }
 
 //       3.2 Weeks
-        if (!validatorClass.EmptyTextBox(this, bl.rc02w, getString(R.string.rc02w))) {
+        if (!validatorClass.EmptyTextBox(this, bl.rc02, getString(R.string.rc02w))) {
             return false;
         }
 
-        if (!validatorClass.RangeTextBox(this, bl.rc02w, 3, 40, getString(R.string.rc02w), " weeks")) {
+        if (!validatorClass.RangeTextBox(this, bl.rc02, 3, 42, getString(R.string.rc02w), " weeks")) {
             return false;
         }
 
 //       3.2 Days
-        if (!validatorClass.EmptyTextBox(this, bl.rc02d, getString(R.string.rc02d))) {
+        /*if (!validatorClass.EmptyTextBox(this, bl.rc02d, getString(R.string.rc02d))) {
             return false;
         }
 
         if (!validatorClass.RangeTextBox(this, bl.rc02d, 0, 6, getString(R.string.rc02d), " days")) {
             return false;
-        }
+        }*/
 
         // 3.3
         if (!validatorClass.EmptyTextBox(this, bl.rc03, getString(R.string.rc03))) {
@@ -173,11 +198,11 @@ public class SecRCActivity extends AppCompatActivity
 
 //        3.5
         if (bl.rc04a.isChecked()) {
-            if (!validatorClass.EmptyRadioButton(this, bl.rc05, bl.rc05a, getString(R.string.rc05))) {
+            if (!validatorClass.EmptyCheckBox(this, bl.fldGrprcCheck05, bl.rc05a, getString(R.string.rc05))) {
                 return false;
             }
 
-            if (!validatorClass.EmptyRadioButton(this, bl.rc05, bl.rc0588, bl.rc0588x, getString(R.string.rc05))) {
+            if (!validatorClass.EmptyCheckBox(this, bl.fldGrprcCheck05, bl.rc0588, bl.rc0588x, getString(R.string.rc05) + " - " + getString(R.string.other))) {
                 return false;
             }
         }
@@ -190,11 +215,11 @@ public class SecRCActivity extends AppCompatActivity
         //      3.7
 
         if (bl.rc06a.isChecked()) {
-            if (!validatorClass.EmptyRadioButton(this, bl.rc07, bl.rc07a, getString(R.string.rc07))) {
+            if (!validatorClass.EmptyCheckBox(this, bl.Grprc07, bl.rc07a, getString(R.string.rc07))) {
                 return false;
             }
 
-            if (!validatorClass.EmptyRadioButton(this, bl.rc07, bl.rc0788, bl.rc0788x, getString(R.string.rc07))) {
+            if (!validatorClass.EmptyCheckBox(this, bl.Grprc07, bl.rc0788, bl.rc0788x, getString(R.string.rc07) + " - " + getString(R.string.other))) {
                 return false;
             }
 
@@ -234,7 +259,7 @@ public class SecRCActivity extends AppCompatActivity
 
         // 3.10
 
-        if (!bl.rc10h.isChecked()) {
+        if (!bl.rc1066.isChecked()) {
 
             if (!validatorClass.EmptyCheckBox(this, bl.fldGrprc10, bl.rc10a, getString(R.string.rc10))) {
                 return false;
@@ -372,12 +397,12 @@ public class SecRCActivity extends AppCompatActivity
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, bl.rc1788, bl.rc1788a, getString(R.string.other))) {
+        if (!validatorClass.EmptyRadioButton(this, bl.rc1788, bl.rc1788a, getString(R.string.rc17) + " - " + getString(R.string.other))) {
             return false;
         }
 
 
-        return validatorClass.EmptyRadioButton(this, bl.rc1788, bl.rc1788a, bl.rc1788x, getString(R.string.rc17 + R.string.other));
+        return validatorClass.EmptyRadioButton(this, bl.rc1788, bl.rc1788a, bl.rc1788x, getString(R.string.rc17) + " - " + getString(R.string.other));
 
     }
 
@@ -406,29 +431,114 @@ public class SecRCActivity extends AppCompatActivity
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
+        JSONObject sRc = new JSONObject();
+
+        sRc.put("rc01", bl.rc0199.isChecked() ? "99" : bl.rc01.getText().toString());
+        sRc.put("rc02", bl.rc02.getText().toString());
+        sRc.put("rc03", bl.rc03.getText().toString());
+        sRc.put("rc04", bl.rc04a.isChecked() ? "1" : bl.rc04b.isChecked() ? "2" : "0");
+        sRc.put("rc05a", bl.rc05a.isChecked() ? "1" : "0");
+        sRc.put("rc05b", bl.rc05b.isChecked() ? "2" : "0");
+        sRc.put("rc05c", bl.rc05c.isChecked() ? "3" : "0");
+        sRc.put("rc0588", bl.rc0588.isChecked() ? "88" : "0");
+        sRc.put("rc0588x", bl.rc0588x.getText().toString());
+        sRc.put("rc06", bl.rc06a.isChecked() ? "1" : bl.rc06b.isChecked() ? "2" : "0");
+        sRc.put("rc07a", bl.rc07a.isChecked() ? "1" : "0");
+        sRc.put("rc07b", bl.rc07b.isChecked() ? "2" : "0");
+        sRc.put("rc07c", bl.rc07c.isChecked() ? "3" : "0");
+        sRc.put("rc07d", bl.rc07d.isChecked() ? "4" : "0");
+        sRc.put("rc0788", bl.rc0788.isChecked() ? "88" : "0");
+        sRc.put("rc0788x", bl.rc0788x.getText().toString());
+        sRc.put("rc08", bl.rc08a.isChecked() ? "1" : bl.rc08b.isChecked() ? "2" :
+                bl.rc08c.isChecked() ? "3" : bl.rc08d.isChecked() ? "4" : bl.rc08e.isChecked() ? "5" : "0");
+        sRc.put("rc09w", bl.rc09wa.isChecked() ? "1" : bl.rc09wb.isChecked() ? "2" : "0");
+        sRc.put("rc09bp", bl.rc09bpa.isChecked() ? "1" : bl.rc09bpb.isChecked() ? "2" : "0");
+        sRc.put("rc09st", bl.rc09sta.isChecked() ? "1" : bl.rc09stb.isChecked() ? "2" : "0");
+        sRc.put("rc09ud", bl.rc09uda.isChecked() ? "1" : bl.rc09udb.isChecked() ? "2" : "0");
+        sRc.put("rc09hb", bl.rc09hba.isChecked() ? "1" : bl.rc09hbb.isChecked() ? "2" : "0");
+        sRc.put("rc09us", bl.rc09usa.isChecked() ? "1" : bl.rc09usb.isChecked() ? "2" : "0");
+        sRc.put("rc09ti", bl.rc09tia.isChecked() ? "1" : bl.rc09tib.isChecked() ? "2" : "0");
+
+        sRc.put("rc10a", bl.rc10a.isChecked() ? "1" : "0");
+        sRc.put("rc10b", bl.rc10b.isChecked() ? "2" : "0");
+        sRc.put("rc10c", bl.rc10c.isChecked() ? "3" : "0");
+        sRc.put("rc10d", bl.rc10d.isChecked() ? "4" : "0");
+        sRc.put("rc10e", bl.rc10e.isChecked() ? "5" : "0");
+        sRc.put("rc10f", bl.rc10f.isChecked() ? "6" : "0");
+        sRc.put("rc10g", bl.rc10g.isChecked() ? "7" : "0");
+        sRc.put("rc1066", bl.rc1066.isChecked() ? "66" : "0");
+        sRc.put("rc011", bl.rc11a.isChecked() ? "1" : bl.rc11b.isChecked() ? "2" : "0");
+        sRc.put("rc12a", bl.rc12a.isChecked() ? "1" : "0");
+        sRc.put("rc12b", bl.rc12b.isChecked() ? "2" : "0");
+        sRc.put("rc12c", bl.rc12c.isChecked() ? "3" : "0");
+        sRc.put("rc12d", bl.rc12d.isChecked() ? "4" : "0");
+        sRc.put("rc12e", bl.rc12e.isChecked() ? "5" : "0");
+        sRc.put("rc12f", bl.rc12f.isChecked() ? "6" : "0");
+        sRc.put("rc1288", bl.rc1288.isChecked() ? "88" : "0");
+        sRc.put("rc1288x", bl.rc1288x.getText().toString());
+        sRc.put("rc1299", bl.rc1299.isChecked() ? "99" : "0");
+        sRc.put("rc013", bl.rc13a.isChecked() ? "1" : bl.rc13b.isChecked() ? "2" : bl.rc13c.isChecked() ? "3"
+                : bl.rc1388.isChecked() ? "88" : bl.rc1399.isChecked() ? "99" : "0");
+        sRc.put("rc1388x", bl.rc1388x.getText().toString());
+        sRc.put("rc14c", bl.rc14ca.isChecked() ? "1" : bl.rc14cb.isChecked() ? "2" : "0");
+        sRc.put("rc14fb", bl.rc14fba.isChecked() ? "1" : bl.rc14fbb.isChecked() ? "2" : "0");
+        sRc.put("rc14la", bl.rc14laa.isChecked() ? "1" : bl.rc14lab.isChecked() ? "2" : "0");
+        sRc.put("rc14nv", bl.rc14nva.isChecked() ? "1" : bl.rc14nvb.isChecked() ? "2" : "0");
+        sRc.put("rc14v", bl.rc14va.isChecked() ? "1" : bl.rc14vb.isChecked() ? "2" : "0");
+        sRc.put("rc14cf", bl.rc14cfa.isChecked() ? "1" : bl.rc14cfb.isChecked() ? "2" : "0");
+        sRc.put("rc14hs", bl.rc14hsa.isChecked() ? "1" : bl.rc14hsb.isChecked() ? "2" : "0");
+        sRc.put("rc14fs", bl.rc14fsa.isChecked() ? "1" : bl.rc14fsb.isChecked() ? "2" : "0");
+        sRc.put("rc14sh", bl.rc14sha.isChecked() ? "1" : bl.rc14shb.isChecked() ? "2" : "0");
+        sRc.put("rc14fv", bl.rc14fva.isChecked() ? "1" : bl.rc14fvb.isChecked() ? "2" : "0");
+        sRc.put("rc14plb", bl.rc14plba.isChecked() ? "1" : bl.rc14plbb.isChecked() ? "2" : "0");
+        sRc.put("rc14bm", bl.rc14bma.isChecked() ? "1" : bl.rc14bmb.isChecked() ? "2" : "0");
+        sRc.put("rc14bv", bl.rc14bva.isChecked() ? "1" : bl.rc14bvb.isChecked() ? "2" : "0");
+        sRc.put("rc14ddp", bl.rc14ddpa.isChecked() ? "1" : bl.rc14ddpb.isChecked() ? "2" : "0");
+        sRc.put("rc14gh", bl.rc14gha.isChecked() ? "1" : bl.rc14ghb.isChecked() ? "2" : "0");
+        sRc.put("rc15", bl.rc15a.isChecked() ? "1" : bl.rc15b.isChecked() ? "2" : "0");
+        sRc.put("rc16", bl.rc16a.isChecked() ? "1" : bl.rc16b.isChecked() ? "2" : "0");
+        sRc.put("rc17dpd", bl.rc17dpda.isChecked() ? "1" : bl.rc17dpdb.isChecked() ? "2" : "0");
+        sRc.put("rc17dn", bl.rc17dna.isChecked() ? "1" : bl.rc17dnb.isChecked() ? "2" : "0");
+        sRc.put("rc17dfs", bl.rc17fsa.isChecked() ? "1" : bl.rc17fsb.isChecked() ? "2" : "0");
+        sRc.put("rc17fp", bl.rc17fpa.isChecked() ? "1" : bl.rc17fpb.isChecked() ? "2" : "0");
+        sRc.put("rc17b", bl.rc17ba.isChecked() ? "1" : bl.rc17bb.isChecked() ? "2" : "0");
+        sRc.put("rc17ebf", bl.rc17ebfa.isChecked() ? "1" : bl.rc17ebfb.isChecked() ? "2" : "0");
+        sRc.put("rc17av", bl.rc17ava.isChecked() ? "1" : bl.rc17avb.isChecked() ? "2" : "0");
+        sRc.put("rc17ahv", bl.rc17ahva.isChecked() ? "1" : bl.rc17ahvb.isChecked() ? "2" : "0");
+        sRc.put("rc17ar", bl.rc17ara.isChecked() ? "1" : bl.rc17arb.isChecked() ? "2" : "0");
+        sRc.put("rc1788", bl.rc1788a.isChecked() ? "1" : bl.rc1788b.isChecked() ? "2" : "0");
+        sRc.put("rc1788x", bl.rc1788x.getText().toString());
+
+
+        MainApp.fc.setsC(String.valueOf(sRc));
+
+
+        //sRc.put()
+
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     private boolean UpdateDB() {
+//Long rowId;
+        DatabaseHelper db = new DatabaseHelper(this);
 
-        /*Long updcount = db.addForm(MainApp.fc);
-        MainApp.fc.set_ID(String.valueOf(updcount));
 
-        if (updcount != 0) {
+        Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+
+        // 2. UPDATE FORM ROWID
+        int updcount = db.updateSC();
+
+        if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-
-            MainApp.fc.setUID(
-                    (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
-            db.updateFormID();
-
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        return true;
+
+        //return true;
     }
 
     public class checking
