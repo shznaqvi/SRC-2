@@ -135,7 +135,7 @@ public class SectionInfoActivity extends AppCompatActivity
         }
 
 //       STATUS
-        if (!validatorClass.EmptyRadioButton(this, binding.istatus, binding.istatus88, binding.istatus88x, getString(R.string.istatus))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.istatus, binding.istatusg, getString(R.string.istatus))) {
             return false;
         }
 
