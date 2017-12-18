@@ -61,6 +61,26 @@
                 android:inputType="number"
                 android:maxLength="9" />
 
+            <!--PWID-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/pwid"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+            <EditText
+                android:id="@+id/pwid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:digits="0123456789"
+                android:hint="@string/pwid"
+                android:inputType="number"
+                android:maxLength="2" />
+
             <!--Women/Mother name-->
             <TextView
                 android:layout_width="match_parent"
@@ -72,7 +92,7 @@
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/pwname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
@@ -241,7 +261,7 @@
                 android:orientation="vertical"
                 android:visibility="@{checkFlag.check == 2 ? View.VISIBLE : View.GONE}">
 
-                <!--dfa10-->
+                <!--da07-->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
