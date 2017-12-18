@@ -82,11 +82,11 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
 
         DatabaseHelper db = new DatabaseHelper(mContext);
         Collection<FormsContract> Forms;
-        if (flag) {
+        //if (flag) {
             Forms = db.getUnsyncedForms();
-        } else {
-            Forms = db.getFormsSg();
-        }
+        //} else {
+        //Forms = db.getFormsSg();
+        //}
         Log.d(TAG, String.valueOf(Forms.size()));
 
         if (Forms.size() > 0) {

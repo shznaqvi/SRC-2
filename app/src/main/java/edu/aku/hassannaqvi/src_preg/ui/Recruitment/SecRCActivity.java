@@ -1,7 +1,6 @@
 package edu.aku.hassannaqvi.src_preg.ui.Recruitment;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,8 +12,6 @@ import android.widget.Toast;
 import org.json.JSONException;
 
 import edu.aku.hassannaqvi.src_preg.R;
-import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
-import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySecRcBinding;
 import edu.aku.hassannaqvi.src_preg.ui.EndingActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
@@ -409,10 +406,6 @@ public class SecRCActivity extends AppCompatActivity
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
-        MainApp.fc = new FormsContract();
-
-//        setGPS();
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
