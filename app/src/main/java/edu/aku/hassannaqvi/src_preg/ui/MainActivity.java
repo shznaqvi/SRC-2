@@ -53,7 +53,6 @@ import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.src_preg.sync.SyncForms;
 import edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRBActivity;
-import edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRCActivity;
 
 public class MainActivity extends Activity {
 
@@ -179,7 +178,7 @@ public class MainActivity extends Activity {
                     iStatus = "\tN/A";
                 }
 
-                rSumText += fc.getDSSID();
+                //rSumText += fc.getDSSID();
 
                 rSumText += " " + iStatus + " ";
 

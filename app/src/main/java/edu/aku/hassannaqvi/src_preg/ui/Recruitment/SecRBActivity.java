@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.src_preg.ui.Recruitment;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +10,11 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.src_preg.R;
+import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
+import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySecRbBinding;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
@@ -52,51 +56,160 @@ public class SecRBActivity extends Activity {
 
     private boolean UpdateDB() {
 
-        /*DatabaseHelper db = new DatabaseHelper(this);
+        //Long rowId;
+        DatabaseHelper db = new DatabaseHelper(this);
 
-        long updcount = db.addFamilyMembers(MainApp.fmc);
+        // 1. INSERT FORM
+        //rowId = db.addForm(AppMain.fc);
 
-        MainApp.fmc.set_ID(String.valueOf(updcount));
+        //AppMain.fc.setID(String.valueOf(rowId));
 
-        if (updcount != 0) {
+        //if (rowId != null) {
+
+        Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+        /*AppMain.fc.setUID(
+                (AppMain.fc.getDeviceID() + AppMain.fc.getID()));*/
+        //Toast.makeText(this, "Current Form No: " + AppMain.fc.getUID(), Toast.LENGTH_SHORT).show();
+
+        // 2. UPDATE FORM ROWID
+        int updcount = db.updateSB();
+
+        if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-
-            MainApp.fmc.set_UID(
-                    (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
-            db.updateFamilyMemberID();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
+        }
+
+
+        /*} else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
         }*/
 
-        return true;
     }
 
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-        /*SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
         JSONObject sB = new JSONObject();
 
-        sB.put("tehsil_code", String.valueOf(MainApp.tehsilCode));
-        sB.put("uc_code", String.valueOf(MainApp.ucCode));
-        sB.put("village_code", String.valueOf(MainApp.villageCode));
-        sB.put("spblb01Serial", String.valueOf(MainApp.counter));
-        sB.put("spblb01", spblb01.getText().toString());
-        sB.put("spblb02", spblb02a.isChecked() ? "1" : spblb02b.isChecked() ? "2" : "0");
-        sB.put("spblb03", spblb03.getSelectedItem().toString());
-        sB.put("spblb03Serial", mothersMap.get(spblb03.getSelectedItem().toString()));
-        sB.put("spblb04y", spblb04y.getText().toString());
-        sB.put("spblb04m", spblb04m.getText().toString());
-        sB.put("spblb04d", spblb04d.getText().toString());
-        sB.put("spblb05", spblb05a.isChecked() ? "1" : spblb05b.isChecked() ? "2" : spblb05c.isChecked() ? "3"
-                : spblb05d.isChecked() ? "4" : spblb05e.isChecked() ? "5" : spblb05f.isChecked() ? "6" : spblb05g.isChecked() ? "7"
-                : spblb0566.isChecked() ? "66" : "0");
-        sB.put("spblb07", spblb07a.isChecked() ? "1" : spblb07b.isChecked() ? "2" : "0");
+        sB.put("rb01", binding.rb01.getText().toString());
+        sB.put("rb03", binding.rb03a.isChecked() ? "1" : binding.rb03b.isChecked() ? "2" : "0");
 
-        MainApp.fmc.setsB(String.valueOf(sB));*/
+        sB.put("rb03n", binding.rb03n.getText().toString());
+        sB.put("rb04", binding.rb04a.isChecked() ? "1" : binding.rb04b.isChecked() ? "2"
+                : "0");
+
+        sB.put("rb04n", binding.rb04n.getText().toString());
+        sB.put("rb05n", binding.rb05n.getText().toString());
+        sB.put("rb06", binding.rb06a.isChecked() ? "1" : binding.rb06b.isChecked() ? "2"
+                : "0");
+
+        if (binding.rb0799.isChecked()) {
+            sB.put("rb07m", "");
+            sB.put("rb0799", binding.rb0799.isChecked() ? "99" : "0");
+        } else {
+            sB.put("rb07m", binding.rb07m.getText().toString());
+        }
+
+
+        if (binding.rb0899.isChecked()) {
+            sB.put("rb08n", "");
+            sB.put("rb0899", binding.rb0899.isChecked() ? "99" : "0");
+        } else {
+            sB.put("rb08n", binding.rb08n.getText().toString());
+        }
+
+
+        sB.put("rb09vd", binding.rb09vda.isChecked() ? "1" : binding.rb09vdb.isChecked() ? "2" : "0");
+        sB.put("rb09i", binding.rb09ia.isChecked() ? "1" : binding.rb09ib.isChecked() ? "2" : "0");
+        sB.put("rb09fa", binding.rb09faa.isChecked() ? "1" : binding.rb09fab.isChecked() ? "2" : "0");
+        sB.put("rb09m", binding.rb09ma.isChecked() ? "1" : binding.rb09mb.isChecked() ? "2" : "0");
+        sB.put("rb09c", binding.rb09ca.isChecked() ? "1" : binding.rb09cb.isChecked() ? "2" : "0");
+        sB.put("rb0988", binding.rb0988a.isChecked() ? "1" : binding.rb0988b.isChecked() ? "2" : "0");
+
+        sB.put("rb0988x", binding.rb0988x.getText().toString());
+
+
+        sB.put("rb10", binding.rb10a.isChecked() ? "1" : binding.rb10b.isChecked() ? "2"
+                : binding.rb1099.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("rb11", binding.rb11a.isChecked() ? "1" : binding.rb11b.isChecked() ? "2"
+                : binding.rb11c.isChecked() ? "3"
+                : binding.rb11d.isChecked() ? "4"
+                : binding.rb11e.isChecked() ? "5"
+                : binding.rb1199.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("rb12", binding.rb12a.isChecked() ? "1" : binding.rb12b.isChecked() ? "2"
+                : binding.rb12c.isChecked() ? "3"
+                : binding.rb12d.isChecked() ? "4"
+                : binding.rb12e.isChecked() ? "5"
+                : binding.rb12f.isChecked() ? "6"
+                : "0");
+
+
+        sB.put("rb13", binding.rb13a.isChecked() ? "1" : binding.rb13b.isChecked() ? "2"
+                : binding.rb13c.isChecked() ? "3"
+                : binding.rb13d.isChecked() ? "4"
+                : binding.rb1388.isChecked() ? "88"
+                : "0");
+
+
+        sB.put("rb1388x", binding.rb1388x.getText().toString());
+
+
+        sB.put("rb14", binding.rb14a.isChecked() ? "1" : binding.rb14b.isChecked() ? "2"
+                : binding.rb14c.isChecked() ? "3"
+                : binding.rb14d.isChecked() ? "4"
+                : binding.rb1488.isChecked() ? "88"
+                : "0");
+
+
+        sB.put("rb1488x", binding.rb1488x.getText().toString());
+
+
+        sB.put("rb15", binding.rb15a.isChecked() ? "1" : binding.rb15b.isChecked() ? "2"
+                : binding.rb15c.isChecked() ? "3"
+                : binding.rb1588.isChecked() ? "88"
+                : "0");
+
+
+        sB.put("rb1588x", binding.rb1588x.getText().toString());
+
+        if (binding.rb1699.isChecked()) {
+            sB.put("rb16", "");
+            sB.put("rb1699", binding.rb1699.isChecked() ? "99" : "0");
+        } else {
+            sB.put("rb16", binding.rb16.getText().toString());
+        }
+
+
+        sB.put("rb17", binding.rb17a.isChecked() ? "1" : binding.rb17b.isChecked() ? "2"
+                : "0");
+
+
+        sB.put("rb18a", binding.rb18a.isChecked() ? "1" : "0");
+        sB.put("rb18b", binding.rb18b.isChecked() ? "2" : "0");
+        sB.put("rb18c", binding.rb18c.isChecked() ? "3" : "0");
+        sB.put("rb18d", binding.rb18d.isChecked() ? "4" : "0");
+        sB.put("rb1888", binding.rb1888.isChecked() ? "88" : "0");
+
+
+        sB.put("rb1888", binding.rb1888.getText().toString());
+
+        sB.put("rb19", binding.rb19a.isChecked() ? "1" : binding.rb19b.isChecked() ? "2"
+                : "0");
+
+
+        MainApp.fc.setsB(String.valueOf(sB));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -118,12 +231,19 @@ public class SecRBActivity extends Activity {
         }
 
 
+        if (Integer.parseInt(binding.rb01.toString()) > MainApp.womanage) {
+            Toast.makeText(this, "Age at 1st pregnancy cannot be greater", Toast.LENGTH_SHORT).show();
+            binding.rb01.requestFocus();
+            return false;
+        }
+
+
         if (!validatorClass.RangeTextBox(this, binding.rb01, 15, 50, getString(R.string.day), "days")) {
             return false;
         }
 
 
-/*        if (!validatorClass.EmptyTextBox(this, binding.rb02, getString(R.string.rb02))) {
+        /*if (!validatorClass.EmptyTextBox(this, binding.rb02, getString(R.string.rb02))) {
             return false;
         }*/
 
@@ -250,7 +370,6 @@ public class SecRBActivity extends Activity {
 
         if (!validatorClass.EmptyRadioButton(this, binding.rb15, binding.rb1588, binding.rb1588x, getString(R.string.rb15))) {
             return false;
-
         }
 
 
