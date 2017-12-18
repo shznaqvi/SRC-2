@@ -63,7 +63,7 @@
                 android:inputType="number"
                 android:maxLength="2" />
 
-            <TextView
+<!--            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -80,7 +80,7 @@
                 android:digits="0123456789"
                 android:hint="@string/rb02"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="2" />-->
 
 
             <TextView

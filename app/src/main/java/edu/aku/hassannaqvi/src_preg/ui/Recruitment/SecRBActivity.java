@@ -123,9 +123,9 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, binding.rb02, getString(R.string.rb02))) {
+/*        if (!validatorClass.EmptyTextBox(this, binding.rb02, getString(R.string.rb02))) {
             return false;
-        }
+        }*/
 
 
         if (!validatorClass.EmptyRadioButton(this, binding.rb03, binding.rb03b, getString(R.string.rb03))) {
