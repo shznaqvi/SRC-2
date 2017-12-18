@@ -15,8 +15,7 @@ import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySectionInfoBinding;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
-public class SectionInfoActivity extends AppCompatActivity
-{
+public class SectionInfoActivity extends AppCompatActivity {
 
     ActivitySectionInfoBinding binding;
     int check = 0;
@@ -215,6 +214,8 @@ public class SectionInfoActivity extends AppCompatActivity
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         MainApp.fc = new FormsContract();
+
+        MainApp.womanage = Integer.parseInt(binding.age.toString());
 
 //        setGPS();
 
