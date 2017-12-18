@@ -46,7 +46,7 @@
     <string name="yes"> ھا </string>
     <string name="no"> نه </string>
     <string name="dkn"> خبر نه آھي </string>
-  <string name="na"> لاڳو نه ٿو ٿئي </string>
+    <string name="na"> لاڳو نه ٿو ٿئي </string>
     <string name="day"> ڏينهن </string>
     <string name="month"> مهينو </string>
     <string name="year"> سال </string>
@@ -73,6 +73,7 @@
     <string name="ra0901"> پهريون </string>
     <string name="ra0902"> ٻيون </string>
     <string name="ra0903"> ٽيون </string>
+    <string name="ra11"> گذريل حملن جو تعداد </string>
     <string name="istatus"> ڇا حاملا عورت انٽرويو لاءِ موجود هئي؟ </string>
     <string name="istatusa"> موجود هئي </string>
     <string name="istatusb"> هن وقت اسپتال ۾ آهي </string>
@@ -85,7 +86,7 @@
     <string name="istatusi"> سبب ڄاڻايو </string>
     <string name="RB"> حصو ٻيون: گذريل حمل يا دائڪي ڄاڻ </string>
     <string name="rb01"> پهرين حمل وقت عمر </string>
-    <string name="rb02"> گذريل حملن جو تعداد </string>
+
     <string name="rb03"> ٻار ضايع ٿيڻ جي ڄاڻَ </string>
     <string name="rb03n"> جيڪڏهن ها ته ٻار ضايع ٿيڻ جو تعداد </string>
     <string name="rb04"> مئل ٻارن ڄمڻ جي ڄاڻ </string>
@@ -193,7 +194,7 @@
     <string name="rc12"> جيڪڏهن ها ته هِنن مان ڪهڙي </string>
     <string name="rc12a"> آئرن يا فولڪ ايسڊ </string>
     <string name="rc12b"> ڪيلشم جي دوا </string>
-  <string name="rc12c"> ملٽي وٽامن(ڪهڙيون) </string>
+    <string name="rc12c"> ملٽي وٽامن(ڪهڙيون) </string>
     <string name="rc12d"> بخار / سور جي دوا </string>
     <string name="rc12e"> اُلٽي جي دوا </string>
     <string name="rc12f"> پيٽ جي ڪيڙن جي </string>

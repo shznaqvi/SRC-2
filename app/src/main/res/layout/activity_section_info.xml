@@ -5,7 +5,6 @@
     tools:context="edu.aku.hassannaqvi.src_preg.ui.SectionInfoActivity">
 
     <data>
-
         <import type="android.view.View" />
 
         <variable
@@ -104,7 +103,8 @@
                     android:digits="0123456789"
                     android:hint="@string/age"
                     android:inputType="number"
-                    android:maxLength="3" />
+                    android:maxLength="3"
+                    android:text='@{checkFlag.check == 2 ? age.getText.toString : ""}' />
 
             </LinearLayout>
 
@@ -258,6 +258,7 @@
                     android:layout_marginTop="1dp"
                     android:focusable="true"
                     android:hint="@string/da07"
+                    android:text='@{checkFlag.check == 2 ? da07.getText.toString : ""}'
                     android:textColor="@android:color/black"
                     app:dateFormat="dd-MM-yyyy" />
 
@@ -389,6 +390,26 @@
                     android:id="@+id/ra10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"></Spinner>
+
+                <!--ra11-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/ra11"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
+
+                <EditText
+                    android:id="@+id/ra11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:digits="0123456789"
+                    android:hint="@string/ra11"
+                    android:inputType="number"
+                    android:maxLength="2" />
             </LinearLayout>
 
             <!--Status-->
@@ -455,7 +476,7 @@
                     android:layout_marginBottom="1dp"
                     android:text="@string/istatusg" />
 
-                <RadioButton
+<!--                <RadioButton
                     android:id="@+id/istatush"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -467,11 +488,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/other" />
+                    android:text="@string/other" />-->
 
             </RadioGroup>
 
-            <EditText
+<!--            <EditText
                 android:id="@+id/istatus88x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -479,7 +500,7 @@
                 android:hint="@string/other"
                 android:maxLength="40"
                 android:text='@{istatus88.checked ? istatus88x.getText.toString : ""}'
-                android:visibility="@{istatus88.checked ? View.VISIBLE : View.GONE}"/>
+                android:visibility="@{istatus88.checked ? View.VISIBLE : View.GONE}" />-->
 
             <!--DFA 15-->
             <LinearLayout
