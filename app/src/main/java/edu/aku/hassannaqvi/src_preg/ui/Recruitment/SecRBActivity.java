@@ -1,6 +1,7 @@
 package edu.aku.hassannaqvi.src_preg.ui.Recruitment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySecRbBinding;
+import edu.aku.hassannaqvi.src_preg.ui.EndingActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
 public class SecRBActivity extends Activity {
@@ -51,6 +53,15 @@ public class SecRBActivity extends Activity {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+
+    public void BtnEnd() {
+        finish();
+        Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
+        Intent endSec = new Intent(this, EndingActivity.class);
+        endSec.putExtra("complete", false);
+        startActivity(endSec);
     }
 
 
@@ -217,11 +228,15 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (Integer.parseInt(binding.rb01.toString()) > MainApp.womanage) {
-            Toast.makeText(this, "Age at 1st pregnancy cannot be greater", Toast.LENGTH_SHORT).show();
-            binding.rb01.requestFocus();
-            return false;
+        if (String.valueOf(MainApp.womanage) != "0") {
+            if (Integer.parseInt(binding.rb01.toString()) > MainApp.womanage) {
+                Toast.makeText(this, "Age at 1st pregnancy cannot be greater", Toast.LENGTH_SHORT).show();
+                binding.rb01.requestFocus();
+                return false;
+            }
         }
+
+
 
 
         if (!validatorClass.RangeTextBox(this, binding.rb01, 15, 50, getString(R.string.day), "days")) {
@@ -573,125 +588,4 @@ public class SecRBActivity extends Activity {
 
 
     }
-
-
-    /*public boolean ValidateForm() {
-
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
-
-        if (binding.rb01.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.rb01), Toast.LENGTH_SHORT).show();
-            binding.rb01.setError("This data is required");
-            binding.rb01.requestFocus();
-            Log.i(TAG, "rb01: This Data is Required!");
-            return false;
-        } else {
-            binding.rb01.setError(null);
-        }
-
-        if (binding.rb02.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.rb02), Toast.LENGTH_SHORT).show();
-            binding.rb02.setError("This data is required");
-            binding.rb02.requestFocus();
-            Log.i(TAG, "rb02: This Data is Required!");
-            return false;
-        } else {
-            binding.rb01.setError(null);
-        }
-
-        if (binding.rb03.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.rb03), Toast.LENGTH_SHORT).show();
-            binding.rb03a.setError("This data is required");
-            binding.rb03a.setFocusable(true);
-            binding.rb03a.setFocusableInTouchMode(true);
-            binding.rb03a.requestFocus();
-            Log.i(TAG, "rb03: This Data is Required!");
-            return false;
-        } else {
-            binding.rb03a.setError(null);
-        }
-
-
-        if (binding.rb03n.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.rb03n), Toast.LENGTH_SHORT).show();
-            binding.rb03n.setError("This data is required");
-            binding.rb03n.requestFocus();
-            Log.i(TAG, "rb03n: This Data is Required!");
-            return false;
-        } else {
-            binding.rb03n.setError(null);
-        }
-
-
-        if (binding.rb04.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.rb04), Toast.LENGTH_SHORT).show();
-            binding.rb04a.setError("This data is required");
-            binding.rb04a.setFocusable(true);
-            binding.rb04a.setFocusableInTouchMode(true);
-            binding.rb04a.requestFocus();
-            Log.i(TAG, "rb04a: This Data is Required!");
-            return false;
-        } else {
-            binding.rb04a.setError(null);
-        }
-
-
-        if (binding.rb04n.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.rb04n), Toast.LENGTH_SHORT).show();
-            binding.rb04n.setError("This data is required");
-            binding.rb04n.requestFocus();
-            Log.i(TAG, "rb04n: This Data is Required!");
-            return false;
-        } else {
-            binding.rb04n.setError(null);
-        }
-
-
-        if (binding.rb05n.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.rb05n), Toast.LENGTH_SHORT).show();
-            binding.rb05n.setError("This data is required");
-            binding.rb05n.requestFocus();
-            Log.i(TAG, "rb05n: This Data is Required!");
-            return false;
-        } else {
-            binding.rb05n.setError(null);
-        }
-
-
-        if (binding.rb06.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.rb06), Toast.LENGTH_SHORT).show();
-            binding.rb06a.setError("This data is required");
-            binding.rb06a.setFocusable(true);
-            binding.rb06a.setFocusableInTouchMode(true);
-            binding.rb06a.requestFocus();
-            Log.i(TAG, "rb06a: This Data is Required!");
-            return false;
-        } else {
-            binding.rb06a.setError(null);
-        }
-
-
-        if (binding.rb0799.isChecked() && binding.rb07m.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.rb07m), Toast.LENGTH_SHORT).show();
-            binding.rb07m.setError("This data is required");
-            binding.rb07m.requestFocus();
-            Log.i(TAG, "rb07m: This Data is Required!");
-            return false;
-        } else {
-            binding.rb07m.setError(null);
-        }
-
-
-        if (binding.rb09vda.isChecked()) {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.rb07m), Toast.LENGTH_SHORT).show();
-            binding.rb07m.setError("This data is required");
-            binding.rb07m.requestFocus();
-            Log.i(TAG, "rb07m: This Data is Required!");
-            return false;
-        } else {
-            binding.rb07m.setError(null);
-        }
-
-        return true;
-    }*/
 }
