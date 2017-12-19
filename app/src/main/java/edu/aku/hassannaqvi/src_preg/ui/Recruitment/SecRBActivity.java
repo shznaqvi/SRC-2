@@ -237,6 +237,8 @@ public class SecRBActivity extends Activity {
         }
 
 
+
+
         if (!validatorClass.RangeTextBox(this, binding.rb01, 15, 50, getString(R.string.day), "days")) {
             return false;
         }
