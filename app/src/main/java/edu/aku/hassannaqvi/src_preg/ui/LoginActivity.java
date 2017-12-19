@@ -66,9 +66,7 @@ import edu.aku.hassannaqvi.src_preg.contracts.TalukasContract;
 import edu.aku.hassannaqvi.src_preg.contracts.UCsContract;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
-import edu.aku.hassannaqvi.src_preg.get.GetBLRandom;
-import edu.aku.hassannaqvi.src_preg.get.GetTalukas;
-import edu.aku.hassannaqvi.src_preg.get.GetUCs;
+import edu.aku.hassannaqvi.src_preg.get.GetDistricts;
 import edu.aku.hassannaqvi.src_preg.get.GetUsers;
 import edu.aku.hassannaqvi.src_preg.get.GetVillages;
 
@@ -196,7 +194,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         db = new DatabaseHelper(this);
 
-        populateSpinner(this);
+//        populateSpinner(this);
 
 //        DB backup
 
@@ -205,7 +203,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
     public void populateSpinner(Context context) {
 
-        final Context mContext = context;
+        /*final Context mContext = context;
 
         // Populate Talukas list
         TalukasList = db.getAllTalukas();
@@ -226,7 +224,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         spTalukas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                // Populate UCs list
+                // Populate Districts list
 
                 if (spTalukas.getSelectedItemPosition() != 0) {
                     MainApp.talukaCode = Integer.valueOf(talukasMap.get(spTalukas.getSelectedItem().toString()));
@@ -237,7 +235,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 lablesUCs.add("Select UC..");
 
                 if (spTalukas.getSelectedItemPosition() != 0) {
-                    UcsList = db.getAllUCs(String.valueOf(MainApp.talukaCode));
+                    UcsList = db.getAllDistricts(String.valueOf(MainApp.talukaCode));
                     for (UCsContract ucs : UcsList) {
                         lablesUCs.add(ucs.getUcs());
                         ucsMap.put(ucs.getUcs(), ucs.getUccode());
@@ -257,7 +255,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         spUCs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                // Populate UCs list
+                // Populate Districts list
 
                 if (spUCs.getSelectedItemPosition() != 0) {
                     MainApp.ucCode = Integer.valueOf(ucsMap.get(spUCs.getSelectedItem().toString()));
@@ -269,7 +267,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });
+        });*/
 
     }
 
@@ -345,15 +343,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-//            if (TalukasList.size() == 0) {
-            new syncData(this, true).execute();
-//            } else {
-            if (spTalukas.getSelectedItemPosition() != 0
-                    &&
-                    spUCs.getSelectedItemPosition() != 0) {
-                new syncData(this, false).execute();
-            }
-//            }
+            new syncData(this).execute();
+
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
         }
@@ -625,12 +616,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
     public class syncData extends AsyncTask<String, String, String> {
 
-        Boolean flag = false;
         private Context mContext;
 
-        public syncData(Context mContext, Boolean flag) {
+        public syncData(Context mContext) {
             this.mContext = mContext;
-            this.flag = flag;
         }
 
         @Override
@@ -639,21 +628,12 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
                 @Override
                 public void run() {
-
-                    if (flag) {
-                        Toast.makeText(LoginActivity.this, "Sync Talukas", Toast.LENGTH_LONG).show();
-                        new GetTalukas(mContext).execute();
-                        Toast.makeText(LoginActivity.this, "Sync UC's", Toast.LENGTH_LONG).show();
-                        new GetUCs(mContext).execute();
-                        Toast.makeText(LoginActivity.this, "Sync Areas", Toast.LENGTH_LONG).show();
-                        Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
-                        new GetVillages(mContext).execute();
-                        Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
-                        new GetUsers(mContext).execute();
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Sync BL Random", Toast.LENGTH_LONG).show();
-                        new GetBLRandom(mContext).execute();
-                    }
+                    Toast.makeText(LoginActivity.this, "Sync District's", Toast.LENGTH_LONG).show();
+                    new GetDistricts(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
+                    new GetVillages(mContext).execute();
+                    Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
+                    new GetUsers(mContext).execute();
                 }
             });
 
@@ -668,9 +648,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 @Override
                 public void run() {
 
-                    if (flag) {
-                        populateSpinner(mContext);
-                    }
+//                    populateSpinner(mContext);
+
                     editor.putBoolean("flag", true);
                     editor.commit();
 

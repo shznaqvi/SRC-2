@@ -44,7 +44,7 @@ public class FormsProvider extends ContentProvider {
     }
 
     /**
-     * FormsDbHelper - database helper object
+     * DatabaseHelper - database helper object
      */
     private DatabaseHelper mDbHelper;
 

@@ -19,7 +19,7 @@
     <application
         android:name=".core.MainApp"
         android:allowBackup="true"
-        android:icon="@mipmap/logonew"
+        android:icon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -71,6 +71,10 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
+            android:name=".ui.Outcome.SectionOCActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
             android:name=".ui.ChildFollowUp.SectionCFBActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
@@ -79,8 +83,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".ui.Outcome.SectionOBActivity$SectionOcActivity" />
-        <activity android:name=".ui.Outcome.SectionOCActivity"></activity>
     </application>
 
 </manifest>

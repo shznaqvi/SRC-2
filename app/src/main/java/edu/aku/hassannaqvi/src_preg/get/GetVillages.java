@@ -19,9 +19,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import edu.aku.hassannaqvi.src_hhlisting2.contract.VillagesContract;
-import edu.aku.hassannaqvi.src_hhlisting2.core.AppMain;
-import edu.aku.hassannaqvi.src_hhlisting2.core.FormsDBHelper;
+import edu.aku.hassannaqvi.src_preg.contracts.VillagesContract;
+import edu.aku.hassannaqvi.src_preg.core.MainApp;
+import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 
 /**
  * Created by hassan.naqvi on 4/28/2016.
@@ -55,7 +55,7 @@ public class GetVillages extends AsyncTask<String, String, String>
 
         URL url = null;
         try {
-            url = new URL(AppMain._HOST_URL + VillagesContract.singleVillage._URI);
+            url = new URL(MainApp._HOST_URL + VillagesContract.singleVillage._URI);
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setReadTimeout(10000 /* milliseconds */);
             urlConnection.setConnectTimeout(15000 /* milliseconds */);
@@ -91,7 +91,7 @@ public class GetVillages extends AsyncTask<String, String, String>
         if (result != null) {
             String json = result;
             if (json.length() > 0) {
-                FormsDBHelper db = new FormsDBHelper(mContext);
+                DatabaseHelper db = new DatabaseHelper(mContext);
                 try {
                     JSONArray jsonArray = new JSONArray(json);
                     db.syncVillages(jsonArray);
