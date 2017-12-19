@@ -376,6 +376,7 @@ public class SectionInfoActivity extends AppCompatActivity {
         sa.put("istatus", binding.istatusa.isChecked() ? "1" : binding.istatusb.isChecked() ? "2" : binding.istatusc.isChecked() ? "3" : binding.istatusd.isChecked() ? "4" : binding.istatuse.isChecked() ? "5"
                 : binding.istatusf.isChecked() ? "6" : binding.istatusg.isChecked() ? "7" : "0");
 
+        MainApp.fc.setsA(String.valueOf(sa));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
