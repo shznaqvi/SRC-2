@@ -9,6 +9,8 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -16,13 +18,23 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import edu.aku.hassannaqvi.src_preg.R;
+import edu.aku.hassannaqvi.src_preg.contracts.DistrictsContract;
 import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
+import edu.aku.hassannaqvi.src_preg.contracts.VillagesContract;
+import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySectionInfoBinding;
+import edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRBActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
 public class SectionInfoActivity extends AppCompatActivity {
@@ -33,10 +45,15 @@ public class SectionInfoActivity extends AppCompatActivity {
     int check = 0;
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
 
+    DatabaseHelper db;
+    Map<String, String> getAllDistricts, getAllVillages;
+    List<String> Districts, Villages;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_section_info);
+        db = new DatabaseHelper(this);
 
 //        Get data from Main Activity
         check = getIntent().getExtras().getInt("check");
@@ -46,6 +63,9 @@ public class SectionInfoActivity extends AppCompatActivity {
         binding.setCallback(this);
 
 //        Setting DATETIME picker and spinners
+
+        populateSpinner(); //populate spinner for ucs and villages
+
         switch (check) {
             case 1:
                 binding.dfa10.setManager(getSupportFragmentManager());
@@ -243,6 +263,40 @@ public class SectionInfoActivity extends AppCompatActivity {
 
                 finish();
 
+                switch (check) {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        startActivity(new Intent(this, SecRBActivity.class));
+                        break;
+                    default:
+                        break;
+                }
+
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public void BtnEnd() {
+
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        if (formValidation()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -291,8 +345,8 @@ public class SectionInfoActivity extends AppCompatActivity {
             MainApp.fc.setFormtype("DFA");
         }
 
-        sa.put("ucCode", binding.spUCs.getSelectedItem().toString());
-        sa.put("villageCode", binding.spVillages.getSelectedItem().toString());
+        sa.put("ucCode", getAllDistricts.get(binding.spUCs.getSelectedItem().toString()));
+        sa.put("villageCode", getAllVillages.get(binding.spVillages.getSelectedItem().toString()));
         sa.put("lhvname", binding.lhvname.getText().toString());
 
         if (check == 3) {
@@ -328,7 +382,7 @@ public class SectionInfoActivity extends AppCompatActivity {
 
     private boolean UpdateDB() {
 
-        /*Long updcount = db.addForm(MainApp.fc);
+        Long updcount = db.addForm(MainApp.fc);
         MainApp.fc.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {
@@ -342,11 +396,8 @@ public class SectionInfoActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
-
-        return true;
+        }
     }
-
 
     public void setGPS() {
         SharedPreferences GPSPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
@@ -386,6 +437,58 @@ public class SectionInfoActivity extends AppCompatActivity {
         public int getCheck() {
             return check;
         }
+    }
+
+    public void populateSpinner() {
+
+        //        Spinner Fill
+
+        db = new DatabaseHelper(this);
+
+        Districts = new ArrayList<>();
+        getAllDistricts = new HashMap<>();
+
+        Districts.add("....");
+
+        Collection<DistrictsContract> allDis = db.getAllDistricts();
+
+        for (DistrictsContract aUCs : allDis) {
+            getAllDistricts.put(aUCs.getDistrictName(), aUCs.getDistrictCode());
+            Districts.add(aUCs.getDistrictName());
+            Collections.sort(Districts);
+        }
+
+        binding.spUCs.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Districts));
+
+        binding.spUCs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                Villages = new ArrayList<>();
+                getAllVillages = new HashMap<>();
+
+                Villages.add("....");
+
+                if (binding.spUCs.getSelectedItemPosition() != 0) {
+                    Collection<VillagesContract> allDis = db.getAllPSUsByDistrict(getAllDistricts.get(binding.spUCs.getSelectedItem().toString()));
+                    for (VillagesContract aUCs : allDis) {
+                        getAllVillages.put(aUCs.getVillageName(), aUCs.getVillageCode());
+                        Villages.add(aUCs.getVillageName());
+                        Collections.sort(Villages);
+                    }
+                }
+
+                binding.spVillages.setAdapter(new ArrayAdapter<>(getBaseContext(), android.R.layout.simple_spinner_dropdown_item, Villages));
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
     }
 
 }

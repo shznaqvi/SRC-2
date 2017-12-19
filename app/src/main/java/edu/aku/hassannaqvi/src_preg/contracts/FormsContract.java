@@ -45,7 +45,7 @@ public class FormsContract {
 
 
     public FormsContract Sync(JSONObject jsonObject) throws JSONException {
-        this._ID = jsonObject.getString(FormsTable.COLUMN_ID);
+        this._ID = jsonObject.getString(FormsTable._ID);
         this._UID = jsonObject.getString(FormsTable.COLUMN_UID);
         this.formDate = jsonObject.getString(FormsTable.COLUMN_FORMDATE);
         this.user = jsonObject.getString(FormsTable.COLUMN_USER);
@@ -71,7 +71,7 @@ public class FormsContract {
     }
 
     public FormsContract Hydrate(Cursor cursor) {
-        this._ID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ID));
+        this._ID = cursor.getString(cursor.getColumnIndex(FormsTable._ID));
         this._UID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_UID));
         this.formDate = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_FORMDATE));
         this.user = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_USER));
@@ -103,7 +103,7 @@ public class FormsContract {
 
         JSONObject json = new JSONObject();
 
-        json.put(FormsTable.COLUMN_ID, this._ID == null ? JSONObject.NULL : this._ID);
+        json.put(FormsTable._ID, this._ID == null ? JSONObject.NULL : this._ID);
         json.put(FormsTable.COLUMN_UID, this._UID == null ? JSONObject.NULL : this._UID);
         json.put(FormsTable.COLUMN_FORMDATE, this.formDate == null ? JSONObject.NULL : this.formDate);
         json.put(FormsTable.COLUMN_USER, this.user == null ? JSONObject.NULL : this.user);
@@ -315,7 +315,7 @@ public class FormsContract {
         public static final String TABLE_NAME = "forms";
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
         public static final String COLUMN_PROJECT_NAME = "projectname";
-        public static final String COLUMN_ID = "_id";
+        public static final String _ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_USER = "user";
