@@ -35,6 +35,7 @@ import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySectionInfoBinding;
 import edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRBActivity;
+import edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRCActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
 public class SectionInfoActivity extends AppCompatActivity {
@@ -271,7 +272,11 @@ public class SectionInfoActivity extends AppCompatActivity {
                     case 3:
                         break;
                     case 4:
-                        startActivity(new Intent(this, SecRBActivity.class));
+                        if (!binding.ra11.getText().toString().equals("0")) {
+                            startActivity(new Intent(this, SecRBActivity.class));
+                        } else {
+                            startActivity(new Intent(this, SecRCActivity.class));
+                        }
                         break;
                     default:
                         break;
@@ -363,6 +368,7 @@ public class SectionInfoActivity extends AppCompatActivity {
             sa.put("pfa19", binding.pfa19.getText().toString().trim().isEmpty() ? (binding.pfa19888.isChecked() ? "88" : "0")
                     : binding.pfa19.getText().toString());
 
+
             MainApp.fc.setFormtype("PFA");
         }
 
@@ -376,6 +382,7 @@ public class SectionInfoActivity extends AppCompatActivity {
         sa.put("istatus", binding.istatusa.isChecked() ? "1" : binding.istatusb.isChecked() ? "2" : binding.istatusc.isChecked() ? "3" : binding.istatusd.isChecked() ? "4" : binding.istatuse.isChecked() ? "5"
                 : binding.istatusf.isChecked() ? "6" : binding.istatusg.isChecked() ? "7" : "0");
 
+        MainApp.womanage = Integer.valueOf(binding.age.getText().toString());
         MainApp.fc.setsA(String.valueOf(sa));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
@@ -428,18 +435,6 @@ public class SectionInfoActivity extends AppCompatActivity {
 
     }
 
-    public class checking {
-        int check;
-
-        public checking(int check) {
-            this.check = check;
-        }
-
-        public int getCheck() {
-            return check;
-        }
-    }
-
     public void populateSpinner() {
 
         //        Spinner Fill
@@ -490,6 +485,19 @@ public class SectionInfoActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public class checking
+    {
+        int check;
+
+        public checking(int check) {
+            this.check = check;
+        }
+
+        public int getCheck() {
+            return check;
+        }
     }
 
 }

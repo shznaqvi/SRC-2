@@ -47,6 +47,7 @@ public abstract class validatorClass {
         }
     }
 
+
     public static boolean RangeTextBox(Context context, EditText txt, double min, double max, String msg, String type) {
 
         if (Double.valueOf(txt.getText().toString()) < min || Double.valueOf(txt.getText().toString()) > max) {

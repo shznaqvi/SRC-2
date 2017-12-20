@@ -228,18 +228,19 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (String.valueOf(MainApp.womanage) != "0") {
-            if (Integer.parseInt(binding.rb01.toString()) > MainApp.womanage) {
+        if (Integer.valueOf(binding.rb01.getText().toString()) == MainApp.womanage
+                || Integer.valueOf(binding.rb01.getText().toString()) > MainApp.womanage) {
                 Toast.makeText(this, "Age at 1st pregnancy cannot be greater", Toast.LENGTH_SHORT).show();
+            binding.rb01.setError("Age at 1st pregnancy cannot be greater than or equal to current age");
                 binding.rb01.requestFocus();
                 return false;
-            }
+
+        } else {
+            binding.rb01.setError(null);
         }
 
 
-
-
-        if (!validatorClass.RangeTextBox(this, binding.rb01, 15, 50, getString(R.string.day), "days")) {
+        if (!validatorClass.RangeTextBox(this, binding.rb01, 15, MainApp.womanage - 1, getString(R.string.rb01), "days")) {
             return false;
         }
 
@@ -277,7 +278,7 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (!validatorClass.RangeTextBox(this, binding.rb05n, 1, 12, getString(R.string.rb05n), "live birth")) {
+        if (!validatorClass.RangeTextBox(this, binding.rb05n, 1, 12, getString(R.string.rb05n), " live birth")) {
             return false;
         }
 
@@ -292,7 +293,7 @@ public class SecRBActivity extends Activity {
             }
 
 
-            if (!binding.rb0799.isChecked() && !validatorClass.RangeTextBox(this, binding.rb07m, 0, 9, getString(R.string.rb07m), "months")) {
+            if (!binding.rb0799.isChecked() && !validatorClass.RangeTextBox(this, binding.rb07m, 0, 9, getString(R.string.rb07m), " months")) {
                 return false;
             }
 

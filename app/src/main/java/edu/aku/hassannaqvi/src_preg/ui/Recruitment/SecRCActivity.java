@@ -12,6 +12,9 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
@@ -23,6 +26,9 @@ public class SecRCActivity extends AppCompatActivity
 {
 
     ActivitySecRcBinding bl;
+    String dateToday;
+    String maxDate9Monthsback;
+    String maxDate9Months;
 
 
     @Override
@@ -34,12 +40,22 @@ public class SecRCActivity extends AppCompatActivity
         setupViews();
         bl.setCallback(this);
 
+        dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
+        maxDate9Monthsback = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((MainApp.MILLISECONDS_IN_9MONTH) + MainApp.MILLISECONDS_IN_DAY));
+        maxDate9Months = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() + ((MainApp.MILLISECONDS_IN_9MONTH) + MainApp.MILLISECONDS_IN_DAY));
+
 
     }
 
     public void setupViews() {
         bl.rc01.setManager(getSupportFragmentManager());
         bl.rc03.setManager(getSupportFragmentManager());
+        bl.rc01.setMaxDate(dateToday);
+        bl.rc01.setMinDate(maxDate9Monthsback);
+        bl.rc03.setMaxDate(maxDate9Months);
+        bl.rc03.setMinDate(dateToday);
+
+
 
         bl.rc04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
