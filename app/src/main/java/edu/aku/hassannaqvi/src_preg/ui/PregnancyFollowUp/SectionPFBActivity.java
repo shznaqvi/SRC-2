@@ -266,6 +266,8 @@ public class SectionPFBActivity extends Activity {
         }
 
 
+
+
         if (!validatorClass.EmptyTextBox(this, binding.pfb34, getString(R.string.pfb34))) {
             return false;
         }
