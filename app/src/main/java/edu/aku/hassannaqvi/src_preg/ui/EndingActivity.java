@@ -72,7 +72,7 @@ public class EndingActivity extends Activity {
 
         } else {
             //fldGrpmn0823Reason.setVisibility(View.GONE);
-            istatus1.setEnabled(false);
+            //istatus1.setEnabled(false);
         }
 
         istatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

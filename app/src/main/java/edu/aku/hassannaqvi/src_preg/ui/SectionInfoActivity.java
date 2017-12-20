@@ -120,6 +120,11 @@ public class SectionInfoActivity extends AppCompatActivity {
             if (!validatorClass.EmptyTextBox(this, binding.age, getString(R.string.age))) {
                 return false;
             }
+
+            if (!validatorClass.RangeTextBox(this, binding.age, 15, 49, getString(R.string.age), " years")) {
+                return false;
+            }
+
         }
 
 //       H.NAME
@@ -383,6 +388,8 @@ public class SectionInfoActivity extends AppCompatActivity {
                 : binding.istatusf.isChecked() ? "6" : binding.istatusg.isChecked() ? "7" : "0");
 
         MainApp.womanage = Integer.valueOf(binding.age.getText().toString());
+        MainApp.prevPreg = Integer.valueOf(binding.ra11.getText().toString());
+
         MainApp.fc.setsA(String.valueOf(sa));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
