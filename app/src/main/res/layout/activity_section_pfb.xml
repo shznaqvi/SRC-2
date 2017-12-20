@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context=".ui.PregnancyFollowUp.SectionPFBActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.PregnancyFollowUp.SectionPFBActivity">
 
     <data>
 
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:padding="5dp">
 
-<!--        <LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
@@ -126,7 +126,7 @@
                     android:text="@string/no" />
 
                 <RadioButton
-                    android:id="@+id/pfb99"
+                    android:id="@+id/pfb0299"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -307,7 +307,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/pfb06a" />
+                    android:text="@string/yes" />
 
                 <RadioButton
                     android:id="@+id/pfb06b"
@@ -315,7 +315,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:layout_weight="1"
-                    android:text="@string/pfb06b" />
+                    android:text="@string/no" />
 
                 <RadioButton
                     android:id="@+id/pfb0699"
@@ -1125,74 +1125,84 @@
             </RadioGroup>
 
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/pfb26"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/pfb26" />
+                android:animateLayoutChanges="true"
+                android:layoutDirection="rtl"
+                android:orientation="vertical">
 
-            <CheckBox
-                android:id="@+id/pfb26a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/pfb26a" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/pfb26" />
 
-            <CheckBox
-                android:id="@+id/pfb26b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/pfb26b" />
+                <CheckBox
+                    android:id="@+id/pfb26a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/pfb26a" />
 
-            <CheckBox
-                android:id="@+id/pfb26c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/pfb26c" />
+                <CheckBox
+                    android:id="@+id/pfb26b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/pfb26b" />
 
-            <CheckBox
-                android:id="@+id/pfb26d"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/pfb26d" />
+                <CheckBox
+                    android:id="@+id/pfb26c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/pfb26c" />
 
-            <CheckBox
-                android:id="@+id/pfb26e"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/pfb26e" />
+                <CheckBox
+                    android:id="@+id/pfb26d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/pfb26d" />
 
-            <CheckBox
-                android:id="@+id/pfb26f"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/pfb26f" />
+                <CheckBox
+                    android:id="@+id/pfb26e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/pfb26e" />
 
-            <CheckBox
-                android:id="@+id/pfb26g"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/pfb26g" />
+                <CheckBox
+                    android:id="@+id/pfb26f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/pfb26f" />
 
-            <CheckBox
-                android:id="@+id/pfb26h"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/pfb26h" />
+                <CheckBox
+                    android:id="@+id/pfb26g"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/pfb26g" />
 
-            <CheckBox
-                android:id="@+id/pfb2699"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/dkn" />
+                <CheckBox
+                    android:id="@+id/pfb26h"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/pfb26h" />
+
+                <CheckBox
+                    android:id="@+id/pfb2699"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/dkn" />
+
+            </LinearLayout>
 
 
             <TextView
@@ -1616,7 +1626,7 @@
                 android:digits="0123456789."
                 android:hint="@string/pfb34"
                 android:inputType="numberDecimal"
-                android:maxLength="2" />
+                android:maxLength="7" />
 
             <CheckBox
                 android:id="@+id/pfb3499"
@@ -1919,7 +1929,36 @@
 
             </RadioGroup>
 
+            <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="80dp"
+                android:orientation="horizontal">
 
-        </LinearLayout>-->
+                <Button
+                    android:id="@+id/btn_End"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/red"
+                    android:onClick="@{() -> callback.BtnEnd()}"
+                    android:text="@string/end_interview"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_Continue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#1ed61e"
+                    android:onClick="@{() -> callback.BtnContinue()}"
+                    android:text="@string/start_interview"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
     </ScrollView>
 </layout>

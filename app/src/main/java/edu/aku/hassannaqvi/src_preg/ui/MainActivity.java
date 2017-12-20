@@ -52,6 +52,7 @@ import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivityMainBinding;
 import edu.aku.hassannaqvi.src_preg.sync.SyncForms;
+import edu.aku.hassannaqvi.src_preg.ui.PregnancyFollowUp.SectionPFBActivity;
 import edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRBActivity;
 
 public class MainActivity extends Activity {
@@ -306,13 +307,13 @@ public class MainActivity extends Activity {
         startActivity(iB);
     }
 
-    /*
+
     public void openC(View v) {
-        Intent iC = new Intent(this, SectionCActivity.class);
+        Intent iC = new Intent(this, SectionPFBActivity.class);
         startActivity(iC);
     }
 
-    public void openD(View v) {
+    /*public void openD(View v) {
         Intent iD = new Intent(this, SectionDActivity.class);
         startActivity(iD);
     }
