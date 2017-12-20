@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -46,6 +48,7 @@ public class SecRBActivity extends Activity {
 
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, SecRCActivity.class));
 
                 finish();
 
@@ -258,6 +261,10 @@ public class SecRBActivity extends Activity {
             if (!validatorClass.EmptyTextBox(this, binding.rb03n, getString(R.string.rb03n))) {
                 return false;
             }
+
+            if (!validatorClass.RangeTextBox(this, binding.rb03n, 1, 9, getString(R.string.rc02w), " abortions")) {
+                return false;
+            }
         }
 
 
@@ -270,6 +277,10 @@ public class SecRBActivity extends Activity {
             if (!validatorClass.EmptyTextBox(this, binding.rb04n, getString(R.string.rb04n))) {
                 return false;
             }
+
+            if (!validatorClass.RangeTextBox(this, binding.rb04n, 1, 9, getString(R.string.rc02w), " still births")) {
+                return false;
+            }
         }
 
 
@@ -277,10 +288,36 @@ public class SecRBActivity extends Activity {
             return false;
         }
 
-
-        if (!validatorClass.RangeTextBox(this, binding.rb05n, 1, 12, getString(R.string.rb05n), " live birth")) {
+        if (!validatorClass.RangeTextBox(this, binding.rb05n, 0, 12, getString(R.string.rb05n), " live birth")) {
             return false;
         }
+
+        int sum = 0;
+        if (!binding.rb05n.getText().toString().isEmpty()) {
+            if (binding.rb03b.isChecked() && binding.rb04b.isChecked()) {
+                sum = Integer.valueOf(binding.rb05n.getText().toString());
+            } else if (binding.rb03a.isChecked() && binding.rb04b.isChecked()) {
+                sum = Integer.valueOf(binding.rb05n.getText().toString()) + Integer.valueOf(binding.rb03n.getText().toString());
+            } else if (binding.rb03b.isChecked() && binding.rb04a.isChecked()) {
+                sum = Integer.valueOf(binding.rb05n.getText().toString()) + Integer.valueOf(binding.rb04n.getText().toString());
+            } else if (binding.rb03a.isChecked() && binding.rb04a.isChecked()) {
+                sum = Integer.valueOf(binding.rb05n.getText().toString()) + Integer.valueOf(binding.rb04n.getText().toString())
+                        + Integer.valueOf(binding.rb03n.getText().toString());
+            }
+        }
+
+        if (sum != MainApp.prevPreg) {
+            Toast.makeText(this, "Should be equal to " + MainApp.prevPreg + " Previous Pregnancies are: " + MainApp.prevPreg, Toast.LENGTH_SHORT).show();
+            binding.rb05n.setError("Check again.. Should be equal to " + MainApp.prevPreg + " Previous Pregnancies are: " + MainApp.prevPreg);
+            binding.rb05n.requestFocus();
+            return false;
+
+        } else {
+            binding.rb05n.setError(null);
+        }
+
+
+
 
 
         if (!validatorClass.EmptyRadioButton(this, binding.rb06, binding.rb06b, getString(R.string.rb06))) {
@@ -293,7 +330,7 @@ public class SecRBActivity extends Activity {
             }
 
 
-            if (!binding.rb0799.isChecked() && !validatorClass.RangeTextBox(this, binding.rb07m, 0, 9, getString(R.string.rb07m), " months")) {
+            if (!binding.rb0799.isChecked() && !validatorClass.RangeTextBox(this, binding.rb07m, 1, 9, getString(R.string.rb07m), " months")) {
                 return false;
             }
 
@@ -408,8 +445,14 @@ public class SecRBActivity extends Activity {
                 if (binding.rb03b.isChecked()) {
                     binding.fldGrprb03n.setVisibility(View.GONE);
                     binding.rb03n.setText(null);
+                    binding.rb12a.setEnabled(false);
+                    binding.rb12d.setEnabled(false);
+                    binding.rb12a.setChecked(false);
+                    binding.rb12d.setChecked(false);
                 } else {
                     binding.fldGrprb03n.setVisibility(View.VISIBLE);
+                    binding.rb12a.setEnabled(true);
+                    binding.rb12d.setEnabled(true);
                 }
             }
         });
@@ -421,11 +464,39 @@ public class SecRBActivity extends Activity {
                 if (binding.rb04b.isChecked()) {
                     binding.fldGrprb04n.setVisibility(View.GONE);
                     binding.rb04n.setText(null);
+                    binding.rb12b.setEnabled(false);
+                    binding.rb12b.setChecked(false);
                 } else {
                     binding.fldGrprb04n.setVisibility(View.VISIBLE);
+                    binding.rb12b.setEnabled(true);
                 }
             }
         });
+
+        binding.rb05n.addTextChangedListener(new TextWatcher()
+        {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (!binding.rb05n.getText().toString().isEmpty() && Integer.valueOf(binding.rb05n.getText().toString()) < 1) {
+                    binding.rb12c.setEnabled(false);
+                    binding.rb12c.setChecked(false);
+                } else {
+                    binding.rb12c.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
 
 
         binding.rb06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
