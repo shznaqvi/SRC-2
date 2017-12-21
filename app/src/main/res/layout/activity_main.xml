@@ -96,7 +96,8 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="@{(v) -> callback.openForm(1)}"
-                android:text="FOLLOWUP CHILD" />
+                android:text="FOLLOWUP CHILD"
+                android:visibility="gone"/>
 
             <Button
                 android:id="@+id/openFormB"
@@ -105,7 +106,8 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="@{(v) -> callback.openForm(2)}"
-                android:text="PREGNANCY OUTCOME" />
+                android:text="PREGNANCY OUTCOME"
+                android:visibility="gone"/>
 
             <Button
                 android:id="@+id/openFormC"
@@ -114,7 +116,8 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="@{(v) -> callback.openForm(3)}"
-                android:text="PREGNANCY FOLLOWUP" />
+                android:text="PREGNANCY FOLLOWUP"
+                android:visibility="gone"/>
 
             <Button
                 android:id="@+id/openFormD"
@@ -123,7 +126,7 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
                 android:onClick="@{(v) -> callback.openForm(4)}"
-                android:text="PREGNANT RECRUITMENT" />
+                android:text="PREGNANT RECRUITMENT"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
