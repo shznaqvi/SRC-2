@@ -417,7 +417,6 @@ public class SecRCActivity extends AppCompatActivity
             return false;
         }
 
-
         return validatorClass.EmptyRadioButton(this, bl.rc1788, bl.rc1788a, bl.rc1788x, getString(R.string.rc17) + " - " + getString(R.string.other));
 
     }
