@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -27,7 +30,7 @@ public class SectionPFBActivity extends Activity {
         setContentView(R.layout.activity_section_pfb);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_section_pfb);
-        //setupViews();
+        setupViews();
         binding.setCallback(this);
     }
 
@@ -98,6 +101,131 @@ public class SectionPFBActivity extends Activity {
         startActivity(endSec);
     }
 
+    public void setupViews() {
+
+        binding.pfb02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (binding.pfb02a.isChecked()) {
+                } else {
+                    binding.pfb03.clearCheck();
+                    binding.pfb04.clearCheck();
+                    binding.pfb05.clearCheck();
+                    binding.pfb06.clearCheck();
+                }
+            }
+        });
+
+
+        binding.pfb10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (binding.pfb10a.isChecked()) {
+                } else {
+                    binding.pfb11.setText(null);
+                    binding.pfb12.clearCheck();
+                }
+            }
+        });
+
+
+        binding.pfb13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (binding.pfb13a.isChecked()) {
+                } else {
+                    binding.pfb12.clearCheck();
+                    binding.pfb13.clearCheck();
+                    binding.pfb14.setText(null);
+                    binding.pfb15.clearCheck();
+                    binding.pfb16.clearCheck();
+                    binding.pfb17.clearCheck();
+                    binding.pfb18.clearCheck();
+                    binding.pfb19.setText(null);
+                }
+            }
+        });
+
+
+        binding.pfb20.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (binding.pfb20a.isChecked()) {
+                } else {
+                    binding.pfb21.setText(null);
+                }
+            }
+        });
+
+
+        binding.pfb22.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (binding.pfb22a.isChecked()) {
+                } else {
+                    binding.pfb23.setText(null);
+                    binding.pfb24.clearCheck();
+                }
+            }
+        });
+
+
+        binding.pfb2788.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (binding.pfb2788.isChecked()) {
+                    binding.pfb2788x.setVisibility(View.VISIBLE);
+                    binding.pfb2788x.requestFocus();
+                } else {
+                    binding.pfb2788x.setText(null);
+                    binding.pfb2788x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        binding.pfb2888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (binding.pfb2888.isChecked()) {
+                    binding.pfb2888x.setVisibility(View.VISIBLE);
+                    binding.pfb2888x.requestFocus();
+                } else {
+                    binding.pfb2888x.setText(null);
+                    binding.pfb2888x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        binding.pfb29.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (binding.pfb29a.isChecked()) {
+                } else {
+                    binding.pfb30.clearCheck();
+                    binding.pfb31.clearCheck();
+                }
+            }
+        });
+
+
+        binding.pfb3088.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (binding.pfb3088.isChecked()) {
+                    binding.pfb3088x.setVisibility(View.VISIBLE);
+                    binding.pfb3088x.requestFocus();
+                } else {
+                    binding.pfb3088x.setText(null);
+                    binding.pfb3088x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+    }
+
+
     private boolean ValidateForm() {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
@@ -107,30 +235,31 @@ public class SectionPFBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb02, binding.pfb0299, getString(R.string.pfb02))) {
-            return false;
+        if (binding.pfb01a.isChecked()) {
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb02, binding.pfb0299, getString(R.string.pfb02))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb03, binding.pfb0377, getString(R.string.pfb03))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb04, binding.pfb0477, getString(R.string.pfb04))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb05, binding.pfb0577, getString(R.string.pfb05))) {
+                return false;
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb06, binding.pfb0677, getString(R.string.pfb06))) {
+                return false;
+            }
         }
-
-
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb03, binding.pfb0377, getString(R.string.pfb03))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb04, binding.pfb0477, getString(R.string.pfb04))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb05, binding.pfb0577, getString(R.string.pfb05))) {
-            return false;
-        }
-
-
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb06, binding.pfb0677, getString(R.string.pfb06))) {
-            return false;
-        }
-
 
         if (!validatorClass.EmptyRadioButton(this, binding.pfb07, binding.pfb0799, getString(R.string.pfb07))) {
             return false;
@@ -142,7 +271,7 @@ public class SectionPFBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb09, binding.pfb0999, getString(R.string.pfb09))) {
+        if (binding.pfb08a.isChecked() && !validatorClass.EmptyRadioButton(this, binding.pfb09, binding.pfb0999, getString(R.string.pfb09))) {
             return false;
         }
 
@@ -151,49 +280,58 @@ public class SectionPFBActivity extends Activity {
             return false;
         }
 
+        if (binding.pfb10a.isChecked()) {
 
-        if (!validatorClass.EmptyTextBox(this, binding.pfb11, getString(R.string.pfb11))) {
-            return false;
+            if (!binding.pfb1199.isChecked() && !binding.pfb1177.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, binding.pfb11, getString(R.string.pfb11))) {
+                    return false;
+                }
+            }
+
+
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb12, binding.pfb1277, getString(R.string.pfb12))) {
+                return false;
+            }
         }
-
-
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb12, binding.pfb1277, getString(R.string.pfb12))) {
-            return false;
-        }
-
 
         if (!validatorClass.EmptyRadioButton(this, binding.pfb13, binding.pfb1399, getString(R.string.pfb13))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, binding.pfb14, getString(R.string.pfb14))) {
-            return false;
-        }
+        if (binding.pfb13a.isChecked()) {
+
+            if (!binding.pfb1499.isChecked() && !binding.pfb1477.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, binding.pfb14, getString(R.string.pfb14))) {
+                    return false;
+                }
+            }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb15, binding.pfb1577, getString(R.string.pfb15))) {
-            return false;
-        }
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb15, binding.pfb1577, getString(R.string.pfb15))) {
+                return false;
+            }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb16, binding.pfb1677, getString(R.string.pfb16))) {
-            return false;
-        }
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb16, binding.pfb1677, getString(R.string.pfb16))) {
+                return false;
+            }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb17, binding.pfb1777, getString(R.string.pfb17))) {
-            return false;
-        }
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb17, binding.pfb1777, getString(R.string.pfb17))) {
+                return false;
+            }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb18, binding.pfb1877, getString(R.string.pfb18))) {
-            return false;
-        }
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb18, binding.pfb1877, getString(R.string.pfb18))) {
+                return false;
+            }
 
 
-        if (!validatorClass.EmptyTextBox(this, binding.pfb19, getString(R.string.pfb19))) {
-            return false;
+            if (!validatorClass.EmptyTextBox(this, binding.pfb19, getString(R.string.pfb19))) {
+                return false;
+            }
+
         }
 
 
@@ -202,8 +340,12 @@ public class SectionPFBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, binding.pfb21, getString(R.string.pfb21))) {
-            return false;
+        if (binding.pfb20a.isChecked()) {
+            if (!binding.pfb2199.isChecked() && !binding.pfb2177.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, binding.pfb21, getString(R.string.pfb21))) {
+                    return false;
+                }
+            }
         }
 
 
@@ -212,13 +354,18 @@ public class SectionPFBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyTextBox(this, binding.pfb23, getString(R.string.pfb23))) {
-            return false;
-        }
+        if (binding.pfb22a.isChecked()) {
+
+            if (!binding.pfb2399.isChecked() && !binding.pfb2377.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, binding.pfb23, getString(R.string.pfb23))) {
+                    return false;
+                }
+            }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb24, binding.pfb2477, getString(R.string.pfb24))) {
-            return false;
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb24, binding.pfb2477, getString(R.string.pfb24))) {
+                return false;
+            }
         }
 
 
@@ -246,26 +393,28 @@ public class SectionPFBActivity extends Activity {
             return false;
         }
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb30, binding.pfb3077, getString(R.string.pfb30))) {
-            return false;
-        }
+
+        if (binding.pfb29a.isChecked()) {
+
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb30, binding.pfb3077, getString(R.string.pfb30))) {
+                return false;
+            }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb31, binding.pfb3177, getString(R.string.pfb31))) {
-            return false;
-        }
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb31, binding.pfb3177, getString(R.string.pfb31))) {
+                return false;
+            }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb32, binding.pfb3299, getString(R.string.pfb32))) {
-            return false;
+            if (!validatorClass.EmptyRadioButton(this, binding.pfb32, binding.pfb3299, getString(R.string.pfb32))) {
+                return false;
+            }
         }
 
 
         if (!validatorClass.EmptyRadioButton(this, binding.pfb33, binding.pfb3377, getString(R.string.pfb33))) {
             return false;
         }
-
-
 
 
         if (!validatorClass.EmptyTextBox(this, binding.pfb34, getString(R.string.pfb34))) {
@@ -303,11 +452,7 @@ public class SectionPFBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb41, binding.pfb4188, getString(R.string.pfb41))) {
-            return false;
-        }
+        return !validatorClass.EmptyRadioButton(this, binding.pfb41, binding.pfb4188, getString(R.string.pfb41));
 
-
-        return true;
     }
 }
