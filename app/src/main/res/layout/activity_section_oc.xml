@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:padding="5dp">
 
-        <!--<LinearLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
@@ -32,7 +32,7 @@
                 android:layout_marginTop="2dp"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
-                android:text="@string/secOCLabel"
+                android:text="@string/ocheading"
                 android:textSize="40sp"/>
 
             <View
@@ -780,7 +780,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/oc1766"/>
+                    android:text="@string/none"/>
 
 
             </RadioGroup>
@@ -843,7 +843,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/oc1866"/>
+                    android:text="@string/none"/>
 
 
             </RadioGroup>
@@ -878,7 +878,7 @@
 
             </LinearLayout>
 
-        </LinearLayout>-->
+        </LinearLayout>
 
     </ScrollView>
 
