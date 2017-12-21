@@ -535,6 +535,14 @@ public class SectionOBActivity extends Activity {
         return validatorClass.EmptyRadioButton(this, bl.ob33, bl.ob33a, getString(R.string.ob33));
     }
 
+    public void BtnEnd() {
+
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+
+        MainApp.endActivity(this, this);
+
+    }
+
     public void BtnContinue() {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
@@ -588,14 +596,15 @@ public class SectionOBActivity extends Activity {
                 : bl.ob0588.isChecked() ? "88" : "0");
         sOb.put("ob0588x", bl.ob0588x.getText().toString());
 
-        sOb.put("ob06", bl.ob06a.isChecked() ? "1"
-                : bl.ob06b.isChecked() ? "2"
-                : bl.ob06c.isChecked() ? "3"
-                : bl.ob06d.isChecked() ? "4"
-                : bl.ob06e.isChecked() ? "5"
-                : bl.ob06f.isChecked() ? "6"
-                : bl.ob0688.isChecked() ? "88"
-                : bl.ob0699.isChecked() ? "99" : "0");
+        sOb.put("ob06a", bl.ob06a.isChecked() ? "1" : "0");
+        sOb.put("ob06b", bl.ob06b.isChecked() ? "2" : "0");
+        sOb.put("ob06c", bl.ob06c.isChecked() ? "3" : "0");
+        sOb.put("ob06d", bl.ob06d.isChecked() ? "4" : "0");
+        sOb.put("ob06e", bl.ob06e.isChecked() ? "5" : "0");
+        sOb.put("ob06f", bl.ob06f.isChecked() ? "6" : "0");
+        sOb.put("ob0688", bl.ob0688.isChecked() ? "88" : "0");
+        sOb.put("ob0699", bl.ob0699.isChecked() ? "99" : "0");
+
         sOb.put("ob0688x", bl.ob0688x.getText().toString());
 
         sOb.put("ob07", bl.ob07a.isChecked() ? "1"
@@ -618,14 +627,14 @@ public class SectionOBActivity extends Activity {
                 : bl.ob0988.isChecked() ? "88" : "0");
         sOb.put("ob0988x", bl.ob0988x.getText().toString());
 
-        sOb.put("ob10", bl.ob10a.isChecked() ? "1"
-                : bl.ob10b.isChecked() ? "2"
-                : bl.ob10c.isChecked() ? "3"
-                : bl.ob10d.isChecked() ? "4"
-                : bl.ob10e.isChecked() ? "5"
-                : bl.ob10f.isChecked() ? "6"
-                : bl.ob10g.isChecked() ? "7"
-                : bl.ob1077.isChecked() ? "77" : "0");
+        sOb.put("ob10a", bl.ob10a.isChecked() ? "1" : "0");
+        sOb.put("ob10b", bl.ob10b.isChecked() ? "2" : "0");
+        sOb.put("ob10c", bl.ob10c.isChecked() ? "3" : "0");
+        sOb.put("ob10d", bl.ob10d.isChecked() ? "4" : "0");
+        sOb.put("ob10e", bl.ob10e.isChecked() ? "5" : "0");
+        sOb.put("ob10f", bl.ob10f.isChecked() ? "6" : "0");
+        sOb.put("ob10g", bl.ob10g.isChecked() ? "7" : "0");
+        sOb.put("ob1077", bl.ob1077.isChecked() ? "77" : "0");
 
         sOb.put("ob11", bl.ob11a.isChecked() ? "1"
                 : bl.ob11b.isChecked() ? "2"
