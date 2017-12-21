@@ -75,7 +75,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".ui.ChildFollowUp.SectionCFBActivity"
+            android:name=".ui.DeliveryFollowUp.SectionDFBActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
@@ -83,6 +83,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".ui.DeliveryFollowUp.SectionDFDActivity"></activity>
     </application>
 
 </manifest>
