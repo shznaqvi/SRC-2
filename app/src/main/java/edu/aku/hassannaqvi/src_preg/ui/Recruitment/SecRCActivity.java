@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
@@ -37,12 +38,14 @@ public class SecRCActivity extends AppCompatActivity
         //setContentView(R.layout.activity_sec_rc);
 
         bl = DataBindingUtil.setContentView(this, R.layout.activity_sec_rc);
+
+        dateToday = new SimpleDateFormat("dd/MM/yyyy").format(new Date().getTime());
+        maxDate9Monthsback = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((MainApp.MILLISECONDS_IN_9MONTH) + MainApp.MILLISECONDS_IN_DAY));
+        maxDate9Months = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() + ((MainApp.MILLISECONDS_IN_9MONTH) + MainApp.MILLISECONDS_IN_DAY));
+
         setupViews();
         bl.setCallback(this);
 
-        dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis());
-        maxDate9Monthsback = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((MainApp.MILLISECONDS_IN_9MONTH) + MainApp.MILLISECONDS_IN_DAY));
-        maxDate9Months = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() + ((MainApp.MILLISECONDS_IN_9MONTH) + MainApp.MILLISECONDS_IN_DAY));
 
 
     }
@@ -51,10 +54,9 @@ public class SecRCActivity extends AppCompatActivity
         bl.rc01.setManager(getSupportFragmentManager());
         bl.rc03.setManager(getSupportFragmentManager());
         bl.rc01.setMaxDate(dateToday);
-        /*bl.rc01.setMinDate(maxDate9Monthsback);
+        bl.rc01.setMinDate(maxDate9Monthsback);
         bl.rc03.setMaxDate(maxDate9Months);
         bl.rc03.setMinDate(dateToday);
-*/
 
 
         bl.rc04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
