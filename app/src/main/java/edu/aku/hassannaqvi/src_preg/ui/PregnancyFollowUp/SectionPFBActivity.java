@@ -11,8 +11,10 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import edu.aku.hassannaqvi.src_preg.R;
+import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySectionPfbBinding;
 import edu.aku.hassannaqvi.src_preg.ui.EndingActivity;
 import edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRBActivity;
@@ -83,10 +85,291 @@ public class SectionPFBActivity extends Activity {
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
-        //JSONObject sB = new JSONObject();
+        JSONObject sB = new JSONObject();
+
+        sB.put("pfb01", binding.pfb01a.isChecked() ? "1"
+                : binding.pfb01b.isChecked() ? "2"
+                : binding.pfb01c.isChecked() ? "3"
+                : binding.pfb0199.isChecked() ? "99"
+                : "0");
 
 
-        //MainApp.fc.setsB(String.valueOf(sB));
+        sB.put("pfb02", binding.pfb02a.isChecked() ? "1"
+                : binding.pfb02b.isChecked() ? "2"
+                : binding.pfb0299.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb03", binding.pfb03a.isChecked() ? "1"
+                : binding.pfb03b.isChecked() ? "2"
+                : binding.pfb0399.isChecked() ? "99"
+                : binding.pfb0377.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb04", binding.pfb04a.isChecked() ? "1"
+                : binding.pfb04b.isChecked() ? "2"
+                : binding.pfb0499.isChecked() ? "99"
+                : binding.pfb0477.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb05", binding.pfb05a.isChecked() ? "1"
+                : binding.pfb05b.isChecked() ? "2"
+                : binding.pfb0599.isChecked() ? "99"
+                : binding.pfb0577.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb06", binding.pfb06a.isChecked() ? "1"
+                : binding.pfb06b.isChecked() ? "2"
+                : binding.pfb0699.isChecked() ? "99"
+                : binding.pfb0677.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb07", binding.pfb07a.isChecked() ? "1"
+                : binding.pfb07b.isChecked() ? "2"
+                : binding.pfb0799.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb08", binding.pfb08a.isChecked() ? "1"
+                : binding.pfb08b.isChecked() ? "2"
+                : binding.pfb0899.isChecked() ? "99"
+                : binding.pfb0877.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb09", binding.pfb09a.isChecked() ? "1"
+                : binding.pfb09b.isChecked() ? "2"
+                : binding.pfb0999.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb10", binding.pfb10a.isChecked() ? "1"
+                : binding.pfb10b.isChecked() ? "2"
+                : binding.pfb1099.isChecked() ? "99"
+                : "0");
+
+
+        if (binding.pfb1177.isChecked() || binding.pfb1199.isChecked()) {
+            sB.put("pfb11", "");
+        } else {
+            sB.put("pfb11", binding.pfb11.getText().toString());
+        }
+
+
+        sB.put("pfb12", binding.pfb12a.isChecked() ? "1"
+                : binding.pfb12b.isChecked() ? "2"
+                : binding.pfb1299.isChecked() ? "99"
+                : binding.pfb1277.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb13", binding.pfb13a.isChecked() ? "1"
+                : binding.pfb13b.isChecked() ? "2"
+                : binding.pfb1399.isChecked() ? "99"
+                : "0");
+
+
+        if (binding.pfb1477.isChecked() || binding.pfb1499.isChecked()) {
+            sB.put("pfb14", "");
+        } else {
+            sB.put("pfb14", binding.pfb14.getText().toString());
+        }
+
+
+        sB.put("pfb15", binding.pfb15a.isChecked() ? "1"
+                : binding.pfb15b.isChecked() ? "2"
+                : binding.pfb1599.isChecked() ? "99"
+                : binding.pfb1577.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb16", binding.pfb16a.isChecked() ? "1"
+                : binding.pfb16b.isChecked() ? "2"
+                : binding.pfb1699.isChecked() ? "99"
+                : binding.pfb1677.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb17", binding.pfb17a.isChecked() ? "1"
+                : binding.pfb17b.isChecked() ? "2"
+                : binding.pfb1799.isChecked() ? "99"
+                : binding.pfb1777.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb18", binding.pfb18a.isChecked() ? "1"
+                : binding.pfb18b.isChecked() ? "2"
+                : binding.pfb1899.isChecked() ? "99"
+                : binding.pfb1877.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb19", binding.pfb19.getText().toString());
+
+
+        sB.put("pfb20", binding.pfb20a.isChecked() ? "1"
+                : binding.pfb20b.isChecked() ? "2"
+                : binding.pfb2099.isChecked() ? "99"
+                : "0");
+
+
+        if (binding.pfb2177.isChecked() || binding.pfb2199.isChecked()) {
+            sB.put("pfb21", "");
+        } else {
+            sB.put("pfb21", binding.pfb21.getText().toString());
+        }
+
+
+        sB.put("pfb22", binding.pfb22a.isChecked() ? "1"
+                : binding.pfb22b.isChecked() ? "2"
+                : binding.pfb2299.isChecked() ? "99"
+                : "0");
+
+
+        if (binding.pfb2377.isChecked() || binding.pfb2377.isChecked()) {
+            sB.put("pfb23", "");
+        } else {
+            sB.put("pfb23", binding.pfb23.getText().toString());
+        }
+
+
+        sB.put("pfb24", binding.pfb24a.isChecked() ? "1"
+                : binding.pfb24b.isChecked() ? "2"
+                : binding.pfb2499.isChecked() ? "99"
+                : binding.pfb2477.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb25", binding.pfb25a.isChecked() ? "1"
+                : binding.pfb25b.isChecked() ? "2"
+                : binding.pfb2599.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb26", binding.pfb26a.isChecked() ? "1"
+                : binding.pfb26b.isChecked() ? "2"
+                : binding.pfb26c.isChecked() ? "3"
+                : binding.pfb26d.isChecked() ? "4"
+                : binding.pfb26e.isChecked() ? "5"
+                : binding.pfb26f.isChecked() ? "6"
+                : binding.pfb26g.isChecked() ? "7"
+                : binding.pfb26h.isChecked() ? "8"
+                : binding.pfb2699.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb27", binding.pfb27a.isChecked() ? "1"
+                : binding.pfb27b.isChecked() ? "2"
+                : binding.pfb27c.isChecked() ? "3"
+                : binding.pfb27d.isChecked() ? "4"
+                : binding.pfb2788.isChecked() ? "88"
+                : "0");
+
+
+        sB.put("pfb2788x", binding.pfb2788x.getText().toString());
+
+
+        sB.put("pfb28", binding.pfb28a.isChecked() ? "1"
+                : binding.pfb28a.isChecked() ? "2"
+                : binding.pfb28c.isChecked() ? "3"
+                : binding.pfb28d.isChecked() ? "4"
+                : binding.pfb2888.isChecked() ? "88"
+                : binding.pfb2899.isChecked() ? "99"
+                : binding.pfb2877.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb2888x", binding.pfb2888x.getText().toString());
+
+
+        sB.put("pfb29", binding.pfb29a.isChecked() ? "1"
+                : binding.pfb29b.isChecked() ? "2"
+                : binding.pfb2988.isChecked() ? "88"
+                : binding.pfb2999.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb30", binding.pfb30a.isChecked() ? "1"
+                : binding.pfb30b.isChecked() ? "2"
+                : binding.pfb30c.isChecked() ? "3"
+                : binding.pfb30d.isChecked() ? "4"
+                : binding.pfb3088.isChecked() ? "88"
+                : binding.pfb3099.isChecked() ? "99"
+                : binding.pfb3077.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb31", binding.pfb31a.isChecked() ? "1"
+                : binding.pfb31b.isChecked() ? "2"
+                : binding.pfb3199.isChecked() ? "99"
+                : binding.pfb3177.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb32", binding.pfb32a.isChecked() ? "1"
+                : binding.pfb32b.isChecked() ? "2"
+                : binding.pfb3299.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb33", binding.pfb33a.isChecked() ? "1"
+                : binding.pfb33b.isChecked() ? "2"
+                : binding.pfb33c.isChecked() ? "3"
+                : binding.pfb33d.isChecked() ? "4"
+                : binding.pfb3399.isChecked() ? "99"
+                : binding.pfb3377.isChecked() ? "77"
+                : "0");
+
+
+        sB.put("pfb34", binding.pfb34.getText().toString());
+
+
+        sB.put("pfb35", binding.pfb35a.isChecked() ? "1"
+                : binding.pfb35b.isChecked() ? "2"
+                : binding.pfb3599.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb36", binding.pfb36a.isChecked() ? "1"
+                : binding.pfb36b.isChecked() ? "2"
+                : binding.pfb3699.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb37", binding.pfb37a.isChecked() ? "1"
+                : binding.pfb37b.isChecked() ? "2"
+                : binding.pfb3799.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb38", binding.pfb38a.isChecked() ? "1"
+                : binding.pfb38b.isChecked() ? "2"
+                : binding.pfb3899.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb39", binding.pfb39a.isChecked() ? "1"
+                : binding.pfb39b.isChecked() ? "2"
+                : binding.pfb3999.isChecked() ? "99"
+                : "0");
+
+        sB.put("pfb40", binding.pfb40a.isChecked() ? "1"
+                : binding.pfb40b.isChecked() ? "2"
+                : binding.pfb4099.isChecked() ? "99"
+                : "0");
+
+
+        sB.put("pfb41", binding.pfb41a.isChecked() ? "1"
+                : binding.pfb41b.isChecked() ? "2"
+                : binding.pfb4199.isChecked() ? "99"
+                : "0");
+
+
+        MainApp.fc.setsB(String.valueOf(sB));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -422,37 +705,37 @@ public class SectionPFBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb35, binding.pfb3588, getString(R.string.pfb35))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.pfb35, binding.pfb3599, getString(R.string.pfb35))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb36, binding.pfb3688, getString(R.string.pfb36))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.pfb36, binding.pfb3699, getString(R.string.pfb36))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb37, binding.pfb3788, getString(R.string.pfb37))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.pfb37, binding.pfb3799, getString(R.string.pfb37))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb38, binding.pfb3888, getString(R.string.pfb38))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.pfb38, binding.pfb3899, getString(R.string.pfb38))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb39, binding.pfb3988, getString(R.string.pfb39))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.pfb39, binding.pfb3999, getString(R.string.pfb39))) {
             return false;
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.pfb40, binding.pfb4088, getString(R.string.pfb40))) {
+        if (!validatorClass.EmptyRadioButton(this, binding.pfb40, binding.pfb4099, getString(R.string.pfb40))) {
             return false;
         }
 
 
-        return !validatorClass.EmptyRadioButton(this, binding.pfb41, binding.pfb4188, getString(R.string.pfb41));
+        return !validatorClass.EmptyRadioButton(this, binding.pfb41, binding.pfb4199, getString(R.string.pfb41));
 
     }
 }
