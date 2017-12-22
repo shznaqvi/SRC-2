@@ -1,16 +1,15 @@
 package edu.aku.hassannaqvi.src_preg.ui.DeliveryFollowUp;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySectionDfcBinding;
 
-public class SectionDFCActivity extends Activity
+public class SectionDFCActivity extends AppCompatActivity
 {
     ActivitySectionDfcBinding bl;
 

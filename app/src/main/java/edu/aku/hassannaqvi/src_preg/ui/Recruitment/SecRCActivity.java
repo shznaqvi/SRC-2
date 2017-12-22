@@ -40,7 +40,7 @@ public class SecRCActivity extends AppCompatActivity
         setupViews();
         bl.setCallback(this);
 
-        dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
+        dateToday = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis());
         maxDate9Monthsback = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((MainApp.MILLISECONDS_IN_9MONTH) + MainApp.MILLISECONDS_IN_DAY));
         maxDate9Months = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() + ((MainApp.MILLISECONDS_IN_9MONTH) + MainApp.MILLISECONDS_IN_DAY));
 
@@ -51,10 +51,10 @@ public class SecRCActivity extends AppCompatActivity
         bl.rc01.setManager(getSupportFragmentManager());
         bl.rc03.setManager(getSupportFragmentManager());
         bl.rc01.setMaxDate(dateToday);
-        bl.rc01.setMinDate(maxDate9Monthsback);
+        /*bl.rc01.setMinDate(maxDate9Monthsback);
         bl.rc03.setMaxDate(maxDate9Months);
         bl.rc03.setMinDate(dateToday);
-
+*/
 
 
         bl.rc04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
