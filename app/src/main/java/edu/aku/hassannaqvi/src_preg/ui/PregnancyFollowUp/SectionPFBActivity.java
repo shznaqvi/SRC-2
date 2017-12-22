@@ -22,6 +22,7 @@ import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
 public class SectionPFBActivity extends Activity {
 
+
     private static final String TAG = SecRBActivity.class.getSimpleName();
 
     ActivitySectionPfbBinding binding;
