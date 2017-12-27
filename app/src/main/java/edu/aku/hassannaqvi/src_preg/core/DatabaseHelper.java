@@ -18,8 +18,8 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import edu.aku.hassannaqvi.src_preg.contracts.BLRandomContract;
-import edu.aku.hassannaqvi.src_preg.contracts.BLRandomContract.singleChild;
+import edu.aku.hassannaqvi.src_preg.contracts.DistrictsContract;
+import edu.aku.hassannaqvi.src_preg.contracts.DistrictsContract.singleDistrict;
 import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
 import edu.aku.hassannaqvi.src_preg.contracts.FormsContract.FormsTable;
 import edu.aku.hassannaqvi.src_preg.contracts.TalukasContract;
@@ -28,8 +28,6 @@ import edu.aku.hassannaqvi.src_preg.contracts.UCsContract;
 import edu.aku.hassannaqvi.src_preg.contracts.UCsContract.UCsTable;
 import edu.aku.hassannaqvi.src_preg.contracts.UsersContract;
 import edu.aku.hassannaqvi.src_preg.contracts.UsersContract.UsersTable;
-import edu.aku.hassannaqvi.src_preg.contracts.DistrictsContract;
-import edu.aku.hassannaqvi.src_preg.contracts.DistrictsContract.singleDistrict;
 import edu.aku.hassannaqvi.src_preg.contracts.VillagesContract;
 import edu.aku.hassannaqvi.src_preg.contracts.VillagesContract.singleVillage;
 
