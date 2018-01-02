@@ -90,24 +90,14 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/openFormA"
+                android:id="@+id/openFormD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="@{(v) -> callback.openForm(1)}"
-                android:text="FOLLOWUP CHILD"
-                android:visibility="gone"/>
+                android:onClick="@{(v) -> callback.openForm(4)}"
+                android:text="PREGNANT RECRUITMENT" />
 
-            <Button
-                android:id="@+id/openFormB"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="16dp"
-                android:onClick="@{(v) -> callback.openForm(2)}"
-                android:text="PREGNANCY OUTCOME"
-                android:visibility="gone"/>
 
             <Button
                 android:id="@+id/openFormC"
@@ -117,16 +107,29 @@
                 android:layout_marginTop="16dp"
                 android:onClick="@{(v) -> callback.openForm(3)}"
                 android:text="PREGNANCY FOLLOWUP"
-                android:visibility="gone"/>
+                android:visibility="visible" />
+
 
             <Button
-                android:id="@+id/openFormD"
+                android:id="@+id/openFormB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
-                android:onClick="@{(v) -> callback.openForm(4)}"
-                android:text="PREGNANT RECRUITMENT"/>
+                android:onClick="@{(v) -> callback.openForm(2)}"
+                android:text="PREGNANCY OUTCOME"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/openFormA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:onClick="@{(v) -> callback.openForm(1)}"
+                android:text="FOLLOWUP CHILD"
+                android:visibility="gone" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
