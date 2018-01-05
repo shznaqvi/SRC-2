@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '26.0.3'
     def versionPropsFile = file('version.properties')
     dataBinding {
         enabled = true
@@ -20,8 +20,8 @@ android {
 
         defaultConfig {
             applicationId "edu.aku.hassannaqvi.src_preg"
-            minSdkVersion 22
-            targetSdkVersion 22
+            minSdkVersion 19
+            targetSdkVersion 19
 
 
             versionCode code

@@ -19,6 +19,7 @@ import android.os.StrictMode;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -108,6 +109,7 @@ public class MainActivity extends Activity {
         editor = sharedPref.edit();
 
         builder = new AlertDialog.Builder(MainActivity.this);
+        final AlertDialog dialog = builder.create();
         ImageView img = new ImageView(getApplicationContext());
         img.setImageResource(R.drawable.tagimg);
         img.setPadding(0, 15, 0, 15);
@@ -115,6 +117,15 @@ public class MainActivity extends Activity {
 
         final EditText input = new EditText(MainActivity.this);
         input.setInputType(InputType.TYPE_CLASS_TEXT);
+        input.requestFocus();
+        input.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b) {
+                    dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+                }
+            }
+        });
         builder.setView(input);
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -136,6 +147,7 @@ public class MainActivity extends Activity {
 
         if (sharedPref.getString("tagName", null) == "" || sharedPref.getString("tagName", null) == null) {
             builder.show();
+
         }
         /*TagID End*/
 
@@ -267,6 +279,7 @@ public class MainActivity extends Activity {
             final EditText input = new EditText(MainActivity.this);
             input.setInputType(InputType.TYPE_CLASS_TEXT);
             builder.setView(input);
+
 
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
