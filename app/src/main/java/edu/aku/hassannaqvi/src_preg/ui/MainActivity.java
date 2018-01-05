@@ -107,9 +107,12 @@ public class MainActivity extends Activity {
         /*TagID Start*/
         sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         editor = sharedPref.edit();
+        editor.putString("tagName", "...");
+        editor.commit();
 
-        builder = new AlertDialog.Builder(MainActivity.this);
+        /*builder = new AlertDialog.Builder(MainActivity.this);
         final AlertDialog dialog = builder.create();
+
         ImageView img = new ImageView(getApplicationContext());
         img.setImageResource(R.drawable.tagimg);
         img.setPadding(0, 15, 0, 15);
@@ -126,6 +129,7 @@ public class MainActivity extends Activity {
                 }
             }
         });
+
         builder.setView(input);
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -148,7 +152,7 @@ public class MainActivity extends Activity {
         if (sharedPref.getString("tagName", null) == "" || sharedPref.getString("tagName", null) == null) {
             builder.show();
 
-        }
+        }*/
         /*TagID End*/
 
 
