@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.src_preg.ui.DeliveryFollowUp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -16,7 +16,7 @@ import edu.aku.hassannaqvi.src_preg.databinding.ActivitySectionDfdBinding;
 import edu.aku.hassannaqvi.src_preg.ui.Outcome.SectionOCActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
-public class SectionDFDActivity extends Activity {
+public class SectionDFDActivity extends AppCompatActivity {
 
     ActivitySectionDfdBinding bl;
 
@@ -25,7 +25,7 @@ public class SectionDFDActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         bl = DataBindingUtil.setContentView(this, R.layout.activity_section_dfd);
-        bl.setCallback(this);
+        bl.setCallback(this);         
     }
 
     public Boolean formValidation() {

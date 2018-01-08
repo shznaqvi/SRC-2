@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.src_preg.ui.DeliveryFollowUp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -15,11 +15,12 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
-import edu.aku.hassannaqvi.src_preg.databinding.ActivitySectionDfbBinding;
 import edu.aku.hassannaqvi.src_preg.ui.Outcome.SectionOCActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
-public class SectionDFBActivity extends Activity {
+import null.databinding.ActivitySectionDfbBinding;
+
+public class SectionDFBActivity extends AppCompatActivity {
 
     ActivitySectionDfbBinding bl;
 

@@ -1,9 +1,9 @@
 package edu.aku.hassannaqvi.src_preg.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -21,7 +21,7 @@ import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
 
-public class EndingActivity extends Activity {
+public class EndingActivity extends AppCompatActivity {
 
     private static final String TAG = EndingActivity.class.getSimpleName();
     @BindView(R.id.scrollView01)

@@ -1,10 +1,10 @@
 package edu.aku.hassannaqvi.src_preg.ui.Recruitment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -22,7 +22,7 @@ import edu.aku.hassannaqvi.src_preg.databinding.ActivitySecRbBinding;
 import edu.aku.hassannaqvi.src_preg.ui.EndingActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
-public class SecRBActivity extends Activity {
+public class SecRBActivity extends AppCompatActivity {
 
     private static final String TAG = SecRBActivity.class.getSimpleName();
 

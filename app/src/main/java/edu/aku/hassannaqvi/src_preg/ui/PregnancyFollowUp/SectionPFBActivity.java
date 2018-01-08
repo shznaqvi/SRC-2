@@ -1,10 +1,10 @@
 package edu.aku.hassannaqvi.src_preg.ui.PregnancyFollowUp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -20,7 +20,7 @@ import edu.aku.hassannaqvi.src_preg.ui.EndingActivity;
 import edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRBActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
-public class SectionPFBActivity extends Activity {
+public class SectionPFBActivity extends AppCompatActivity {
 
 
     private static final String TAG = SecRBActivity.class.getSimpleName();
