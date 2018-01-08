@@ -5,6 +5,7 @@
     tools:context="edu.aku.hassannaqvi.src_preg.ui.SectionInfoActivity">
 
     <data>
+
         <import type="android.view.View" />
 
         <variable
@@ -503,31 +504,31 @@
                     android:layout_marginBottom="1dp"
                     android:text="@string/istatusg" />
 
-<!--                <RadioButton
-                    android:id="@+id/istatush"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatush" />
+                <!--                <RadioButton
+                                    android:id="@+id/istatush"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="1dp"
+                                    android:text="@string/istatush" />
 
-                <RadioButton
-                    android:id="@+id/istatus88"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/other" />-->
+                                <RadioButton
+                                    android:id="@+id/istatus88"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="1dp"
+                                    android:text="@string/other" />-->
 
             </RadioGroup>
 
-<!--            <EditText
-                android:id="@+id/istatus88x"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:hint="@string/other"
-                android:maxLength="40"
-                android:text='@{istatus88.checked ? istatus88x.getText.toString : ""}'
-                android:visibility="@{istatus88.checked ? View.VISIBLE : View.GONE}" />-->
+            <!--            <EditText
+                            android:id="@+id/istatus88x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                            android:hint="@string/other"
+                            android:maxLength="40"
+                            android:text='@{istatus88.checked ? istatus88x.getText.toString : ""}'
+                            android:visibility="@{istatus88.checked ? View.VISIBLE : View.GONE}" />-->
 
             <!--DFA 15-->
             <LinearLayout
@@ -567,7 +568,6 @@
                     android:checked="@{dfa15888.checked ? false : false}"
                     android:enabled="@{dfa15888.checked ? false : true}"
                     android:text="@string/dkn" />
-
 
                 <CheckBox
                     android:id="@+id/dfa15888"
@@ -613,6 +613,7 @@
 
                 <CheckBox
                     android:id="@+id/pfa1499"
+                    style="@style/checkbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="@{pfa14888.checked ? false : false}"
@@ -622,6 +623,7 @@
 
                 <CheckBox
                     android:id="@+id/pfa14888"
+                    style="@style/checkbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="@{pfa1499.checked ? false : false}"
@@ -864,7 +866,7 @@
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/start_interview"
                     android:textColor="@color/white"
-                    android:visibility="@{istatusa.checked ? View.VISIBLE : View.GONE}"/>
+                    android:visibility="@{istatusa.checked ? View.VISIBLE : View.GONE}" />
 
             </LinearLayout>
         </LinearLayout>

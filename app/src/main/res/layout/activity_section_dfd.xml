@@ -110,6 +110,7 @@
 
                 <RadioButton
                     android:id="@+id/dfd04a"
+                    style="@style/radiobutton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -117,6 +118,7 @@
 
                 <RadioButton
                     android:id="@+id/dfd04b"
+                    style="@style/radiobutton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

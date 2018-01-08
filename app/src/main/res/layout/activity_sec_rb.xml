@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context="edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRBActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.aku.hassannaqvi.src_preg.ui.Recruitment.SecRBActivity">
 
     <data>
 
@@ -227,7 +227,7 @@
                 android:digits="0123456789"
                 android:hint="@string/rb05n"
                 android:inputType="number"
-                android:maxLength="2"/>
+                android:maxLength="2" />
 
 
             <TextView
@@ -290,7 +290,7 @@
                     android:digits="0123456789"
                     android:hint="@string/rb07m"
                     android:inputType="number"
-                    android:maxLength="1"/>
+                    android:maxLength="1" />
 
                 <CheckBox
                     android:id="@+id/rb0799"
@@ -351,7 +351,7 @@
                         android:background="@color/pink_100"
                         android:text="@string/rb09vd"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@color/colorPrimaryDark"/>
+                        android:textColor="@color/colorPrimaryDark" />
 
 
                     <RadioGroup
@@ -388,7 +388,7 @@
                         android:background="@color/pink_100"
                         android:text="@string/rb09i"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@color/colorPrimaryDark"/>
+                        android:textColor="@color/colorPrimaryDark" />
 
                     <RadioGroup
                         android:id="@+id/rb09i"
@@ -424,7 +424,7 @@
                         android:background="@color/pink_100"
                         android:text="@string/rb09fa"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@color/colorPrimaryDark"/>
+                        android:textColor="@color/colorPrimaryDark" />
 
                     <RadioGroup
                         android:id="@+id/rb09fa"
@@ -460,7 +460,7 @@
                         android:background="@color/pink_100"
                         android:text="@string/rb09m"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@color/colorPrimaryDark"/>
+                        android:textColor="@color/colorPrimaryDark" />
 
                     <RadioGroup
                         android:id="@+id/rb09m"
@@ -496,7 +496,7 @@
                         android:background="@color/pink_100"
                         android:text="@string/rb09c"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@color/colorPrimaryDark"/>
+                        android:textColor="@color/colorPrimaryDark" />
 
                     <RadioGroup
                         android:id="@+id/rb09c"
@@ -532,7 +532,7 @@
                         android:background="@color/pink_100"
                         android:text="@string/other"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@color/colorPrimaryDark"/>
+                        android:textColor="@color/colorPrimaryDark" />
 
                     <RadioGroup
                         android:id="@+id/rb0988"
@@ -1125,7 +1125,6 @@
 
                 <RadioButton
                     android:id="@+id/rb19a"
-
                     style="@style/radiobutton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1135,7 +1134,6 @@
 
                 <RadioButton
                     android:id="@+id/rb19b"
-
                     style="@style/radiobutton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

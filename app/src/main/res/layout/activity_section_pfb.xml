@@ -604,7 +604,6 @@
                     android:layout_weight="1"
                     android:text="@string/na" />
 
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1856,7 +1855,6 @@
                 android:layout_weight="1"
                 android:text="@string/dkn" />
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1912,7 +1910,6 @@
                 android:textColor="@android:color/white" />
 
             <RadioGroup
-
                 android:id="@+id/pfb36"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -2028,6 +2025,7 @@
 
                 <RadioButton
                     android:id="@+id/pfb3899"
+                    style="@style/radiobutton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
