@@ -452,10 +452,11 @@
 
                 <Button
                     android:id="@+id/btn_End"
+                    style="@style/buttons"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/red"
+                    android:background="@color/red"
                     android:onClick="@{() -> callback.BtnEnd()}"
                     android:text="@string/end_interview"
                     android:textColor="@color/white"
@@ -463,10 +464,11 @@
 
                 <Button
                     android:id="@+id/btn_Continue"
+                    style="@style/buttons"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#1ed61e"
+                    android:background="#1ed61e"
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/start_interview"
                     android:textColor="@color/white" />
