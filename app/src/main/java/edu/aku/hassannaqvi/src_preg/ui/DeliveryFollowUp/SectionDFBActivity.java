@@ -15,10 +15,10 @@ import org.json.JSONObject;
 import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
+import edu.aku.hassannaqvi.src_preg.databinding.ActivitySectionDfbBinding;
 import edu.aku.hassannaqvi.src_preg.ui.Outcome.SectionOCActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
-import null.databinding.ActivitySectionDfbBinding;
 
 public class SectionDFBActivity extends AppCompatActivity {
 
