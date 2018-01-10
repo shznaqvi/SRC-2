@@ -123,6 +123,11 @@ public class SectionDFDActivity extends AppCompatActivity {
         //return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
+
     public class checking
     {
         int check;
@@ -135,6 +140,4 @@ public class SectionDFDActivity extends AppCompatActivity {
             return check;
         }
     }
-
-
 }

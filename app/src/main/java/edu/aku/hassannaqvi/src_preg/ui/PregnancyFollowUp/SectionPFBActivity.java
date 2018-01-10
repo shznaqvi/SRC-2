@@ -739,4 +739,9 @@ public class SectionPFBActivity extends AppCompatActivity {
         return !validatorClass.EmptyRadioButton(this, binding.pfb41, binding.pfb4199, getString(R.string.pfb41));
 
     }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
 }

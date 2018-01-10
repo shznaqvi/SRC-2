@@ -473,8 +473,7 @@ public class SecRBActivity extends AppCompatActivity {
             }
         });
 
-        binding.rb05n.addTextChangedListener(new TextWatcher()
-        {
+        binding.rb05n.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -496,7 +495,6 @@ public class SecRBActivity extends AppCompatActivity {
 
             }
         });
-
 
 
         binding.rb06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -659,5 +657,10 @@ public class SecRBActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 }
