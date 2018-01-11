@@ -4,6 +4,7 @@
     tools:context="edu.aku.hassannaqvi.src_preg.ui.DeliveryFollowUp.SectionDFDActivity">
 
     <data>
+
         <import type="android.view.View" />
 
         <variable
