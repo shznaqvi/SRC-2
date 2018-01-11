@@ -434,92 +434,92 @@
             </LinearLayout>
 
             <!--Status-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/istatus"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+            <!-- <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="16dp"
+                 android:background="@color/colorPrimary"
+                 android:text="@string/istatus"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textColor="@android:color/white" />
 
-            <RadioGroup
-                android:id="@+id/istatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+             <RadioGroup
+                 android:id="@+id/istatus"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
 
-                <RadioButton
-                    android:id="@+id/istatusa"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusa" />
+                 <RadioButton
+                     android:id="@+id/istatusa"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusa" />
 
-                <RadioButton
-                    android:id="@+id/istatusb"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusb" />
+                 <RadioButton
+                     android:id="@+id/istatusb"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusb" />
 
-                <RadioButton
-                    android:id="@+id/istatusc"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusc" />
+                 <RadioButton
+                     android:id="@+id/istatusc"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusc" />
 
-                <RadioButton
-                    android:id="@+id/istatusd"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusd" />
+                 <RadioButton
+                     android:id="@+id/istatusd"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusd" />
 
-                <RadioButton
-                    android:id="@+id/istatuse"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatuse" />
+                 <RadioButton
+                     android:id="@+id/istatuse"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatuse" />
 
-                <RadioButton
-                    android:id="@+id/istatusf"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusf" />
+                 <RadioButton
+                     android:id="@+id/istatusf"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusf" />
 
-                <RadioButton
-                    android:id="@+id/istatusg"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusg" />
+                 <RadioButton
+                     android:id="@+id/istatusg"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusg" />
 
-                <!--                <RadioButton
-                                    android:id="@+id/istatush"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/istatush" />
+                 &lt;!&ndash;                <RadioButton
+                                     android:id="@+id/istatush"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:layout_marginBottom="1dp"
+                                     android:text="@string/istatush" />
 
-                                <RadioButton
-                                    android:id="@+id/istatus88"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/other" />-->
+                                 <RadioButton
+                                     android:id="@+id/istatus88"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:layout_marginBottom="1dp"
+                                     android:text="@string/other" />&ndash;&gt;
 
-            </RadioGroup>
-
+             </RadioGroup>
+ -->
             <!--            <EditText
                             android:id="@+id/istatus88x"
                             android:layout_width="match_parent"
@@ -853,8 +853,8 @@
                     android:background="@color/red"
                     android:onClick="@{() -> callback.BtnEnd()}"
                     android:text="@string/end_interview"
-                    android:textColor="@color/white"
-                    android:visibility="@{istatusa.checked ? View.GONE : View.VISIBLE}" />
+                    android:textColor="@color/white" />
+                <!--android:visibility="@{istatusa.checked ? View.GONE : View.VISIBLE}" />-->
 
                 <Button
                     android:id="@+id/btn_Continue"
@@ -865,8 +865,8 @@
                     android:background="#1ed61e"
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/start_interview"
-                    android:textColor="@color/white"
-                    android:visibility="@{istatusa.checked ? View.VISIBLE : View.GONE}" />
+                    android:textColor="@color/white" />
+                <!--    android:visibility="@{istatusa.checked ? View.VISIBLE : View.GONE}" />-->
 
             </LinearLayout>
         </LinearLayout>

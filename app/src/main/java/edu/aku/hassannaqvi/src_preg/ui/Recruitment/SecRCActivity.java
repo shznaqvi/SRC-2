@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
@@ -54,8 +56,7 @@ public class SecRCActivity extends AppCompatActivity
         bl.rc03.setManager(getSupportFragmentManager());
         bl.rc01.setMaxDate(dateToday);
         bl.rc01.setMinDate(maxDate9Monthsback);
-        bl.rc03.setMaxDate(maxDate9Months);
-        bl.rc03.setMinDate(dateToday);
+
 
 
         bl.rc04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
@@ -167,9 +168,41 @@ public class SecRCActivity extends AppCompatActivity
                 if (b) {
                     bl.rc01.setVisibility(View.GONE);
                     bl.rc01.setText(null);
+                    bl.rc03.setMaxDate(maxDate9Months);
+                    bl.rc03.setMinDate(dateToday);
+
+                    bl.eddRange.setText("EDD Range :" + dateToday + " - " + maxDate9Months);
+
                 } else {
                     bl.rc01.setVisibility(View.VISIBLE);
                 }
+            }
+        });
+
+        bl.rc01.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                Calendar eddMin = MainApp.getCalendarDate(bl.rc01.getText().toString());
+                eddMin.add(Calendar.DAY_OF_MONTH, 7);
+                eddMin.add(Calendar.YEAR, 1);
+                eddMin.add(Calendar.MONTH, -3);
+                bl.rc03.setMinDate(new SimpleDateFormat("dd/MM/yyyy").format(eddMin.getTime()));
+                Calendar eddMax = MainApp.getCalendarDate(bl.rc01.getText().toString());
+                eddMax.add(Calendar.WEEK_OF_YEAR, 44);
+                bl.rc03.setMaxDate(new SimpleDateFormat("dd/MM/yyyy").format(eddMax.getTime()));
+                bl.eddRange.setText("EDD Range :" + new SimpleDateFormat("dd/MM/yyyy").format(eddMin.getTime()) + " - " + new SimpleDateFormat("dd/MM/yyyy").format(eddMax.getTime()));
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 

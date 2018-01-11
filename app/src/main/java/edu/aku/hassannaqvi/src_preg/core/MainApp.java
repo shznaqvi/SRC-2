@@ -257,6 +257,20 @@ public class MainApp extends Application {
         return "";
     }
 
+    public static Calendar getCalendarDate(String value) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            Date date = sdf.parse(value);
+            calendar.setTime(date);
+            return calendar;
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return calendar;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -419,5 +433,6 @@ public class MainApp extends Application {
 
         }
     }
+
 
 }

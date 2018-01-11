@@ -402,13 +402,15 @@ public class SecRBActivity extends AppCompatActivity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb14, binding.rb1488, binding.rb1488x, getString(R.string.rb14))) {
-            return false;
-        }
+        if (binding.rb13d.isChecked()) {
+            if (!validatorClass.EmptyRadioButton(this, binding.rb14, binding.rb1488, binding.rb1488x, getString(R.string.rb14))) {
+                return false;
+            }
+        } else {
 
-
-        if (!validatorClass.EmptyRadioButton(this, binding.rb15, binding.rb1588, binding.rb1588x, getString(R.string.rb15))) {
-            return false;
+            if (!validatorClass.EmptyRadioButton(this, binding.rb15, binding.rb1588, binding.rb1588x, getString(R.string.rb15))) {
+                return false;
+            }
         }
 
 
@@ -652,6 +654,23 @@ public class SecRBActivity extends AppCompatActivity {
                 } else {
                     binding.rb1888x.setText(null);
                     binding.rb1888x.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        binding.rb13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (binding.rb13d.isChecked()) {
+                    binding.fldGrprb14.setVisibility(View.VISIBLE);
+                    binding.fldGrprb15.setVisibility(View.GONE);
+                    binding.rb15.clearCheck();
+                    binding.rb1588x.setText(null);
+                } else {
+                    binding.fldGrprb14.setVisibility(View.GONE);
+                    binding.fldGrprb15.setVisibility(View.VISIBLE);
+                    binding.rb14.clearCheck();
+                    binding.rb1488x.setText(null);
                 }
             }
         });
