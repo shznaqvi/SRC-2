@@ -1,28 +1,21 @@
 package edu.aku.hassannaqvi.src_preg.ui.Outcome;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.provider.Settings;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.contracts.FormsContract;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySectionOcBinding;
-import edu.aku.hassannaqvi.src_preg.ui.EndingActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
-public class SectionOCActivity extends Activity {
+public class SectionOCActivity extends AppCompatActivity {
 
     ActivitySectionOcBinding binding;
     DatabaseHelper db;
@@ -169,11 +162,7 @@ public class SectionOCActivity extends Activity {
         }
 
 //      17
-        if (!validatorClass.EmptyRadioButton(this, binding.oc18, binding.oc1866, getString(R.string.oc18))) {
-            return false;
-        }
-
-        return true;
+        return validatorClass.EmptyRadioButton(this, binding.oc18, binding.oc1866, getString(R.string.oc18));
     }
 
     private boolean UpdateDB() {
@@ -247,6 +236,11 @@ public class SectionOCActivity extends Activity {
         MainApp.fc.setsC(String.valueOf(soc));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 
 }

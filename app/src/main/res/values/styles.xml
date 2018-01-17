@@ -42,7 +42,7 @@
 
 
     <!-- Form Styles -->
-    <style name="labels" parent="android:Widget.Material.Light.TextView">
+    <style name="labels" parent="android:Widget.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">24dp</item>
@@ -59,7 +59,7 @@
 
     </style>
 
-    <style name="listItems" parent="android:Widget.Material.Light.TextView">
+    <style name="listItems" parent="android:Widget.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@android:color/darker_gray</item>
@@ -97,7 +97,7 @@
 
     </style>
 
-    <style name="textInput" parent="android:Widget.Material.Light.EditText">
+    <style name="textInput" parent="Widget.AppCompat.EditText">
         <item name="android:textSize">24sp</item>
         <item name="android:background">#d6d6d6</item>
         <item name="android:paddingBottom">8dp</item>
@@ -148,7 +148,7 @@
 
     </style>
 
-    <style name="radiobutton" parent="android:Widget.Material.Light.CompoundButton.RadioButton">
+    <style name="radiobutton" parent="Widget.AppCompat.CompoundButton.RadioButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:button">@null</item>
@@ -156,10 +156,10 @@
         <item name="android:textSize">24sp</item>
         <item name="android:typeface">serif</item>
         <item name="android:background">#d6d6d6</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:padding">16dp</item>
     </style>
 
-    <style name="buttons" parent="android:Widget.Material.Light.Button">
+    <style name="buttons" parent="Widget.AppCompat.Button">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">24sp</item>
         <item name="android:typeface">serif</item>
@@ -170,7 +170,7 @@
         <item name="android:background">@drawable/background_grad</item>
     </style>
 
-    <style name="checkbox" parent="android:Widget.Material.Light.CompoundButton.CheckBox">
+    <style name="checkbox" parent="Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:layout_gravity">right</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

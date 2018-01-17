@@ -202,9 +202,9 @@ public class SectionInfoActivity extends AppCompatActivity {
         }
 
 //       STATUS
-        if (!validatorClass.EmptyRadioButton(this, binding.istatus, binding.istatusg, getString(R.string.istatus))) {
+        /*if (!validatorClass.EmptyRadioButton(this, binding.istatus, binding.istatusg, getString(R.string.istatus))) {
             return false;
-        }
+        }*/
 
 //        DFA 15
         if (check == 1) {
@@ -321,6 +321,8 @@ public class SectionInfoActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         MainApp.fc = new FormsContract();
 
+
+
         MainApp.fc.setDevicetagID(sharedPref.getString("tagName", null));
         MainApp.fc.setFormDate(dtToday);
         MainApp.fc.setUser(MainApp.userName);
@@ -384,9 +386,9 @@ public class SectionInfoActivity extends AppCompatActivity {
             MainApp.fc.setFormtype("RA");
         }
 
-        sa.put("istatus", binding.istatusa.isChecked() ? "1" : binding.istatusb.isChecked() ? "2" : binding.istatusc.isChecked() ? "3" : binding.istatusd.isChecked() ? "4" : binding.istatuse.isChecked() ? "5"
+        /*sa.put("istatus", binding.istatusa.isChecked() ? "1" : binding.istatusb.isChecked() ? "2" : binding.istatusc.isChecked() ? "3" : binding.istatusd.isChecked() ? "4" : binding.istatuse.isChecked() ? "5"
                 : binding.istatusf.isChecked() ? "6" : binding.istatusg.isChecked() ? "7" : "0");
-
+*/
         MainApp.womanage = Integer.valueOf(binding.age.getText().toString());
         MainApp.prevPreg = Integer.valueOf(binding.ra11.getText().toString());
 

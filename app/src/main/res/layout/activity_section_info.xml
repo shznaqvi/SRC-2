@@ -5,6 +5,7 @@
     tools:context="edu.aku.hassannaqvi.src_preg.ui.SectionInfoActivity">
 
     <data>
+
         <import type="android.view.View" />
 
         <variable
@@ -433,94 +434,101 @@
             </LinearLayout>
 
             <!--Status-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:text="@string/istatus"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+            <!-- <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="16dp"
+                 android:background="@color/colorPrimary"
+                 android:text="@string/istatus"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textColor="@android:color/white" />
 
-            <RadioGroup
-                android:id="@+id/istatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+             <RadioGroup
+                 android:id="@+id/istatus"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
 
-                <RadioButton
-                    android:id="@+id/istatusa"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusa" />
+                 <RadioButton
+                     android:id="@+id/istatusa"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusa" />
 
-                <RadioButton
-                    android:id="@+id/istatusb"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusb" />
+                 <RadioButton
+                     android:id="@+id/istatusb"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusb" />
 
-                <RadioButton
-                    android:id="@+id/istatusc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusc" />
+                 <RadioButton
+                     android:id="@+id/istatusc"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusc" />
 
-                <RadioButton
-                    android:id="@+id/istatusd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusd" />
+                 <RadioButton
+                     android:id="@+id/istatusd"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusd" />
 
-                <RadioButton
-                    android:id="@+id/istatuse"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatuse" />
+                 <RadioButton
+                     android:id="@+id/istatuse"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatuse" />
 
-                <RadioButton
-                    android:id="@+id/istatusf"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusf" />
+                 <RadioButton
+                     android:id="@+id/istatusf"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusf" />
 
-                <RadioButton
-                    android:id="@+id/istatusg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatusg" />
+                 <RadioButton
+                     android:id="@+id/istatusg"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="1dp"
+                     android:text="@string/istatusg" />
 
-<!--                <RadioButton
-                    android:id="@+id/istatush"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/istatush" />
+                 &lt;!&ndash;                <RadioButton
+                                     android:id="@+id/istatush"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:layout_marginBottom="1dp"
+                                     android:text="@string/istatush" />
 
-                <RadioButton
-                    android:id="@+id/istatus88"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/other" />-->
+                                 <RadioButton
+                                     android:id="@+id/istatus88"
+                                     android:layout_width="match_parent"
+                                     android:layout_height="wrap_content"
+                                     android:layout_marginBottom="1dp"
+                                     android:text="@string/other" />&ndash;&gt;
 
-            </RadioGroup>
-
-<!--            <EditText
-                android:id="@+id/istatus88x"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:hint="@string/other"
-                android:maxLength="40"
-                android:text='@{istatus88.checked ? istatus88x.getText.toString : ""}'
-                android:visibility="@{istatus88.checked ? View.VISIBLE : View.GONE}" />-->
+             </RadioGroup>
+ -->
+            <!--            <EditText
+                            android:id="@+id/istatus88x"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                            android:hint="@string/other"
+                            android:maxLength="40"
+                            android:text='@{istatus88.checked ? istatus88x.getText.toString : ""}'
+                            android:visibility="@{istatus88.checked ? View.VISIBLE : View.GONE}" />-->
 
             <!--DFA 15-->
             <LinearLayout
@@ -554,15 +562,16 @@
 
                 <CheckBox
                     android:id="@+id/dfa1599"
+                    style="@style/checkbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="@{dfa15888.checked ? false : false}"
                     android:enabled="@{dfa15888.checked ? false : true}"
                     android:text="@string/dkn" />
 
-
                 <CheckBox
                     android:id="@+id/dfa15888"
+                    style="@style/checkbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="@{dfa1599.checked ? false : false}"
@@ -604,6 +613,7 @@
 
                 <CheckBox
                     android:id="@+id/pfa1499"
+                    style="@style/checkbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="@{pfa14888.checked ? false : false}"
@@ -613,6 +623,7 @@
 
                 <CheckBox
                     android:id="@+id/pfa14888"
+                    style="@style/checkbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="@{pfa1499.checked ? false : false}"
@@ -637,6 +648,7 @@
 
                     <RadioButton
                         android:id="@+id/pfa15a"
+                        style="@style/radiobutton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -644,6 +656,7 @@
 
                     <RadioButton
                         android:id="@+id/pfa15b"
+                        style="@style/radiobutton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -651,6 +664,7 @@
 
                     <RadioButton
                         android:id="@+id/pfa15c"
+                        style="@style/radiobutton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -675,6 +689,7 @@
 
                     <RadioButton
                         android:id="@+id/pfa16a"
+                        style="@style/radiobutton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -682,6 +697,7 @@
 
                     <RadioButton
                         android:id="@+id/pfa16b"
+                        style="@style/radiobutton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -689,6 +705,7 @@
 
                     <RadioButton
                         android:id="@+id/pfa16c"
+                        style="@style/radiobutton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -696,6 +713,7 @@
 
                     <RadioButton
                         android:id="@+id/pfa16d"
+                        style="@style/radiobutton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -703,6 +721,7 @@
 
                     <RadioButton
                         android:id="@+id/pfa16e"
+                        style="@style/radiobutton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -710,6 +729,7 @@
 
                     <RadioButton
                         android:id="@+id/pfa16f"
+                        style="@style/radiobutton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -717,6 +737,7 @@
 
                     <RadioButton
                         android:id="@+id/pfa16g"
+                        style="@style/radiobutton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -749,6 +770,7 @@
 
                 <CheckBox
                     android:id="@+id/pfa1799"
+                    style="@style/checkbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="@{pfa17888.checked ? false : false}"
@@ -757,6 +779,7 @@
 
                 <CheckBox
                     android:id="@+id/pfa17888"
+                    style="@style/checkbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="@{pfa1799.checked ? false : false}"
@@ -806,6 +829,7 @@
 
                 <CheckBox
                     android:id="@+id/pfa19888"
+                    style="@style/checkbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/na" />
@@ -822,25 +846,27 @@
 
                 <Button
                     android:id="@+id/btn_End"
+                    style="@style/buttons"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/red"
+                    android:background="@color/red"
                     android:onClick="@{() -> callback.BtnEnd()}"
                     android:text="@string/end_interview"
-                    android:textColor="@color/white"
-                    android:visibility="@{istatusa.checked ? View.GONE : View.VISIBLE}" />
+                    android:textColor="@color/white" />
+                <!--android:visibility="@{istatusa.checked ? View.GONE : View.VISIBLE}" />-->
 
                 <Button
                     android:id="@+id/btn_Continue"
+                    style="@style/buttons"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#1ed61e"
+                    android:background="#1ed61e"
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="@string/start_interview"
-                    android:textColor="@color/white"
-                    android:visibility="@{istatusa.checked ? View.VISIBLE : View.GONE}"/>
+                    android:textColor="@color/white" />
+                <!--    android:visibility="@{istatusa.checked ? View.VISIBLE : View.GONE}" />-->
 
             </LinearLayout>
         </LinearLayout>

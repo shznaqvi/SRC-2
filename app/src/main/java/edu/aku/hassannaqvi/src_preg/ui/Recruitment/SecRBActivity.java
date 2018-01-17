@@ -1,10 +1,10 @@
 package edu.aku.hassannaqvi.src_preg.ui.Recruitment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -22,7 +22,7 @@ import edu.aku.hassannaqvi.src_preg.databinding.ActivitySecRbBinding;
 import edu.aku.hassannaqvi.src_preg.ui.EndingActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
-public class SecRBActivity extends Activity {
+public class SecRBActivity extends AppCompatActivity {
 
     private static final String TAG = SecRBActivity.class.getSimpleName();
 
@@ -402,13 +402,15 @@ public class SecRBActivity extends Activity {
         }
 
 
-        if (!validatorClass.EmptyRadioButton(this, binding.rb14, binding.rb1488, binding.rb1488x, getString(R.string.rb14))) {
-            return false;
-        }
+        if (binding.rb13d.isChecked()) {
+            if (!validatorClass.EmptyRadioButton(this, binding.rb14, binding.rb1488, binding.rb1488x, getString(R.string.rb14))) {
+                return false;
+            }
+        } else {
 
-
-        if (!validatorClass.EmptyRadioButton(this, binding.rb15, binding.rb1588, binding.rb1588x, getString(R.string.rb15))) {
-            return false;
+            if (!validatorClass.EmptyRadioButton(this, binding.rb15, binding.rb1588, binding.rb1588x, getString(R.string.rb15))) {
+                return false;
+            }
         }
 
 
@@ -473,8 +475,7 @@ public class SecRBActivity extends Activity {
             }
         });
 
-        binding.rb05n.addTextChangedListener(new TextWatcher()
-        {
+        binding.rb05n.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -496,7 +497,6 @@ public class SecRBActivity extends Activity {
 
             }
         });
-
 
 
         binding.rb06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -658,6 +658,28 @@ public class SecRBActivity extends Activity {
             }
         });
 
+        binding.rb13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (binding.rb13d.isChecked()) {
+                    binding.fldGrprb14.setVisibility(View.VISIBLE);
+                    binding.fldGrprb15.setVisibility(View.GONE);
+                    binding.rb15.clearCheck();
+                    binding.rb1588x.setText(null);
+                } else {
+                    binding.fldGrprb14.setVisibility(View.GONE);
+                    binding.fldGrprb15.setVisibility(View.VISIBLE);
+                    binding.rb14.clearCheck();
+                    binding.rb1488x.setText(null);
+                }
+            }
+        });
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
     }
 }
