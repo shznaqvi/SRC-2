@@ -71,7 +71,7 @@ public class UsersContract {
     public UsersContract Sync(JSONObject jsonObject) throws JSONException {
         this.ROW_USERNAME = jsonObject.getString(UsersTable.ROW_USERNAME);
         this.ROW_PASSWORD = jsonObject.getString(UsersTable.ROW_PASSWORD);
-        this.FULL_NAME = jsonObject.getString(UsersTable.FULL_NAME);
+//        this.FULL_NAME = jsonObject.getString(UsersTable.FULL_NAME);
 //        this.REGION_DSS = jsonObject.getString(UsersTable.REGION_DSS);
         return this;
 
@@ -81,7 +81,7 @@ public class UsersContract {
         this._ID = cursor.getLong(cursor.getColumnIndex(UsersTable._ID));
         this.ROW_USERNAME = cursor.getString(cursor.getColumnIndex(UsersTable.ROW_USERNAME));
         this.ROW_PASSWORD = cursor.getString(cursor.getColumnIndex(UsersTable.ROW_PASSWORD));
-        this.FULL_NAME = cursor.getString(cursor.getColumnIndex(UsersTable.FULL_NAME));
+//        this.FULL_NAME = cursor.getString(cursor.getColumnIndex(UsersTable.FULL_NAME));
 //        this.REGION_DSS = cursor.getString(cursor.getColumnIndex(UsersTable.REGION_DSS));
         return this;
 
@@ -94,7 +94,7 @@ public class UsersContract {
         json.put(UsersTable._ID, this._ID == null ? JSONObject.NULL : this._ID);
         json.put(UsersTable.ROW_USERNAME, this.ROW_USERNAME == null ? JSONObject.NULL : this.ROW_USERNAME);
         json.put(UsersTable.ROW_PASSWORD, this.ROW_PASSWORD == null ? JSONObject.NULL : this.ROW_PASSWORD);
-        json.put(UsersTable.FULL_NAME, this.FULL_NAME == null ? JSONObject.NULL : this.FULL_NAME);
+//        json.put(UsersTable.FULL_NAME, this.FULL_NAME == null ? JSONObject.NULL : this.FULL_NAME);
 //        json.put(UsersTable.REGION_DSS, this.REGION_DSS == null ? JSONObject.NULL : this.REGION_DSS);
         return json;
     }
