@@ -24,7 +24,7 @@ public abstract class validatorClass {
         if (TextUtils.isEmpty(txt.getText().toString())) {
             Toast.makeText(context, "ERROR(empty): " + msg, Toast.LENGTH_SHORT).show();
             txt.setError("This data is Required! ");    // Set Error on last radio button
-            txt.requestFocus();
+            //txt.requestFocus();
             Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": This data is Required!");
             return false;
         } else {
@@ -38,7 +38,7 @@ public abstract class validatorClass {
         if (Integer.valueOf(txt.getText().toString()) < min || Integer.valueOf(txt.getText().toString()) > max) {
             Toast.makeText(context, "ERROR(invalid): " + msg, Toast.LENGTH_SHORT).show();
             txt.setError("Range is " + min + " to " + max + type + " ... ");    // Set Error on last radio button
-            txt.requestFocus();
+            //txt.requestFocus();
             Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": Range is " + min + " to " + max + " times...  ");
             return false;
         } else {
@@ -53,7 +53,7 @@ public abstract class validatorClass {
         if (Double.valueOf(txt.getText().toString()) < min || Double.valueOf(txt.getText().toString()) > max) {
             Toast.makeText(context, "ERROR(invalid): " + msg, Toast.LENGTH_SHORT).show();
             txt.setError("Range is " + min + " to " + max + type + " ... ");    // Set Error on last radio button
-            txt.requestFocus();
+            //txt.requestFocus();
             Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": Range is " + min + " to " + max + " times...  ");
             return false;
         } else {
@@ -67,7 +67,7 @@ public abstract class validatorClass {
             Toast.makeText(context, "ERROR(Empty)" + msg, Toast.LENGTH_SHORT).show();
             ((TextView) spin.getSelectedView()).setText("This Data is Required");
             ((TextView) spin.getSelectedView()).setTextColor(Color.RED);
-            spin.requestFocus();
+            //spin.requestFocus();
             Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(spin.getId()) + ": This data is Required!");
             return false;
         } else {
@@ -83,7 +83,7 @@ public abstract class validatorClass {
 
             rdBtn.setFocusable(true);
             rdBtn.setFocusableInTouchMode(true);
-            rdBtn.requestFocus();
+            //rdBtn.requestFocus();
             Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(rdGrp.getId()) + ": This data is Required!");
             return false;
         } else {
@@ -99,7 +99,7 @@ public abstract class validatorClass {
 
             rdBtn.setFocusable(true);
             rdBtn.setFocusableInTouchMode(true);
-            rdBtn.requestFocus();
+            //rdBtn.requestFocus();
             Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(rdGrp.getId()) + ": This data is Required!");
             return false;
         } else {

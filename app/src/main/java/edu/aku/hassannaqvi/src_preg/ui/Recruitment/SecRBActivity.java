@@ -235,7 +235,7 @@ public class SecRBActivity extends AppCompatActivity {
                 || Integer.valueOf(binding.rb01.getText().toString()) > MainApp.womanage) {
                 Toast.makeText(this, "Age at 1st pregnancy cannot be greater", Toast.LENGTH_SHORT).show();
             binding.rb01.setError("Age at 1st pregnancy cannot be greater than or equal to current age");
-                binding.rb01.requestFocus();
+            //binding.rb01.requestFocus();
                 return false;
 
         } else {
@@ -309,7 +309,7 @@ public class SecRBActivity extends AppCompatActivity {
         if (sum != MainApp.prevPreg) {
             Toast.makeText(this, "Should be equal to " + MainApp.prevPreg + " Previous Pregnancies are: " + MainApp.prevPreg, Toast.LENGTH_SHORT).show();
             binding.rb05n.setError("Check again.. Should be equal to " + MainApp.prevPreg + " Previous Pregnancies are: " + MainApp.prevPreg);
-            binding.rb05n.requestFocus();
+            //binding.rb05n.requestFocus();
             return false;
 
         } else {

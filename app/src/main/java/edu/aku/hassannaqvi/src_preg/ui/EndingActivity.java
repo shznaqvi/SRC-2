@@ -80,7 +80,7 @@ public class EndingActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (istatus88.isChecked()) {
                     istatus88x.setVisibility(View.VISIBLE);
-                    istatus88x.requestFocus();
+                    //istatus88x.requestFocus();
                 } else {
                     istatus88x.setText(null);
                     istatus88x.setVisibility(View.GONE);

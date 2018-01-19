@@ -459,7 +459,7 @@ public class SectionPFBActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (binding.pfb2788.isChecked()) {
                     binding.pfb2788x.setVisibility(View.VISIBLE);
-                    binding.pfb2788x.requestFocus();
+                    //binding.pfb2788x.requestFocus();
                 } else {
                     binding.pfb2788x.setText(null);
                     binding.pfb2788x.setVisibility(View.GONE);
@@ -473,7 +473,7 @@ public class SectionPFBActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (binding.pfb2888.isChecked()) {
                     binding.pfb2888x.setVisibility(View.VISIBLE);
-                    binding.pfb2888x.requestFocus();
+                    //binding.pfb2888x.requestFocus();
                 } else {
                     binding.pfb2888x.setText(null);
                     binding.pfb2888x.setVisibility(View.GONE);
@@ -499,7 +499,7 @@ public class SectionPFBActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (binding.pfb3088.isChecked()) {
                     binding.pfb3088x.setVisibility(View.VISIBLE);
-                    binding.pfb3088x.requestFocus();
+                    //binding.pfb3088x.requestFocus();
                 } else {
                     binding.pfb3088x.setText(null);
                     binding.pfb3088x.setVisibility(View.GONE);
