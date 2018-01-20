@@ -697,6 +697,8 @@
 
                 </RadioGroup>
 
+            </LinearLayout>
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -767,9 +769,19 @@
                         android:layout_weight="1"
                         android:text="@string/rb12f" />
 
+                    <RadioButton
+                        android:id="@+id/rb12g"
+                        style="@style/radiobutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_weight="1"
+                        android:text="@string/rb12g" />
+
+
                 </RadioGroup>
 
-            </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -1012,7 +1024,7 @@
                 android:digits="0123456789."
                 android:hint="@string/rb16"
                 android:inputType="numberDecimal"
-                android:maxLength="7" />
+                android:maxLength="5" />
 
             <CheckBox
                 android:id="@+id/rb1699"
@@ -1101,6 +1113,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/rb18d" />
+
+                <CheckBox
+                    android:id="@+id/rb18e"
+                    style="@style/checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb18e" />
+
+                <CheckBox
+                    android:id="@+id/rb18f"
+                    style="@style/checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rb18f" />
 
 
                 <CheckBox

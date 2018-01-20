@@ -105,8 +105,16 @@ public class SectionInfoActivity extends AppCompatActivity {
             return false;
         }
 
+        if (!validatorClass.RangeTextBox(this, binding.hhno, 1, 4000, getString(R.string.hhno), " only")) {
+            return false;
+        }
+
 //        PW-ID
         if (!validatorClass.EmptyTextBox(this, binding.pwid, getString(R.string.pwid))) {
+            return false;
+        }
+
+        if (!validatorClass.RangeTextBox(this, binding.pwid, 1, 4000, getString(R.string.pwid), " only")) {
             return false;
         }
 
@@ -197,6 +205,10 @@ public class SectionInfoActivity extends AppCompatActivity {
             }
 
             if (!validatorClass.EmptyTextBox(this, binding.ra11, getString(R.string.ra11))) {
+                return false;
+            }
+
+            if (!validatorClass.RangeTextBox(this, binding.ra11, 0, 15, getString(R.string.ra11), " pregnancies")) {
                 return false;
             }
         }

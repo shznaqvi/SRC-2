@@ -92,13 +92,38 @@ public class SecRCActivity extends AppCompatActivity
                     bl.rc0788.setChecked(false);
                     bl.rc0788x.setText(null);
                     bl.rc08.clearCheck();
-                    bl.rc09w.clearCheck();
-                    bl.rc09bp.clearCheck();
-                    bl.rc09st.clearCheck();
-                    bl.rc09ud.clearCheck();
-                    bl.rc09hb.clearCheck();
-                    bl.rc09us.clearCheck();
-                    bl.rc09ti.clearCheck();
+
+                }
+            }
+        });
+
+        bl.rc1299.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    bl.rc12a.setEnabled(false);
+                    bl.rc12a.setChecked(false);
+                    bl.rc12b.setEnabled(false);
+                    bl.rc12b.setChecked(false);
+                    bl.rc12c.setEnabled(false);
+                    bl.rc12c.setChecked(false);
+                    bl.rc12d.setEnabled(false);
+                    bl.rc12d.setChecked(false);
+                    bl.rc12e.setEnabled(false);
+                    bl.rc12e.setChecked(false);
+                    bl.rc12f.setEnabled(false);
+                    bl.rc12f.setChecked(false);
+                    bl.rc1288.setEnabled(false);
+                    bl.rc1288.setChecked(false);
+                    bl.rc1288x.setText(null);
+                } else {
+                    bl.rc12a.setEnabled(true);
+                    bl.rc12b.setEnabled(true);
+                    bl.rc12c.setEnabled(true);
+                    bl.rc12d.setEnabled(true);
+                    bl.rc12e.setEnabled(true);
+                    bl.rc12f.setEnabled(true);
+                    bl.rc1288.setEnabled(true);
                 }
             }
         });
@@ -276,6 +301,7 @@ public class SecRCActivity extends AppCompatActivity
             if (!validatorClass.EmptyRadioButton(this, bl.rc08, bl.rc08a, getString(R.string.rc08))) {
                 return false;
             }
+        }
 
             if (!validatorClass.EmptyRadioButton(this, bl.rc09w, bl.rc09wa, getString(R.string.rc09w))) {
                 return false;
@@ -305,7 +331,6 @@ public class SecRCActivity extends AppCompatActivity
                 return false;
             }
 
-        }
 
         // 3.10
 

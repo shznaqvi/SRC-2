@@ -60,7 +60,7 @@
                 android:digits="0123456789"
                 android:hint="@string/hhno"
                 android:inputType="number"
-                android:maxLength="9" />
+                android:maxLength="4" />
 
             <!--PWID-->
             <TextView
@@ -80,7 +80,7 @@
                 android:digits="0123456789"
                 android:hint="@string/pwid"
                 android:inputType="number"
-                android:maxLength="2" />
+                android:maxLength="4" />
 
             <!--Women/Mother name-->
             <TextView
@@ -201,26 +201,28 @@
                 android:layoutDirection="ltr"
                 android:orientation="horizontal">
 
-                <TextView
-                    style="?android:textAppearanceMedium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="7"
-                    android:background="@android:color/transparent"
-                    android:text="UC"
-                    android:textAlignment="center"
-                    android:textStyle="bold" />
-
                 <Spinner
                     android:id="@+id/spUCs"
                     style="@style/Widget.AppCompat.Spinner.Underlined"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_weight="35"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:popupBackground="#ffffff" />
+
+                <TextView
+                    style="?android:textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1.5"
+                    android:background="@android:color/transparent"
+                    android:text="@string/ra06"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+
             </LinearLayout>
 
             <!--Village-->
@@ -231,26 +233,27 @@
                 android:layoutDirection="ltr"
                 android:orientation="horizontal">
 
-                <TextView
-                    style="?android:textAppearanceMedium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="3"
-                    android:background="@android:color/transparent"
-                    android:text="Villages: "
-                    android:textAlignment="center"
-                    android:textStyle="bold" />
-
                 <Spinner
                     android:id="@+id/spVillages"
                     style="@style/Widget.AppCompat.Spinner.Underlined"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:layout_weight="35"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:popupBackground="#ffffff" />
+
+                <TextView
+                    style="?android:textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1.5"
+                    android:background="@android:color/transparent"
+                    android:text="@string/ra07"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
 
             </LinearLayout>
 

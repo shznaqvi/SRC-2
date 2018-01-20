@@ -153,6 +153,7 @@ public class SecRBActivity extends AppCompatActivity {
                 : binding.rb12d.isChecked() ? "4"
                 : binding.rb12e.isChecked() ? "5"
                 : binding.rb12f.isChecked() ? "6"
+                : binding.rb12g.isChecked() ? "7"
                 : "0");
 
 
@@ -200,6 +201,8 @@ public class SecRBActivity extends AppCompatActivity {
         sB.put("rb18b", binding.rb18b.isChecked() ? "2" : "0");
         sB.put("rb18c", binding.rb18c.isChecked() ? "3" : "0");
         sB.put("rb18d", binding.rb18d.isChecked() ? "4" : "0");
+        sB.put("rb18e", binding.rb18e.isChecked() ? "5" : "0");
+        sB.put("rb18f", binding.rb18f.isChecked() ? "6" : "0");
         sB.put("rb1888", binding.rb1888.isChecked() ? "88" : "0");
 
 
@@ -391,9 +394,11 @@ public class SecRBActivity extends AppCompatActivity {
                 return false;
             }
 
-            if (!validatorClass.EmptyRadioButton(this, binding.rb12, binding.rb12f, getString(R.string.rb12))) {
-                return false;
-            }
+
+        }
+
+        if (!validatorClass.EmptyRadioButton(this, binding.rb12, binding.rb12g, getString(R.string.rb12))) {
+            return false;
         }
 
 
@@ -569,7 +574,6 @@ public class SecRBActivity extends AppCompatActivity {
                     binding.fldGrprb11.setVisibility(View.VISIBLE);
                 } else {
                     binding.rb11.clearCheck();
-                    binding.rb12.clearCheck();
                     binding.fldGrprb11.setVisibility(View.GONE);
                 }
             }
@@ -638,6 +642,8 @@ public class SecRBActivity extends AppCompatActivity {
                     binding.rb18b.setChecked(false);
                     binding.rb18c.setChecked(false);
                     binding.rb18d.setChecked(false);
+                    binding.rb18e.setChecked(false);
+                    binding.rb18f.setChecked(false);
                     binding.rb1888.setChecked(false);
 
                     binding.fldGrprb18.setVisibility(View.GONE);

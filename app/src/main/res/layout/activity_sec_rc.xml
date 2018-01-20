@@ -432,7 +432,9 @@
 
                 </LinearLayout>
 
-                <TextView
+            </LinearLayout>
+
+            <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -711,7 +713,7 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -831,19 +833,19 @@
                     android:layout_weight="1"
                     android:text="@string/no" />
 
-                <View
-                    android:layout_width="2dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark" />
-
-                <RadioButton
-                    android:id="@+id/rc1199"
-                    style="@style/radiobutton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/dkn" />
-
+                <!-- <View
+                     android:layout_width="2dp"
+                     android:layout_height="match_parent"
+                     android:background="@color/colorPrimaryDark" />
+ -->
+                <!-- <RadioButton
+                     android:id="@+id/rc1199"
+                     style="@style/radiobutton"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:text="@string/dkn" />
+ -->
             </RadioGroup>
 
             <LinearLayout
