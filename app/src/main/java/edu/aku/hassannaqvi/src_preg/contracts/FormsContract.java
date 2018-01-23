@@ -117,12 +117,11 @@ public class FormsContract {
         }
         if (!this.sB.equals("")) {
 
-            json.put(FormsTable.COLUMN_SC, this.sC.equals("") ? JSONObject.NULL : new JSONObject(this.sC));
+            json.put(FormsTable.COLUMN_SB, this.sB.equals("") ? JSONObject.NULL : new JSONObject(this.sB));
         }
         if (!this.sC.equals("")) {
 
             json.put(FormsTable.COLUMN_SC, this.sC.equals("") ? JSONObject.NULL : new JSONObject(this.sC));
-            // }
         }
         if (!this.sD.equals("")) {
 
