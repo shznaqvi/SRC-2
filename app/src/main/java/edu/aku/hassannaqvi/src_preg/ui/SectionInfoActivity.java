@@ -317,9 +317,8 @@ public class SectionInfoActivity extends AppCompatActivity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
-                finish();
-
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+                //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+                MainApp.endActivity(this, this);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

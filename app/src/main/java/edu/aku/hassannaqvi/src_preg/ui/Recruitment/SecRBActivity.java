@@ -19,7 +19,6 @@ import edu.aku.hassannaqvi.src_preg.R;
 import edu.aku.hassannaqvi.src_preg.core.DatabaseHelper;
 import edu.aku.hassannaqvi.src_preg.core.MainApp;
 import edu.aku.hassannaqvi.src_preg.databinding.ActivitySecRbBinding;
-import edu.aku.hassannaqvi.src_preg.ui.EndingActivity;
 import edu.aku.hassannaqvi.src_preg.validation.validatorClass;
 
 public class SecRBActivity extends AppCompatActivity {
@@ -60,11 +59,12 @@ public class SecRBActivity extends AppCompatActivity {
 
 
     public void BtnEnd() {
-        finish();
-        Toast.makeText(this, "complete Section", Toast.LENGTH_SHORT).show();
-        Intent endSec = new Intent(this, EndingActivity.class);
+        Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+        /*Intent endSec = new Intent(this, EndingActivity.class);
         endSec.putExtra("complete", false);
-        startActivity(endSec);
+        startActivity(endSec);*/
+
+        MainApp.endActivity(this, this);
     }
 
 

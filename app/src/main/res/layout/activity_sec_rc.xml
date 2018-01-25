@@ -432,7 +432,6 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
 
             <TextView
                     android:layout_width="match_parent"
@@ -711,9 +710,10 @@
 
                     </RadioGroup>
 
+
                 </LinearLayout>
 
-
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -796,6 +796,7 @@
                     android:text="@string/rc10h" />
 
             </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -2087,6 +2088,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@color/red"
+                    android:onClick="@{() -> callback.BtnEnd()}"
                     android:text="@string/end_interview"
                     android:textColor="@color/white"
                     android:visibility="visible" />
@@ -2099,7 +2101,7 @@
                     android:layout_weight="1"
                     android:background="#1ed61e"
                     android:onClick="@{() -> callback.BtnContinue()}"
-                    android:text="@string/start_interview"
+                    android:text="@string/nextSection"
                     android:textColor="@color/white" />
 
             </LinearLayout>

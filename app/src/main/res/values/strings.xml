@@ -109,7 +109,7 @@
     <string name="rb09c"> Calcium </string>
 
 
-  <string name="rb10">  ڇا توهان جي گذريل حمل جي دوران وئي ٻار کي جھٽڪي کان بچائڻ جي لاءِ توهان جي ٻانهن ۾ انجيڪشن هنئيِ </string>
+  <string name="rb10">  ڇا توهان جي گذريل حمل جي دوران  ٻار کي جھٽڪي کان بچائڻ جي لاءِ توهان جي ٻانهن ۾ انجيڪشن هنئي ِوئي </string>
     <string name="rb11"> جيڪڏهن ها، ته توهان کي جھٽڪن کان بچاءُ واري انجيڪشن گھڻا دفعا لڳائي وئي </string>
     <string name="rb11a"> هڪ </string>
     <string name="rb11b"> ٻه </string>
@@ -194,7 +194,7 @@
     <string name="rc10g"> حفاظتي ٽڪا </string>
     <string name="rc10h"> ڪو به نه </string>
   <string name="rc11"> ڇا توهان هن وقت ڪا دوا استعمال ڪندا آهيو؟ </string>
-    <string name="rc12"> جيڪڏهن ها ته هِنن مان ڪهڙي </string>
+  <string name="rc12"> جيڪڏهن ها ته هِنن مان ڪهڙي (هڪ کان وڌيڪ جواب ٿي سگهن ٿا) </string>
     <string name="rc12a"> آئرن يا فولڪ ايسڊ </string>
     <string name="rc12b"> ڪيلشم جي دوا </string>
     <string name="rc12c"> ملٽي وٽامن(ڪهڙيون) </string>
@@ -213,7 +213,7 @@
     <string name="rc14la"> بُک جو گهٽ ٿي وڃڻ </string>
   <string name="rc14nv"> نڪ مان رت اچڻ ۽ الٽي </string>
     <string name="rc14v"> مٿي کي چڪر اچڻ </string>
-    <string name="rc14cf"> جھٽڪا </string>
+  <string name="rc14cf"> جھٽڪا( مرگهي کان علاوه) </string>
     <string name="rc14hs"> هٿن جي سڄڻ </string>
     <string name="rc14fs"> منهن سڄڻ </string>
     <string name="rc14sh"> شديد مٿي جو سور </string>

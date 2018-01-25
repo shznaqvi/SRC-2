@@ -92,6 +92,13 @@ public class SecRCActivity extends AppCompatActivity
                     bl.rc0788.setChecked(false);
                     bl.rc0788x.setText(null);
                     bl.rc08.clearCheck();
+                    bl.rc09w.clearCheck();
+                    bl.rc09bp.clearCheck();
+                    bl.rc09st.clearCheck();
+                    bl.rc09ud.clearCheck();
+                    bl.rc09hb.clearCheck();
+                    bl.rc09us.clearCheck();
+                    bl.rc09ti.clearCheck();
 
                 }
             }
@@ -301,7 +308,6 @@ public class SecRCActivity extends AppCompatActivity
             if (!validatorClass.EmptyRadioButton(this, bl.rc08, bl.rc08a, getString(R.string.rc08))) {
                 return false;
             }
-        }
 
             if (!validatorClass.EmptyRadioButton(this, bl.rc09w, bl.rc09wa, getString(R.string.rc09w))) {
                 return false;
@@ -330,6 +336,8 @@ public class SecRCActivity extends AppCompatActivity
             if (!validatorClass.EmptyRadioButton(this, bl.rc09ti, bl.rc09tia, getString(R.string.rc09ti))) {
                 return false;
             }
+
+        }
 
 
         // 3.10
@@ -479,6 +487,16 @@ public class SecRCActivity extends AppCompatActivity
         return validatorClass.EmptyRadioButton(this, bl.rc1788, bl.rc1788a, bl.rc1788x, getString(R.string.rc17) + " - " + getString(R.string.other));
 
     }
+
+    public void BtnEnd() {
+        Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
+        /*Intent endSec = new Intent(this, EndingActivity.class);
+        endSec.putExtra("complete", false);
+        startActivity(endSec);*/
+
+        MainApp.endActivity(this, this);
+    }
+
 
     public void BtnContinue() {
 
